@@ -1,0 +1,6 @@
+# Distribution files
+dist
+
+# The dreaded node modules!
+node_modules
+

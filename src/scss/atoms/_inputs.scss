@@ -1,0 +1,57 @@
+%input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+}
+
+%input-invalid {
+  @extend %input;
+}
+
+%input-valid {
+  @extend %input;
+}
+
+%input-std {
+  @extend %input;
+}
+
+%input-focus {
+  @extend %input;
+}
+
+%input-required {
+  @extend %input;
+}
+
+input {
+  @extend %input-std;
+  &:invalid {
+    @extend %input-invalid;
+  }
+  &:valid {
+    @extend %input-valid;
+  }
+  &:focus {
+    @extend %input-focus;
+  }
+  &[type="submit"],
+  &[type="button"],
+  &[type="reset"] {
+    @extend %button;
+  }
+}
+
+textarea {
+  @extend %input-std;
+}
+
+select {
+  @extend %input-std;
+  option {
+  }
+}
+
+fieldset {
+  border: 0;
+}

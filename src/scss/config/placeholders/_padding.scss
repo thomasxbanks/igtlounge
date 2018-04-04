@@ -1,0 +1,32 @@
+%padding-top-std {
+  padding-top: 2rem;
+}
+
+%padding-right-std {
+  padding-right: 2rem;
+}
+
+%padding-bottom-std {
+  padding-bottom: 3rem;
+}
+
+%padding-left-std {
+  padding-left: 2rem;
+}
+
+%padding-vt-std {
+  @extend %padding-top-std;
+  @extend %padding-bottom-std;
+}
+
+%padding-hz-std {
+  @extend %padding-right-std;
+  @extend %padding-left-std;
+}
+
+%padding-std {
+  @extend %padding-top-std;
+  @extend %padding-right-std;
+  @extend %padding-bottom-std;
+  @extend %padding-left-std;
+}

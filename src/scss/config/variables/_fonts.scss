@@ -1,0 +1,23 @@
+// Face Stack/Family
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300|Overpass:300");
+
+// The fallback font stack includes OS specific fonts followed by Emoji rendering fonts.
+$font_face-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+// Various font stacks used in the build
+$font_face-main: "Arial", $font_face-fallback;
+$font_face-accent: "Arial", $font_face-fallback;
+$font_face-utility: "Arial", $font_face-fallback;
+
+// Font Sizes
+$font_size-xsm: 0.75rem;
+$font_size-sml: 0.8rem;
+$font_size-std: 1rem;
+$font_size-med: 1.25rem;
+$font_size-lrg: 1.5rem;
+$font_size-xlg: 2rem;
+
+// Calculate line-heights
+$lh: 1.618em; // :pray: The Golden Ratio!
