@@ -1,3 +1,10 @@
 %button {
   @extend button;
 }
+
+.bx--btn--danger {
+  background: $clr_failure;
+  &:hover {
+    background: darken($clr_failure, 20%);
+  }
+}
