@@ -16,16 +16,18 @@
       .tabs_nav_item {
         @extend %bobby;
         width: 33.33%;
-        line-height: 1em;
+        line-height: 1rem;
         text-align: center;
-        padding: 0.5rem 1rem;
+        padding: 1rem 1.5rem;
+        background: $clr_white;
+        color: $clr_black;
         &:first-of-type {
-          border-top-left-radius: 1rem;
-          border-bottom-left-radius: 1rem;
+          border-top-left-radius: 3rem;
+          border-bottom-left-radius: 3rem;
         }
         &:last-of-type {
-          border-top-right-radius: 1rem;
-          border-bottom-right-radius: 1rem;
+          border-top-right-radius: 3rem;
+          border-bottom-right-radius: 3rem;
         }
         &[data-state="is-active"] {
           background: $clr_igt-blue;
