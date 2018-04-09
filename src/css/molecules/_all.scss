@@ -1,0 +1,48 @@
+.unused-class-for-removal {
+  background-color: limegreen;
+  color: lightgreen;
+  text-shadow: $text-shadow;
+  @extend %padding-std;
+}
+
+.tabs_container {
+  .tabs_nav {
+    ul {
+      @extend %semantic-list;
+      @extend %horizontal-list;
+      width: 100%;
+      max-width: 500px;
+      margin: 1rem auto;
+      .tabs_nav_item {
+        @extend %bobby;
+        width: 33.33%;
+        line-height: 1em;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        &:first-of-type {
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+        }
+        &:last-of-type {
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+        }
+        &[data-state="is-active"] {
+          background: $clr_igt-blue;
+          color: $clr_white;
+        }
+      }
+    }
+  }
+  .tab {
+    background: $clr_white;
+    width: 100%;
+    padding: 1rem;
+    @extend %richie;
+    color: $clr_black;
+    &[data-state="not-active"] {
+      position: absolute;
+      left: -50000px;
+    }
+  }
+}

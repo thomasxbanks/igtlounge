@@ -34,8 +34,8 @@ let dist = 'dist/';
 
 let path = {
   css: {
-    i: `${root + src}scss/**/*.scss`,
-    o: `${root + dist}css/`,
+    i: `${root + src}**/*.scss`,
+    o: `${root + dist}`,
   },
   js: {
     i: `${root + src}js/**/*.js`,
@@ -124,7 +124,7 @@ gulp.task('sass', function() {
     .pipe(envProd ? noop() : sourcemaps.init())
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(envProd ? noop() : sourcemaps.write())
-    .pipe(envProd ? purify([`${root + dist}/js/app.js`, `${root + dist}/styleguide.html`]) : noop())
+    .pipe(envProd ? purify([`${root + dist}js/app.js`, `${root + dist}styleguide.html`]) : noop())
     .pipe(postcss(plugins))
     .pipe(gulp.dest(path.css.o));
 });

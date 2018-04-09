@@ -1,7 +1,7 @@
 'use strict';
 
 window.onload = () => {
-  document.documentElement.classList.remove('no-js'); // Tells us that JS isn't disabed in the browser.
+  document.documentElement.classList.remove('no-js'); // Tells us that JS isn't disabled in the browser.
 
   if (window.location.href.indexOf('local') <= 0) {
     // In case we forget to remove the .redline class prior to production,
