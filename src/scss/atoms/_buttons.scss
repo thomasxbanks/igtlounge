@@ -1,0 +1,21 @@
+%button {
+  @extend button;
+  @extend %border-radius-lozenge;
+  padding: 1rem 2rem;
+}
+
+a[class*="button-"] {
+  text-decoration: none;
+}
+
+%button-primary,
+.button-primary {
+  @extend %button;
+  @extend %bobby;
+  color: $clr_white;
+  background: $clr_igt-blue;
+  transition: background $ease-main $speed-std;
+  &:hover {
+    background: darken($clr_igt-blue, $shade-percentage);
+  }
+}

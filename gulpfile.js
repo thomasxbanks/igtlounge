@@ -8,6 +8,7 @@ let strip = require('gulp-strip-comments');
 let stripDebug = require('gulp-config-strip-debug');
 let sourcemaps = require('gulp-sourcemaps');
 let noop = require('gulp-noop');
+let nodemon = require('gulp-nodemon');
 
 // For Css
 let sass = require('gulp-sass');
@@ -34,8 +35,8 @@ let dist = 'dist/';
 
 let path = {
   css: {
-    i: `${root + src}**/*.scss`,
-    o: `${root + dist}`,
+    i: `${root + src}scss/**/*.scss`,
+    o: `${root + dist}css/`,
   },
   js: {
     i: `${root + src}js/**/*.js`,
@@ -48,6 +49,22 @@ let path = {
   html: {
     i: `${root + src}**/*.html`,
     o: `${root + dist}`,
+  },
+  routes: {
+    i: root + src + 'routes/**/*.js',
+    o: root + dist + 'routes/',
+  },
+  server: {
+    i: root + src + 'server.js',
+    o: root + dist + '',
+  },
+  views: {
+    i: root + src + 'views/**/*.ejs',
+    o: root + dist + 'views/',
+  },
+  modules: {
+    i: root + src + 'modules/**/*',
+    o: root + dist + 'modules/',
   },
 };
 
@@ -68,19 +85,23 @@ let cssNanoOptions = {
 
 // TASKS
 gulp.task('default', function(callback) {
-  runSequence('clean', 'sass', 'js', 'img', 'html', callback);
+  runSequence('clean', 'sass', 'js', 'img', 'views', 'modules', 'routes', 'server', callback);
 });
 
 // Watching for changes
 gulp.task('watch', function(callback) {
-  runSequence('clean', 'default', function() {
+  runSequence(['nodemon'], function() {
     browserSync.init({
-      server: 'dist',
+      proxy: 'http://localhost:8008',
+      files: ['dist/**/*.*'],
+      port: 1337,
     });
     gulp.watch(path.js.i, ['js', browserSync.reload]);
     gulp.watch(path.css.i, ['sass', browserSync.reload]);
-    gulp.watch(path.html.i, ['html', browserSync.reload]);
     gulp.watch(path.img.i, ['img', browserSync.reload]);
+    gulp.watch(path.routes.i, ['routes', browserSync.reload]);
+    gulp.watch(path.views.i, ['views', browserSync.reload]);
+    gulp.watch(path.server.i, ['server', browserSync.reload]);
   });
 });
 
@@ -91,7 +112,7 @@ gulp.task('production', function(callback) {
   console.log('production build started');
   sassOptions.outputStyle = 'compressed';
   plugins = [autoprefixer(), cssnano(cssNanoOptions)];
-  runSequence('clean', 'sass', 'js', 'img', 'html', () => {
+  runSequence('clean', 'sass', 'js', 'img', 'views', 'modules', 'routes', 'server', () => {
     console.log('production build finished');
   });
 });
@@ -100,7 +121,10 @@ gulp.task('production', function(callback) {
 gulp.task('clean', function() {
   return gulp.src('./dist', { read: false }).pipe(clean());
 });
-
+// SERVER
+gulp.task('server', function() {
+  gulp.src([path.server.i]).pipe(gulp.dest(path.server.o));
+});
 // HTML files
 gulp.task('html', function() {
   gulp
@@ -108,7 +132,13 @@ gulp.task('html', function() {
     .pipe(envProd ? htmlmin({ collapseWhitespace: true }) : noop())
     .pipe(gulp.dest(path.html.o));
 });
-
+// EJS views
+gulp.task('views', function() {
+  gulp
+    .src([path.views.i])
+    .pipe(envProd ? htmlmin({ collapseWhitespace: true }) : noop())
+    .pipe(gulp.dest(path.views.o));
+});
 // Images
 gulp.task('img', function() {
   gulp
@@ -141,4 +171,29 @@ gulp.task('js', function() {
     .pipe(envProd ? strip() : noop())
     .pipe(envProd ? noop() : sourcemaps.write('.'))
     .pipe(gulp.dest(path.js.o));
+});
+
+// Routes
+gulp.task('routes', function() {
+  gulp.src([path.routes.i]).pipe(gulp.dest(path.routes.o));
+});
+// Modules
+gulp.task('modules', function() {
+  gulp
+    .src(path.modules.i)
+    .pipe(envProd ? stripDebug() : noop())
+    .pipe(envProd ? strip() : noop())
+    .pipe(gulp.dest(path.modules.o));
+});
+
+gulp.task('nodemon', function(cb) {
+  var hasBooted = false;
+  return nodemon({
+    script: './dist/server.js',
+  }).on('start', function() {
+    if (!hasBooted) {
+      cb();
+      hasBooted = true;
+    }
+  });
 });

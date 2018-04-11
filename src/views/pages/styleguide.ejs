@@ -1,0 +1,17 @@
+<%- contentFor('hero') %>
+	<div class="hero themed">
+		<div class="inner">
+			<div class="content">
+				<div class="central-column">
+					<h1>
+						This is the Styleguide
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<%- contentFor('body') %>
+		<section data-title="Buttons" class="styleguide-buttons">
+			<%- include('../../views/atoms/button', {link: '/', text: 'Homepage', style: 'primary'}) %>
+		</section>

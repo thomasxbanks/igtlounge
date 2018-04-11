@@ -1,0 +1,13 @@
+<article class="card-teaser">
+  <header>
+    <%- include('../../views/atoms/hero', {src: article['_embedded']['wp:featuredmedia'][0].source_url, alt: article['_embedded']['wp:featuredmedia'][0].alt}) %>
+    <h1 class="title"><%- article.title.rendered %></h1>
+  </header>
+  <div class="content"><%- article.content.rendered.split("</p>")[0] %></div>
+  <footer>
+    <a href="/posts/<%- article.slug %>" class="button-default">Read more</a>
+  </footer>
+</article>
+<script>
+  <%- JSON.stringify(article['_embedded']['wp:featuredmedia']) %>
+</script>
