@@ -84,3 +84,11 @@ let log = (value) => {
 let requestLogin = () => {
   alert('You must be logged in');
 };
+
+const openModal = () => {
+  document.querySelector('.modal__container').setAttribute('data-state', 'is-active');
+};
+
+const closeModal = () => {
+  document.querySelector('.modal__container').setAttribute('data-state', 'not-active');
+};

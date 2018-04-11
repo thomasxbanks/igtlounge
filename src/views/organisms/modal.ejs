@@ -1,0 +1,6 @@
+<section class="modal__container" data-state="not-active">
+  <article class="modal__content">
+    <%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'closeModal()', text: 'Close the modal', icon: 'close'}) %>
+    <%= content %>
+  </article>
+</section>

@@ -1,0 +1,35 @@
+.modal__container {
+  position: fixed;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: -50000px;
+  z-index: 50000;
+  background: rgba($clr_black, $opacity-backdrop-decimal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  &[data-state="is-active"] {
+    right: 0;
+    left: 0;
+    .modal__content {
+      opacity: 1;
+    }
+  }
+}
+
+.modal__content {
+  @extend %border-radius-large;
+  background: $clr_white;
+  max-width: 600px;
+  max-height: 600px;
+  position: relative;
+  padding: 2rem;
+  .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+}
