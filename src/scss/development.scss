@@ -1,0 +1,53 @@
+// @TODO: Remove prior to production
+// This is where we apply hideous styles to highlight where we have fucked up with our specificity.
+html * {
+  background: darkslategray;
+  color: yellow;
+}
+
+// @TODO: Remove prior to production
+// Development Redline
+html.redline * {
+  outline: 1px solid rgba(255, 0, 0, 0.3) !important;
+}
+
+// @TODO: Remove prior to production
+// For testing un-css
+.unused-class {
+  background: limegreen;
+}
+
+// @TODO: Remove prior to production
+// For testing un-css
+.class-added-by-js {
+  outline: 1rem solid limegreen;
+}
+
+// @TODO: Remove prior to production
+// For styling the styleguide only
+// Fingers crossed, that id shouldn't appear anywhere in the site
+// but best to be careful
+[id^="styleguide-"] {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 2rem;
+  border-top: 1px solid orangered;
+  margin-top: calc(1rem - 1px);
+  border-bottom: 1px solid orangered;
+  margin-bottom: calc(1rem - 1px);
+  &:before {
+    content: attr(data-title);
+    font-size: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 3px;
+    background: black;
+    font-family: sans-serif;
+    color: white;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+}

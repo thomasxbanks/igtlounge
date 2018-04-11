@@ -1,52 +1,6 @@
-// @TODO: Remove prior to production
-// This is where we apply hideous styles to highlight where we have fucked up with our specificity.
-html * {
-  background: darkslategray;
-  color: yellow;
-  // font-family: monospace;
-}
-
-// @TODO: Remove prior to production
-// Development Redline
-html.redline * {
-  outline: 1px solid rgba(255, 0, 0, 0.3) !important;
-}
-
 // Include all of the things!
 @import "config/all"; // Site configuration. Contains variables and reusable code.
 @import "atoms/all"; // All of the smallest bits that make up a layout: button, input, etc.
 @import "molecules/all"; // Things that are made up of atoms; think a form or a card.
 @import "organisms/all"; // Things made up of molecules. We're talking pages, site-header, that sort of thing.
 @import "shame/all"; // The seedy underbelly of the internet. You shall never speak of what you see here.
-
-.unused-class {
-  background: limegreen;
-}
-.class-added-by-js {
-  outline: 1px solid orange;
-}
-
-[class^="styleguide-"] {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 2rem;
-  border-top: 1px solid orangered;
-  margin-top: calc(1rem - 1px);
-  border-bottom: 1px solid orangered;
-  margin-bottom: calc(1rem - 1px);
-  &:before {
-    content: attr(data-title);
-    font-size: 13px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    padding: 3px;
-    background: black;
-    font-family: sans-serif;
-    color: white;
-    text-transform: uppercase;
-    opacity: 0.75;
-  }
-}

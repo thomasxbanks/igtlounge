@@ -1,5 +1,6 @@
 // Grayscale
 $clr_black: black;
+$clr_gray: gray;
 $clr_whitesmoke: whitesmoke;
 $clr_white: white;
 
@@ -22,3 +23,6 @@ $shade-decimal: 0.2;
 // eg lighten($color, $tint-percentage);
 $tint-percentage: 20%;
 $tint-decimal: 0.2;
+
+$opacity-disabled-percentage: 60%;
+$opacity-disabled-decimal: 0.6;

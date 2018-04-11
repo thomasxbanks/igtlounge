@@ -1,0 +1,16 @@
+[class*="-restricted"] {
+  cursor: not-allowed;
+  &:before {
+    content: "Restricted to logged in users only";
+    font-size: 0;
+    background-image: url("http://www.clker.com/cliparts/B/1/y/Z/B/s/padlock-icon-md.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    display: inline-block;
+    vertical-align: top;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+  }
+}

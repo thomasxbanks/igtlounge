@@ -1,6 +1,7 @@
-<% if (post['_embedded']['wp:featuredmedia']) { %>
-  <div class="hero" style="background-image: url(<%- post['_embedded']['wp:featuredmedia'][0].source_url %>)">
-<% } else { %>
-	<div class="hero themed">
-<% } %>
-  </div>
+<section class="hero__wrapper">
+  <%- include(site.views + '/atoms/images/image', {url: image.url, alt: image.alt}) %>
+  <h1><%= title %></h1>
+  <p><%= content %></p>
+  <%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button'}) %>
+  <%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("' + title + '")', text: 'Secondary Button'}) %>
+</section>

@@ -76,3 +76,11 @@ function easeInOut(currentTime, start, change, duration) {
   currentTime -= 1;
   return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
 }
+
+let log = (value) => {
+  console.log(value);
+};
+
+let requestLogin = () => {
+  alert('You must be logged in');
+};

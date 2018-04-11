@@ -1,17 +1,24 @@
 <%- contentFor('hero') %>
-	<div class="hero themed">
-		<div class="inner">
-			<div class="content">
-				<div class="central-column">
-					<h1>
-						This is the Styleguide
-					</h1>
-				</div>
-			</div>
-		</div>
-	</div>
+	<%- include(site.views + '/organisms/hero', 
+		{
+			image: {
+				url: 'http://fillmurray.com/600/400', 
+				alt: 'Bill Murray. Pretty much a living legend.', 
+			},
+			title: 'This is the UI Kit', 
+			content: 'There\'s only a couple times when fame is ever helpful. Sometimes you can get into a restaurant where the kitchen is just closing. Sometimes you can avoid a traffic violation. But the only time it really matters is in the emergency room with your kids. That\'s when you want to be noticed, because it\'s very easy to get forgotten in an ER.'}) %>
 
 	<%- contentFor('body') %>
-		<section data-title="Buttons" class="styleguide-buttons">
-			<%- include('../../views/atoms/button', {link: '/', text: 'Homepage', style: 'primary'}) %>
+		<section data-title="Links" id="styleguide-links">
+			<%- include(site.views + '/atoms/link', {link: '/styleguide', text: 'Primary Link', style: 'primary', restricted: false}) %>
+			<%- include(site.views + '/atoms/link', {link: '/styleguide', text: 'Primary Link (Restricted)', style: 'primary', restricted: true}) %>
+		</section>
+
+		<section data-title="Buttons" id="styleguide-buttons">
+			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("Secondary")', text: 'Secondary Button'}) %>
+		</section>
+
+		<section data-title="Usage Icons" id="styleguide-usage-icons">
+			<%- include(site.views + '/atoms/usage-icons', {icons: ['phone', 'tablet', 'laptop', 'land']}) %>
 		</section>
