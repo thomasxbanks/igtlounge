@@ -1,0 +1,37 @@
+.tabbed-section__container {
+  background: $clr_white;
+}
+
+.tabbed-section__nav {
+  ul {
+    background: $clr_white;
+    @extend %semantic-list;
+    @extend %horizontal-list;
+    width: 100%;
+    text-align: center;
+    li {
+      a {
+        @extend %bobby;
+        background: $clr_white;
+        color: $clr_black;
+        text-decoration: none;
+        display: block;
+        padding: 1rem 2rem (1rem - $border-width-std) 2rem;
+        &[data-state="is-active"] {
+          border-bottom: $border-width-std solid $clr_igt-blue;
+        }
+      }
+    }
+  }
+}
+
+.tabbed-section__tab {
+  background: $clr_white;
+  max-width: $max-width;
+  margin: 0 auto;
+  position: absolute;
+  left: -50000px;
+  &[data-state="is-active"] {
+    position: static;
+  }
+}

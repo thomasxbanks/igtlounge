@@ -16,23 +16,21 @@ router.get('/favicon.ico', function(req, res) {
 
 // route for our homepage
 router.get('/', function(req, res) {
-  var body = JSON.parse(JSON.stringify(req.body));
   let site = res.app.locals.site;
-  res.render(`pages/${site.template}`, body);
+  site.template = 'index';
+  res.render(`pages/${site.template}`, res.app.locals);
 });
 
 // route for our Styleguide
 router.get('/styleguide', function(req, res) {
-  var body = JSON.parse(JSON.stringify(req.body));
   let site = res.app.locals.site;
   site.template = 'styleguide';
-  res.render(`pages/${site.template}`, body);
+  res.render(`pages/${site.template}`, res.app.locals);
 });
 
 // Final Catch-all for errors
 router.get('/*', function(req, res) {
-  var body = JSON.parse(JSON.stringify(req.body));
-  console.log(body); // Log the response
-
-  res.render('pages/error', body);
+  let site = res.app.locals.site;
+  site.template = 'error';
+  res.render(`pages/${site.template}`, res.app.locals);
 });
