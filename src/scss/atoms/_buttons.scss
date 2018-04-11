@@ -5,3 +5,19 @@
 a[class*="button-"] {
   text-decoration: none; // Removes the default underline to make the text match actual buttons
 }
+
+.button-icon-only {
+  font-size: 0;
+}
+
+.button-icon-only.icon-close {
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 1rem;
+  padding: 0.25rem;
+  @extend %border-radius-circle;
+  background-color: $clr_igt-blue;
+  &:hover {
+    background-color: darken($clr_igt-blue, $shade-percentage);
+  }
+}

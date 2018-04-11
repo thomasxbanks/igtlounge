@@ -30,6 +30,7 @@
   max-width: $max-width;
   margin: 0 auto;
   position: absolute;
+  top: 0;
   left: -50000px;
   &[data-state="is-active"] {
     position: static;

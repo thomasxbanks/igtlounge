@@ -27,10 +27,6 @@ html.redline * {
   display: block;
   width: 100%;
   padding: 2rem;
-  border-top: 1px solid orangered;
-  margin-top: calc(1rem - 1px);
-  border-bottom: 1px solid orangered;
-  margin-bottom: calc(1rem - 1px);
   &:before {
     content: attr(data-title);
     font-size: 13px;
