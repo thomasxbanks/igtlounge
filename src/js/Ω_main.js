@@ -12,6 +12,12 @@ window.onload = () => {
     document.getElementById('devCss').outerHTML = '';
   }
 
+  setTimeout(() => {
+    document.querySelectorAll('.dot').forEach((dot) => {
+      dot.classList.remove('is-start');
+    });
+  }, 1000);
+
   let tabLinks = document.querySelectorAll('.tabbed-section__nav a');
   let tabs = document.querySelectorAll('.tabbed-section__tab');
   if (tabLinks.length > 0 && tabs.length > 0) {

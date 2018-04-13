@@ -1,0 +1,96 @@
+$volatility-casual: #62b741;
+$volatility-casual-balanced: #b6b91f;
+$volatility-balanced: #fdba01;
+$volatility-balanced-aggressive: #f4841b;
+$volatility-aggressive: #e53e3c;
+
+.volatility-meter_container {
+  display: inline-block;
+  width: 10rem;
+  .title {
+    @extend %bobby;
+    display: block;
+    color: $clr_black;
+  }
+  .description {
+    @extend %bobby;
+    text-align: right;
+  }
+}
+
+.volatility-bar {
+  display: block;
+  width: 100%;
+  position: relative;
+  .gradient-bar {
+    display: block;
+    width: 100%;
+    height: 0.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    @extend %border-radius-lozenge;
+    background: linear-gradient(
+      to right,
+      $volatility-casual,
+      $volatility-casual-balanced,
+      $volatility-balanced,
+      $volatility-balanced-aggressive,
+      $volatility-aggressive
+    );
+  }
+  .dot {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 0.125rem solid $clr_white;
+    @extend %border-radius-circle;
+    transition: $ease-swoosh $speed-std;
+    &.is-start {
+      left: 0;
+    }
+  }
+}
+
+.dot-casual {
+  background-color: $volatility-casual;
+  left: 0%;
+}
+
+.dot-casual-balanced {
+  background-color: $volatility-casual-balanced;
+  left: 25%;
+}
+
+.dot-balanced {
+  background-color: $volatility-balanced;
+  left: 50%;
+}
+
+.dot-balanced-aggressive {
+  background-color: $volatility-balanced-aggressive;
+  left: 75%;
+}
+
+.dot-aggressive {
+  background-color: $volatility-aggressive;
+  left: 100%;
+}
+
+.description.volatility-casual {
+  color: $volatility-casual;
+}
+.description.volatility-casual-balanced {
+  color: $volatility-casual-balanced;
+}
+.description.volatility-balanced {
+  color: $volatility-balanced;
+}
+.description.volatility-balanced-aggressive {
+  color: $volatility-balanced-aggressive;
+}
+.description.volatility-aggressive {
+  color: $volatility-aggressive;
+}

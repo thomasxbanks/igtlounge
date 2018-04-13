@@ -36,7 +36,7 @@
 		</section>
 
 		<section data-title="Buttons (Icon only)" id="styleguide-buttons-icon-only">
-			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("close modal")', text: 'Close the modal', icon: 'close-brand', theme: 'light'}) %>
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("expand thumbnail")', text: 'Expand the thumbnail', icon: 'plus-light', theme: 'light'}) %>
 			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("log in")', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
 			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("share stuff")', text: 'Share something', icon: 'share-light', theme: 'dark'}) %>
 		</section>
@@ -44,7 +44,13 @@
 		<section data-title="Usage Icons" id="styleguide-usage-icons">
 			<%- include(site.views + '/atoms/usage-icons', {icons: ['phone', 'tablet', 'laptop', 'land']}) %>
 		</section>
-
+		<section data-title="Volatility Meter" id="styleguide-volatility-meter">
+			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Casual'}) %>
+			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Casual Balanced'}) %>
+			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Balanced'}) %>
+			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Balanced Aggressive'}) %>
+			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Aggressive'}) %>
+		</section>
 		<section data-title="Search Bar" id="styleguide-search-bar">
 			<%- include(site.views + '/atoms/search-bar') %>
 		</section>

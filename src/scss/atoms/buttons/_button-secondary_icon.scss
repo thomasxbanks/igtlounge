@@ -26,6 +26,9 @@
       right: 0.5rem;
       top: 50%;
       transform: translateY(-50%);
+      height: 1em;
+      width: auto;
+      object-fit: contain;
     }
   }
 }
