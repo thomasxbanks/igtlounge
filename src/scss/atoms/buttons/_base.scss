@@ -1,0 +1,11 @@
+%button {
+  @extend button;
+}
+
+a[class*="button-"] {
+  text-decoration: none; // Removes the default underline to make the text match actual buttons
+}
+
+.button-icon-only {
+  font-size: 0;
+}

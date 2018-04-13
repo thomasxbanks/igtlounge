@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="redline">
+<html lang="en" class="no-js">
 
 <head>
 	<meta charset="UTF-8">
@@ -10,15 +10,14 @@
 </head>
 
 <body>
-	<%- include('../views/organisms/masthead') %>
-	<%- include('../views/molecules/nav-primary') %>
+	<%- include(site.views + '/organisms/masthead') %>
 	<%- hero %>
 
 	<main>
 		<%- body %>
 	</main>
 
-	<%- include('../views/organisms/colophon') %>
+	<%- include(site.views + '/organisms/colophon') %>
 	<script src="/js/app.js" charset="utf-8"></script>
 </body>
 

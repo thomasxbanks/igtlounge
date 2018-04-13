@@ -1,0 +1,11 @@
+%central-column {
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%dead-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -2,21 +2,43 @@
 	<%- include(site.views + '/organisms/hero', 
 		{
 			image: {
-				url: 'http://fillmurray.com/600/400', 
+				url: './img/elephant-king.jpg', 
 				alt: 'Bill Murray. Pretty much a living legend.', 
 			},
 			title: 'This is the UI Kit', 
-			content: 'There\'s only a couple times when fame is ever helpful. Sometimes you can get into a restaurant where the kitchen is just closing. Sometimes you can avoid a traffic violation. But the only time it really matters is in the emergency room with your kids. That\'s when you want to be noticed, because it\'s very easy to get forgotten in an ER.'}) %>
+			content: 'There\'s only a couple times when fame is ever helpful. Sometimes you can get into a restaurant where the kitchen is just closing. Sometimes you can avoid a traffic violation. But the only time it really matters is in the emergency room with your kids. That\'s when you want to be noticed, because it\'s very easy to get forgotten in an ER.',
+			primary: 'params',
+			secondary: 'this-game' }) %>
 
 	<%- contentFor('body') %>
+		<a name="this-game" id="this-game"></a>
 		<section data-title="Links" id="styleguide-links">
-			<%- include(site.views + '/atoms/link', {link: '/styleguide', text: 'Primary Link', style: 'primary', restricted: false}) %>
-			<%- include(site.views + '/atoms/link', {link: '/styleguide', text: 'Primary Link (Restricted)', style: 'primary', restricted: true}) %>
+			<%- include(site.views + '/atoms/link', {link: '/styleguide', text: 'Primary Nav Link', style: 'primary-nav', restricted: false}) %>
+			<%- include(site.views + '/atoms/link', {link: '/styleguide', text: 'Primary Nav Link (Restricted)', style: 'primary-nav', restricted: true}) %>
 		</section>
 
-		<section data-title="Buttons" id="styleguide-buttons">
-			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button'}) %>
-			<%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("Secondary")', text: 'Secondary Button'}) %>
+		<section data-title="Buttons (Primary)" id="styleguide-buttons-primary">
+			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button', theme: 'dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button', theme: 'light'}) %>
+		</section>
+
+		<section data-title="Buttons (Secondary)" id="styleguide-buttons-secondary">
+			<%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("Secondary")', text: 'Secondary Button', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("Secondary")', text: 'Secondary Button', theme: 'dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("Secondary")', text: 'Secondary Button', theme: 'light'}) %>
+		</section>
+
+		<section data-title="Buttons (Secondary with Icon)" id="styleguide-buttons-secondary-icon">
+			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Secondary with Icon")', text: 'Secondary Button', theme: 'brand', icon: 'arrow-brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Secondary with Icon")', text: 'Secondary Button', theme: 'dark', icon: 'arrow-dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Secondary with Icon")', text: 'Secondary Button', theme: 'light', icon: 'arrow-light'}) %>
+		</section>
+
+		<section data-title="Buttons (Icon only)" id="styleguide-buttons-icon-only">
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("close modal")', text: 'Close the modal', icon: 'close-brand', theme: 'light'}) %>
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("log in")', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("share stuff")', text: 'Share something', icon: 'share-light', theme: 'dark'}) %>
 		</section>
 
 		<section data-title="Usage Icons" id="styleguide-usage-icons">
@@ -38,6 +60,6 @@
 		</section>
 
 		<section data-title="Modal" id="styleguide-modal">
-			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'openModal()', text: 'Open the modal'}) %>
+			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'openModal()', text: 'Open the modal', theme: 'dark'}) %>
 			<%- include(site.views + '/organisms/modal', {content: 'Donec dictum hendrerit nisl sed finibus. Vestibulum massa arcu, varius eget efficitur vitae, vulputate eget erat. Ut dignissim faucibus tortor ac suscipit. Quisque eget risus nec libero porta cursus id ac purus. Praesent vel dapibus ante. Vivamus sollicitudin lorem diam, sed pellentesque urna accumsan eu. Ut vel elementum ex, ac volutpat nibh. Aliquam laoreet posuere metus, venenatis ullamcorper mauris aliquet a. Sed tempus metus nec scelerisque tempor. Vivamus dapibus pretium dolor vitae tincidunt.'}) %>
 		</section>

@@ -4,7 +4,7 @@
   right: auto;
   bottom: 0;
   left: -50000px;
-  z-index: 50000;
+  z-index: $z-modal;
   background: rgba($clr_black, $opacity-backdrop-decimal);
   display: flex;
   align-items: center;
@@ -27,8 +27,7 @@
   max-height: 600px;
   position: relative;
   padding: 2rem;
-  border: $border_style-standard;
-  .icon-close {
+  [onClick="closeModal()"] {
     position: absolute;
     top: 0;
     right: 0;

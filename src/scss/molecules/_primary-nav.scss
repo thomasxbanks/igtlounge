@@ -1,0 +1,8 @@
+[class^="link-primary-nav"] {
+  @extend %junior;
+  color: $clr_silver;
+  text-decoration: none;
+  &:not(:last-of-type) {
+    margin-right: 2rem;
+  }
+}

@@ -1,8 +1,9 @@
 // Grayscale
 $clr_black: black;
-$clr_gray: gray;
-$clr_whitesmoke: whitesmoke;
-$clr_white: white;
+$clr_mineshaft: #333333;
+$clr_boulder: #666666;
+$clr_silver: #b3b3b3;
+$clr_white: #ffffff;
 
 // Utility
 $clr_success: green;
@@ -10,6 +11,26 @@ $clr_warning: orange;
 $clr_failure: red;
 
 // Brand
-$clr_igt-blue: dodgerblue;
-$clr_igt-orange: orangered;
-$clr_igt-yellow: yellow;
+$clr_igt-azure: #0179ff;
+$clr_igt-cornflower: #8dc8e8;
+$clr_igt-tory: #0c51a1;
+$clr_igt-congress: #004c97;
+$clr_igt-orange: #ff671f;
+$clr_igt-yellow: #fedd00;
+$clr_igt-energy: #fadc5c;
+
+// Transparencies
+$clr_transparent: rgba(
+  255,
+  255,
+  255,
+  0
+); // White with zero opacity works best in Safari
+
+$clr_black-75: rgba($clr_black, 0.75);
+// Gradients
+$clr_gradient-dark: linear-gradient(
+  $clr_transparent 50%,
+  $clr_transparent 50%,
+  $clr_black-75 100%
+);

@@ -1,6 +1,6 @@
 $grid_size: 12;
 $max-grid: $max-width;
-$grid-gutter: 1;
+$grid-gutter: 0;
 $min-item: 300;
 $break: 2;
 %grid_container {
@@ -41,31 +41,31 @@ $break: 2;
   %grid_wrap-reverse {
     flex-wrap: wrap-reverse;
   }
-  %content-start {
+  %justify-start {
     justify-content: flex-start;
   }
-  %content-end {
+  %justify-end {
     justify-content: flex-end;
   }
-  %content-center {
+  %justify-center {
     justify-content: center;
   }
-  %content-between {
+  %justify-between {
     justify-content: space-between;
   }
-  %content-even {
+  %justify-around {
     justify-content: space-around;
   }
-  %items-stretch {
+  %align-stretch {
     align-items: stretch;
   }
-  %items-start {
+  %align-start {
     align-items: flex-start;
   }
-  %items-end {
+  %align-end {
     align-items: flex-end;
   }
-  %items-center {
+  %align-center {
     align-items: center;
   }
 }

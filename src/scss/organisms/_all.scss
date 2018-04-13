@@ -1,2 +1,15 @@
 // Include the separate organisms files here
+@import "hero";
 @import "modal";
+
+#masthead {
+  background: $clr_transparent;
+  padding: 1.5rem 3rem;
+  position: fixed;
+  top: 0;
+  z-index: $z-masthead;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

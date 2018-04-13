@@ -1,23 +1,27 @@
+$breakpoint: 768px;
+
 // Influenced by BBC GEL guidelines (http://www.bbc.co.uk/gel/guidelines/typography)
 // %SilentClasses for extension use only.
 // @extend these basic font stylings for specific content blocks to maintain
 // consistency across the build.
 // Extra marks awwwarded for those who got the Sopranos references.
 %tony {
-  font-family: $font_face-accent;
-  font-size: $font_size-xlg;
+  font-family: $font_face-accent-light;
+  @include fontSize(50px);
+  @include lineHeight(64px);
   font-smooth: auto;
   font-size-adjust: none;
   font-variant: normal;
   font-kerning: none;
   font-variant-ligatures: none;
-  font-weight: 900;
+  font-weight: normal;
   font-style: normal;
 }
 
 %silvio {
-  font-family: $font_face-accent;
-  font-size: $font_size-xlg;
+  font-family: $font_face-accent-light;
+  @include fontSize(32px);
+  @include lineHeight(40px);
   font-smooth: auto;
   font-size-adjust: none;
   font-variant: normal;
@@ -25,35 +29,16 @@
   font-variant-ligatures: none;
   font-weight: normal;
   font-style: normal;
+  @media (min-width: $breakpoint) {
+    @include fontSize(48px);
+    @include lineHeight(56px);
+  }
 }
 
 %paulie {
-  font-family: $font_face-accent;
-  font-size: $font_size-med;
-  font-smooth: auto;
-  font-size-adjust: none;
-  font-variant: normal;
-  font-kerning: none;
-  font-variant-ligatures: none;
-  font-weight: 900;
-  font-style: normal;
-}
-
-%chris {
-  font-family: $font_face-main;
-  font-size: $font_size-med;
-  font-smooth: auto;
-  font-size-adjust: none;
-  font-variant: normal;
-  font-kerning: none;
-  font-variant-ligatures: none;
-  font-weight: 900;
-  font-style: normal;
-}
-
-%ralphie {
-  font-family: $font_face-accent;
-  font-size: $font_size-med;
+  font-family: $font_face-accent-regular;
+  @include fontSize(24px);
+  @include lineHeight(32px);
   font-smooth: auto;
   font-size-adjust: none;
   font-variant: normal;
@@ -61,11 +46,51 @@
   font-variant-ligatures: none;
   font-weight: normal;
   font-style: normal;
+  @media (min-width: $breakpoint) {
+    font-family: $font_face-accent-light;
+    @include fontSize(32px);
+    @include lineHeight(40px);
+  }
+}
+
+%christopher {
+  font-family: $font_face-accent-regular;
+  @include fontSize(20px);
+  @include lineHeight(28px);
+  font-smooth: auto;
+  font-size-adjust: none;
+  font-variant: normal;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-weight: normal;
+  font-style: normal;
+  @media (min-width: $breakpoint) {
+    @include fontSize(24px);
+    @include lineHeight(32px);
+  }
+}
+
+%ralphie {
+  font-family: $font_face-accent-light;
+  @include fontSize(14px);
+  @include lineHeight(20px);
+  font-smooth: auto;
+  font-size-adjust: none;
+  font-variant: normal;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-weight: normal;
+  font-style: normal;
+  @media (min-width: $breakpoint) {
+    @include fontSize(16px);
+    @include lineHeight(24px);
+  }
 }
 
 %richie {
   font-family: $font_face-main;
-  font-size: $font_size-std;
+  @include fontSize(14px);
+  @include lineHeight(20px);
   font-smooth: auto;
   font-size-adjust: none;
   font-variant: normal;
@@ -73,23 +98,30 @@
   font-variant-ligatures: none;
   font-weight: normal;
   font-style: normal;
+  @media (min-width: $breakpoint) {
+    @include fontSize(16px);
+    @include lineHeight(24px);
+  }
 }
 
 %bobby {
   font-family: $font_face-main;
-  font-size: $font_size-sml;
+  @include fontSize(12px);
+  @include lineHeight(12px);
   font-smooth: auto;
   font-size-adjust: none;
   font-variant: normal;
   font-kerning: none;
   font-variant-ligatures: none;
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
+  text-transform: uppercase;
 }
 
 %junior {
   font-family: $font_face-main;
-  font-size: $font_size-xsm;
+  @include fontSize(14px);
+  @include lineHeight(24px);
   font-smooth: auto;
   font-size-adjust: none;
   font-variant: normal;

@@ -59,7 +59,7 @@ let path = {
     o: root + dist + '',
   },
   views: {
-    i: root + src + 'views/**/*.ejs',
+    i: root + src + 'views/**/*.*',
     o: root + dist + 'views/',
   },
   modules: {

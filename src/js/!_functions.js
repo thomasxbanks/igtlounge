@@ -1,16 +1,3 @@
-// Scroll to anchor
-let scrollToAnchor = (aid) => {
-  var aTag = document.querySelectorAll("a[name='" + aid + "']");
-  aTag.forEach((obj) => {
-    document.documentElement.animate(
-      {
-        scrollTop: obj.offset().top,
-      },
-      900
-    );
-  });
-};
-
 // Make a button enabled
 let enableButton = (target) => {
   document.querySelector(target).prop('disabled', false);
@@ -45,10 +32,6 @@ let urlContains = (needle) => {
   return haystack.includes(needle) ? true : false;
 };
 
-let isAdult = (data) => {
-  return data.age >= 18;
-};
-
 function scrollTo(element, to, duration) {
   var start = element.scrollTop,
     change = to - start,
@@ -64,7 +47,6 @@ function scrollTo(element, to, duration) {
       }, increment);
     }
   };
-
   animateScroll(0);
 }
 
@@ -87,8 +69,10 @@ let requestLogin = () => {
 
 const openModal = () => {
   document.querySelector('.modal__container').setAttribute('data-state', 'is-active');
+  document.documentElement.style.overflow = `hidden`;
 };
 
 const closeModal = () => {
   document.querySelector('.modal__container').setAttribute('data-state', 'not-active');
+  document.documentElement.style.overflow = ``;
 };

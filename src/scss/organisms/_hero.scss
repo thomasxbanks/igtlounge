@@ -1,0 +1,50 @@
+.hero__wrapper {
+  $hero_width: 100%;
+  $hero_height: 100vh;
+  width: $hero_width;
+  height: $hero_height;
+  position: relative;
+  @extend %grid;
+  @extend %align-center;
+  @extend %justify-start;
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: $hero_width;
+    height: $hero_height;
+    object-fit: cover;
+  }
+  .content {
+    @extend %item-6;
+    @extend %grid;
+    @extend %grid_column;
+    @extend %align-center;
+    @extend %justify-center;
+    position: relative;
+    z-index: 1;
+    padding: 3rem;
+    .inner {
+      max-width: 380px;
+      .title {
+        @extend %tony;
+        color: $clr_white;
+      }
+
+      p {
+        @extend %richie;
+        color: $clr_silver;
+        display: block;
+        margin-top: 1.5rem;
+      }
+
+      .button-primary-brand {
+        margin-top: 3.5rem;
+        margin-right: 2rem;
+      }
+    }
+  }
+}

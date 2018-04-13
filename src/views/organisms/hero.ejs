@@ -1,7 +1,16 @@
 <section class="hero__wrapper">
   <%- include(site.views + '/atoms/images/image', {url: image.url, alt: image.alt}) %>
-  <h1><%= title %></h1>
-  <p><%= content %></p>
-  <%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button'}) %>
-  <%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("' + title + '")', text: 'Secondary Button'}) %>
+  <section class="item-6 content">
+    <article class="inner">
+      <header>
+        <h1 class="title"><%= title %></h1>
+      </header>
+      <p><%= content %></p>
+      <a href="#this-game" class="button-secondary-light">Anchor link</a>
+      <footer>
+        <%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("' + primary + '")', text: 'Play game', theme: 'brand'}) %>
+        <%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("' + secondary + '")', text: 'Game details', theme: 'light', icon: 'plus-light'}) %>
+      </footer>
+    </article>
+  </section>
 </section>
