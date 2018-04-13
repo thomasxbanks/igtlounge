@@ -5,4 +5,7 @@
   &:not(:last-of-type) {
     margin-right: 2rem;
   }
+  &:hover {
+    color: darken($clr_silver, $shade-percentage);
+  }
 }
