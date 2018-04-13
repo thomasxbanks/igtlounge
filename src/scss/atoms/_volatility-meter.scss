@@ -7,6 +7,7 @@ $volatility-aggressive: #e53e3c;
 .volatility-meter_container {
   display: inline-block;
   width: 10rem;
+  background: $clr_white;
   .title {
     @extend %bobby;
     display: block;
@@ -41,7 +42,6 @@ $volatility-aggressive: #e53e3c;
   .dot {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     display: block;
     width: 0.75rem;
     height: 0.75rem;
@@ -57,26 +57,31 @@ $volatility-aggressive: #e53e3c;
 .dot-casual {
   background-color: $volatility-casual;
   left: 0%;
+  transform: translate(0%, -50%);
 }
 
 .dot-casual-balanced {
   background-color: $volatility-casual-balanced;
   left: 25%;
+  transform: translate(-25%, -50%);
 }
 
 .dot-balanced {
   background-color: $volatility-balanced;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .dot-balanced-aggressive {
   background-color: $volatility-balanced-aggressive;
   left: 75%;
+  transform: translate(-75%, -50%);
 }
 
 .dot-aggressive {
   background-color: $volatility-aggressive;
   left: 100%;
+  transform: translate(-100%, -50%);
 }
 
 .description.volatility-casual {
