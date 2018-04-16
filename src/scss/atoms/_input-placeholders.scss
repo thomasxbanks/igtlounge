@@ -1,0 +1,23 @@
+::-webkit-input-placeholder {
+  // Chrome/Opera/Safari
+  @extend %bobby;
+  color: $clr_silver;
+}
+
+::-moz-placeholder {
+  // Firefox 19+
+  @extend %bobby;
+  color: $clr_silver;
+}
+
+:-ms-input-placeholder {
+  // IE 10+
+  @extend %bobby;
+  color: $clr_silver;
+}
+
+:-moz-placeholder {
+  // Firefox 18-
+  @extend %bobby;
+  color: $clr_silver;
+}

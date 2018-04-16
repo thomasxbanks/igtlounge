@@ -2,18 +2,25 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   background: none;
+  border: 0;
 }
 
-%input-invalid {
+%input-standard {
   @extend %input;
 }
 
-%input-valid {
+%input-minimal {
+  @extend %bobby;
   @extend %input;
+  line-height: 1rem;
+  padding: 13px 1rem;
+  border-bottom: $border_width-thin solid $clr_boulder;
 }
 
-%input-std {
+%input-invert {
   @extend %input;
+  border-color: $clr_white;
+  color: $clr_white;
 }
 
 %input-focus {
@@ -24,8 +31,25 @@
   @extend %input;
 }
 
+%input-invalid {
+  @extend %input;
+  border-color: $clr_failure;
+}
+
+%input-valid {
+  @extend %input;
+}
+
 input {
-  @extend %input-std;
+  .input-standard {
+    @extend %input-standard;
+  }
+  &.input-minimal {
+    @extend %input-minimal;
+  }
+  &.input-invert {
+    @extend %input-invert;
+  }
   &:invalid {
     @extend %input-invalid;
   }
@@ -43,15 +67,19 @@ input {
 }
 
 textarea {
-  @extend %input-std;
-}
-
-select {
-  @extend %input-std;
-  option {
+  &.input-standard {
+    @extend %input-standard;
+  }
+  &.input-minimal {
+    @extend %input-minimal;
   }
 }
 
-fieldset {
-  border: 0;
+select {
+  &.input-standard {
+    @extend %input-standard;
+  }
+  &.input-minimal {
+    @extend %input-minimal;
+  }
 }
