@@ -1,0 +1,18 @@
+section {
+  &.section-theme-brand {
+    @extend %theme-brand;
+  }
+  &.section-theme-dark {
+    @extend %theme-dark;
+  }
+  &.section-theme-light {
+    @extend %theme-light;
+  }
+  &.section-theme-white {
+    @extend %theme-white;
+  }
+  .section-title {
+    @extend %paulie;
+    @extend %central-column;
+  }
+}

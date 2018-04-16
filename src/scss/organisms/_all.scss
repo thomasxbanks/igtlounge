@@ -1,6 +1,7 @@
 // Include the separate organisms files here
 @import "hero";
 @import "modal";
+@import "section";
 
 #masthead {
   background: $clr_transparent;
@@ -12,4 +13,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#site-footer {
+  background: $clr_black;
+  padding: 3rem 0 2rem 0;
+  .grid {
+    @extend %grid;
+    @extend %grid_row;
+    @extend %align-stretch;
+    @extend %justify-around;
+  }
+}
+
+#colophon {
+  @extend %junior;
+  color: $clr_boulder;
+  text-align: center;
+  padding: 2.5rem 0 0 0;
 }
