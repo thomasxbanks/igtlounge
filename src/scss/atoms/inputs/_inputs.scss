@@ -7,13 +7,14 @@
 
 %input-standard {
   @extend %input;
+  @extend %junior;
 }
 
 %input-minimal {
-  @extend %bobby;
   @extend %input;
-  line-height: 1rem;
-  padding: 13px 1rem;
+  @extend %junior;
+  height: 2.5rem;
+  padding: 13px 0;
   border-bottom: $border_width-thin solid $clr_boulder;
 }
 
@@ -36,20 +37,33 @@
   border-color: $clr_failure;
 }
 
+%input-invisible {
+  border: 0;
+}
+
 %input-valid {
   @extend %input;
 }
 
+.input-standard {
+  @extend %input-standard;
+}
+
+.input-minimal {
+  @extend %input-minimal;
+}
+
+.input-invert {
+  @extend %input-invert;
+}
+
+label.input-minimal {
+  input {
+    @extend %input-invisible;
+  }
+}
+
 input {
-  .input-standard {
-    @extend %input-standard;
-  }
-  &.input-minimal {
-    @extend %input-minimal;
-  }
-  &.input-invert {
-    @extend %input-invert;
-  }
   &:invalid {
     @extend %input-invalid;
   }
@@ -59,6 +73,7 @@ input {
   &:focus {
     @extend %input-focus;
   }
+
   &[type="submit"],
   &[type="button"],
   &[type="reset"] {

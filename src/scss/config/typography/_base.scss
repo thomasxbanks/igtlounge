@@ -4,7 +4,6 @@
 // consistency across the build.
 // Extra marks awwwarded for those who got the Sopranos references.
 %tony {
-  // H1
   font-family: $font_face-accent-light;
   @include fontSize(50px);
   @include lineHeight(64px);
@@ -18,7 +17,6 @@
 }
 
 %silvio {
-  // H2
   font-family: $font_face-accent-light;
   @include fontSize(32px);
   @include lineHeight(40px);
@@ -36,7 +34,6 @@
 }
 
 %paulie {
-  // H3
   font-family: $font_face-accent-regular;
   @include fontSize(24px);
   @include lineHeight(32px);
@@ -55,7 +52,6 @@
 }
 
 %christopher {
-  // H4
   font-family: $font_face-accent-regular;
   @include fontSize(20px);
   @include lineHeight(28px);
@@ -73,7 +69,6 @@
 }
 
 %ralphie {
-  // H5
   font-family: $font_face-accent-light;
   @include fontSize(14px);
   @include lineHeight(20px);
@@ -108,7 +103,6 @@
 }
 
 %bobby {
-  // H6
   font-family: $font_face-main;
   @include fontSize(12px);
   @include lineHeight(12px);
@@ -117,9 +111,9 @@
   font-variant: normal;
   font-kerning: none;
   font-variant-ligatures: none;
+  text-transform: uppercase;
   font-weight: bold;
   font-style: normal;
-  text-transform: uppercase;
 }
 
 %junior {

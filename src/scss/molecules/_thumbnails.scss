@@ -11,7 +11,7 @@
   display: inline-flex;
   @extend %grid_row;
   @extend %align-stretch;
-  @extend %justify-between;
+  @extend %justify-end;
   margin: 1.2rem;
   width: calc(25% - 2.4rem);
   height: $thumbnail_height;
@@ -45,7 +45,7 @@
       .description {
         @extend %ralphie;
         @include fontSize(16px);
-        @include lineHeight(24px);
+        @include lineHeight(16px);
         color: $clr_silver;
         opacity: 0;
         transition: opacity $ease-main $speed-std;

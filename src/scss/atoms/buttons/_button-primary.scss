@@ -1,7 +1,6 @@
 [class^="button"] {
   &[class*="-primary-"] {
     @extend %button-primary;
-
     &[class*="-brand"] {
       color: $clr_white;
       background-color: $clr_brand-primary;
