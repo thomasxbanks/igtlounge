@@ -4,9 +4,9 @@
     position: relative;
     padding-right: 2rem;
     &[class*="-brand"] {
-      color: $clr_igt-azure;
+      color: $clr_brand-primary;
       &:hover {
-        color: darken($clr_igt-azure, $shade-percentage);
+        color: darken($clr_brand-primary, $shade-percentage);
       }
     }
     &[class*="-dark"] {

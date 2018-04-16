@@ -4,9 +4,9 @@
 
     &[class*="-brand"] {
       color: $clr_white;
-      background-color: $clr_igt-azure;
+      background-color: $clr_brand-primary;
       &:hover {
-        background-color: darken($clr_igt-azure, $shade-percentage);
+        background-color: darken($clr_brand-primary, $shade-percentage);
       }
     }
 
@@ -19,7 +19,7 @@
     }
 
     &[class*="-light"] {
-      color: $clr_igt-azure;
+      color: $clr_brand-primary;
       background-color: $clr_white;
       &:hover {
         background-color: darken($clr_white, $shade-percentage);

@@ -41,7 +41,7 @@
 			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("share stuff")', text: 'Share something', icon: 'share-light', theme: 'dark'}) %>
 		</section>
 
-		<section data-title="Usage Icons" id="styleguide-usage-icons">
+		<section data-title="Usage Icons" id="styleguide-usage-icons" class="section-theme-brand">
 			<%- include(site.views + '/atoms/usage-icons', {icons: ['phone', 'tablet', 'laptop', 'land']}) %>
 		</section>
 		<section data-title="Volatility Meter" id="styleguide-volatility-meter">
@@ -51,8 +51,33 @@
 			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Balanced Aggressive'}) %>
 			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Aggressive'}) %>
 		</section>
+		
+		<section data-title="Cards" id="styleguide-cards" class="section-theme-light">
+			<h3 class="section-title">What's new on Casino Lounge</h3>
+			<section class="card_container">
+				<div class="card_container-column">
+					<%- include(site.views + '/molecules/card', {style: 'large', image: {url: 'http://fillmurray.com/600/400', alt: 'Bill Murray'}, title: 'Wishwood Launch Party - Malta (IGT Interactive)', content: 'Every path reveals secret treasures in the mystical forest of Wishwood! Join Poa the sprite and other woodland creatures as you climb the gargantuan tree growing deep within the forest.', link: '/styleguide'}) %>
+				</div>
+				<div class="card_container-column">
+					<%- include(site.views + '/molecules/card', {style: 'small', image: {url: 'http://fillmurray.com/300/200', alt: 'Bill Murray'}, title: 'Behind the scenes: The making of Wishwood', content: '', link: '/styleguide'}) %>
+					<%- include(site.views + '/molecules/card', {style: 'small', image: {url: 'http://fillmurray.com/300/210', alt: 'Bill Murray'}, title: 'Going Wireless With Your Headphones', content: '', link: '/styleguide'}) %>
+					<%- include(site.views + '/molecules/card', {style: 'small', image: {url: 'http://fillmurray.com/300/220', alt: 'Bill Murray'}, title: 'How Does An Lcd Screen Work', content: '', link: '/styleguide'}) %>
+					<%- include(site.views + '/molecules/card', {style: 'small', image: {url: 'http://fillmurray.com/300/230', alt: 'Bill Murray'}, title: 'Microsoft Patch Management For Home Users', content: '', link: '/styleguide'}) %>
+				</div>
+			</section>
+		</section>
+		
 		<section data-title="Search Bar" id="styleguide-search-bar">
 			<%- include(site.views + '/atoms/search-bar') %>
+		</section>
+
+		<section data-title="Thumbnails" id="styleguide-thumbnails">
+			<section class="thumbnail_container">
+				<%- include(site.views + '/atoms/thumbnail', {target: 'monkey-tennis', image: {url: 'http://fillmurray.com/640/460', alt: 'Bill Murray'}, title: 'Monkey Tennis', description: 'Casual game'}) %>
+				<%- include(site.views + '/atoms/thumbnail', {target: 'elephant-kingdom', image: {url: 'http://fillmurray.com/840/470', alt: 'Bill Murray'}, title: 'Elephant Kingdom', description: 'Casual game'}) %>
+				<%- include(site.views + '/atoms/thumbnail', {target: 'witchwood', image: {url: 'http://fillmurray.com/650/480', alt: 'Bill Murray'}, title: 'Witchwood', description: 'Casual game'}) %>
+				<%- include(site.views + '/atoms/thumbnail', {target: 'keystone-kops', image: {url: 'http://fillmurray.com/640/490', alt: 'Bill Murray'}, title: 'Keystone Kops', description: 'Casual game'}) %>
+			</section>
 		</section>
 
 		<section data-title="Tabbed Section" id="styleguide-tabbed-section">

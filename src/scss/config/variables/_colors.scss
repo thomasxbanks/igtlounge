@@ -3,12 +3,13 @@ $clr_black: black;
 $clr_mineshaft: #333333;
 $clr_boulder: #666666;
 $clr_silver: #b3b3b3;
+$clr_wildsand: #f4f4f4;
 $clr_white: #ffffff;
 
 // Utility
-$clr_success: green;
-$clr_warning: orange;
-$clr_failure: red;
+$clr_success: #62b741;
+$clr_warning: #fdba01;
+$clr_failure: #e53e3c;
 
 // Brand
 $clr_igt-azure: #0179ff;
@@ -18,6 +19,9 @@ $clr_igt-congress: #004c97;
 $clr_igt-orange: #ff671f;
 $clr_igt-yellow: #fedd00;
 $clr_igt-energy: #fadc5c;
+
+// Brand hierarchy
+$clr_brand-primary: $clr_igt-azure;
 
 // Volatility Meter
 $volatility-casual: #62b741;

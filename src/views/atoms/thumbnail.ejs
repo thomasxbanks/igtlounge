@@ -1,0 +1,10 @@
+<article class="thumbnail" data-state="" data-target="<%= target %>">
+  <img src="<%= image.url %>" alt="<%= image.alt %>">
+  <header>
+    <div class="content">
+      <h2 class="title"><%= title %></h2>
+      <p class="description"><%= description %></p>
+    </div>
+    <%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'viewGameDetails("'+target+'")', text: 'View game details', icon: 'plus-light', theme: 'light'}) %>
+  </header>
+</article>

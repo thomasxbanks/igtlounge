@@ -6,9 +6,9 @@
 }
 .button-icon-only-brand {
   color: $clr_white;
-  background-color: $clr_igt-azure;
+  background-color: $clr_brand-primary;
   &:hover {
-    background-color: darken($clr_igt-azure, $shade-percentage);
+    background-color: darken($clr_brand-primary, $shade-percentage);
   }
 }
 
@@ -21,7 +21,7 @@
 }
 
 .button-icon-only-light {
-  color: $clr_igt-azure;
+  color: $clr_brand-primary;
   background-color: $clr_transparent;
   border: $border-width-std solid $clr_white;
   &:hover {

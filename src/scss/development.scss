@@ -36,9 +36,9 @@ html.redline * {
     left: 0;
     display: block;
     padding: 3px;
-    background: black;
+    background: rgba(0, 0, 0, 0.66);
     font-family: sans-serif;
-    color: white;
+    color: rgba(255, 255, 255, 0.66);
     text-transform: uppercase;
     opacity: 0.75;
   }

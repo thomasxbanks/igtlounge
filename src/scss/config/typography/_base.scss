@@ -1,11 +1,10 @@
-$breakpoint: 768px;
-
 // Influenced by BBC GEL guidelines (http://www.bbc.co.uk/gel/guidelines/typography)
 // %SilentClasses for extension use only.
 // @extend these basic font stylings for specific content blocks to maintain
 // consistency across the build.
 // Extra marks awwwarded for those who got the Sopranos references.
 %tony {
+  // H1
   font-family: $font_face-accent-light;
   @include fontSize(50px);
   @include lineHeight(64px);
@@ -19,6 +18,7 @@ $breakpoint: 768px;
 }
 
 %silvio {
+  // H2
   font-family: $font_face-accent-light;
   @include fontSize(32px);
   @include lineHeight(40px);
@@ -29,13 +29,14 @@ $breakpoint: 768px;
   font-variant-ligatures: none;
   font-weight: normal;
   font-style: normal;
-  @media (min-width: $breakpoint) {
+  @media (min-width: $breakpoint-min) {
     @include fontSize(48px);
     @include lineHeight(56px);
   }
 }
 
 %paulie {
+  // H3
   font-family: $font_face-accent-regular;
   @include fontSize(24px);
   @include lineHeight(32px);
@@ -46,7 +47,7 @@ $breakpoint: 768px;
   font-variant-ligatures: none;
   font-weight: normal;
   font-style: normal;
-  @media (min-width: $breakpoint) {
+  @media (min-width: $breakpoint-min) {
     font-family: $font_face-accent-light;
     @include fontSize(32px);
     @include lineHeight(40px);
@@ -54,6 +55,7 @@ $breakpoint: 768px;
 }
 
 %christopher {
+  // H4
   font-family: $font_face-accent-regular;
   @include fontSize(20px);
   @include lineHeight(28px);
@@ -64,13 +66,14 @@ $breakpoint: 768px;
   font-variant-ligatures: none;
   font-weight: normal;
   font-style: normal;
-  @media (min-width: $breakpoint) {
+  @media (min-width: $breakpoint-min) {
     @include fontSize(24px);
     @include lineHeight(32px);
   }
 }
 
 %ralphie {
+  // H5
   font-family: $font_face-accent-light;
   @include fontSize(14px);
   @include lineHeight(20px);
@@ -81,7 +84,7 @@ $breakpoint: 768px;
   font-variant-ligatures: none;
   font-weight: normal;
   font-style: normal;
-  @media (min-width: $breakpoint) {
+  @media (min-width: $breakpoint-min) {
     @include fontSize(16px);
     @include lineHeight(24px);
   }
@@ -98,13 +101,14 @@ $breakpoint: 768px;
   font-variant-ligatures: none;
   font-weight: normal;
   font-style: normal;
-  @media (min-width: $breakpoint) {
+  @media (min-width: $breakpoint-min) {
     @include fontSize(16px);
     @include lineHeight(24px);
   }
 }
 
 %bobby {
+  // H6
   font-family: $font_face-main;
   @include fontSize(12px);
   @include lineHeight(12px);

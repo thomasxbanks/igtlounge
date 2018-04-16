@@ -1,0 +1,104 @@
+.thumbnail_container {
+  font-size: 0;
+  @extend %grid;
+  @extend %grid_row;
+  @extend %grid_wrap;
+  @extend %align-stretch;
+  @extend %justify-between;
+}
+.thumbnail {
+  $thumbnail_height: 13.75rem;
+  display: inline-flex;
+  @extend %grid_row;
+  @extend %align-stretch;
+  @extend %justify-between;
+  margin: 1.2rem;
+  width: calc(25% - 2.4rem);
+  height: $thumbnail_height;
+  transition: transform $ease-main $speed-std;
+  position: relative;
+  header {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    width: 100%;
+    @extend %grid;
+    @extend %grid_row;
+    @extend %align-end;
+    @extend %justify-between;
+    background: $clr_gradient-dark;
+    opacity: 0;
+    transition: opacity $ease-main $speed-fast;
+    transition-delay: 0;
+    .content {
+      flex-basis: 1;
+      .title {
+        @extend %christopher;
+        @include fontSize(16px);
+        @include lineHeight(24px);
+        color: $clr_white;
+        opacity: 0;
+        transition: opacity $ease-main $speed-std;
+        transition-delay: 50ms;
+      }
+
+      .description {
+        @extend %ralphie;
+        @include fontSize(16px);
+        @include lineHeight(24px);
+        color: $clr_silver;
+        opacity: 0;
+        transition: opacity $ease-main $speed-std;
+        transition-delay: 150ms;
+      }
+    }
+    button {
+      opacity: 0;
+      transition: opacity $ease-main $speed-slow;
+      transition-delay: 100ms;
+    }
+  }
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: $thumbnail_height;
+    object-fit: cover;
+  }
+  &[data-state="not-active"] {
+    background-color: $clr_black;
+    img {
+      opacity: $opacity_disabled-decimal;
+    }
+  }
+  &[data-state="is-active"] {
+    img {
+      border: $border-width-thick solid $clr_brand-primary;
+    }
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0.5rem 1rem 0 1rem;
+      border-color: $clr_brand-primary transparent transparent;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+  }
+  &:hover {
+    transform: scale(1.2);
+    header,
+    header .title,
+    header .description,
+    button {
+      opacity: 1;
+    }
+  }
+}
