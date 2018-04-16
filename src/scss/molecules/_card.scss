@@ -1,0 +1,58 @@
+%card {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1.5rem 0;
+}
+.card_container {
+  @extend %central-column;
+  font-size: 0;
+  @extend %grid;
+  @extend %grid_row;
+  .card_container-column {
+    @extend %item-6;
+    @extend %grid;
+    @extend %grid_wrap;
+    @extend %align-stretch;
+    @extend %justify-between;
+  }
+}
+.card {
+  @extend %card;
+  img {
+    width: 100%;
+  }
+  .title {
+    margin-top: 1em;
+  }
+  .content {
+    margin-top: 1em;
+  }
+}
+
+.card-large {
+  width: calc(100% - 1.5rem);
+  img {
+    height: 25rem;
+    object-fit: cover;
+  }
+  .title {
+    @extend %christopher;
+  }
+  .content {
+    @extend %richie;
+  }
+}
+
+.card-small {
+  width: calc(50% - 0.75rem);
+  img {
+    height: 12.5rem;
+    object-fit: cover;
+  }
+  .title {
+    @extend %richie;
+  }
+  .content {
+    display: none;
+  }
+}
