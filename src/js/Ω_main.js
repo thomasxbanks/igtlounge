@@ -53,18 +53,20 @@ window.addEventListener(
   throttle(() => {
     const scrollTop = window.scrollY;
     // log for debug
-    console.log(scrollTop, mastheadHeight, numberizePixels(mastheadHeight));
+    console.log(scrollTop, mastheadHeight, heroHeight);
     if (scrollTop > numberizePixels(mastheadHeight)) {
       masthead.setAttribute('data-conditional', 'true');
     } else {
       masthead.setAttribute('data-conditional', 'false');
     }
-    if (scrollTop > CurrentScroll) {
-      // Scroll down the page
-      masthead.setAttribute('data-state', 'not-visible');
-    } else {
-      // Scroll up the page
-      masthead.setAttribute('data-state', 'is-visible');
+    if (scrollTop > numberizePixels(heroHeight)) {
+      if (scrollTop > CurrentScroll) {
+        // Scroll down the page
+        masthead.setAttribute('data-state', 'not-visible');
+      } else {
+        // Scroll up the page
+        masthead.setAttribute('data-state', 'is-visible');
+      }
     }
 
     CurrentScroll = scrollTop; // Updates current scroll position
