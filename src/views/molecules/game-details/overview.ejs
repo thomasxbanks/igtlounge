@@ -1,0 +1,26 @@
+<section
+  id="<%= article.slug %>" 
+  class="tabbed-section_tab tab-<%= article.slug %>" 
+  data-state="<% if (index == 0) { %>is-active<% } %>"
+>
+  <div class="inner">
+    <article>
+      <header>
+        <h2 class="title">The Monkey Prince</h2>
+        <div class="game-meta-data">
+          <%- include(site.views + '/atoms/volatility-meter', {volatility: 'Aggressive'}) %>
+          <%- include(site.views + '/atoms/usage-icons', {icons: ['phone', 'tablet', 'laptop', 'land']}) %>
+          <%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("share stuff")', text: 'Share something', icon: 'share-light', theme: 'dark'}) %>
+        </div>
+      </header>
+      <div class="content">
+        <%= article.content %>
+      </div>
+      <footer>
+        <%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Play game")', text: 'Play game', theme: 'brand'}) %>
+        <%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Download assets")', text: 'Download assets', theme: 'brand', icon: 'arrow-brand'}) %>
+      </footer>
+    </article>
+  </div>
+  <div class="inner"></div>
+</section>

@@ -1,5 +1,5 @@
-<section class="tabbed-section__container">
-  <nav class="tabbed-section__nav">
+<section class="tabbed-section_container">
+  <nav class="tabbed-section_nav">
     <ul>
     <% articles.forEach(function(article, index) { %>
       <li>
@@ -12,13 +12,6 @@
     </ul>
   </nav>
   <% articles.forEach(function(article, index) { %>
-    <article 
-      id="<%= article.slug %>" 
-      class="tabbed-section__tab" 
-      data-state="<% if (index == 0) { %>is-active<% } %>"
-    >
-      <h2><%= article.title %></h2>
-      <p><%= article.content %></p>
-    </article>
+    <%- include(site.views + '/molecules/game-details/' + article.slug, {index: index, article: article}) %>
   <% }); %>
 </section>

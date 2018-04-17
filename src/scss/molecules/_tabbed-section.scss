@@ -1,58 +1,73 @@
-.tabbed-section__container {
+.tabbed-section_container {
   background: $clr_white;
 }
 
-.tabbed-section__nav {
-  display: none;
-}
-
-.tabbed-section__tab {
+.tabbed-section_tab {
   background: $clr_white;
   @extend %central-column;
-  @extend %richie;
+  .title {
+    @extend %silvio;
+    color: $clr_black;
+  }
+  .content {
+    @extend %richie;
+    color: $clr_boulder;
+  }
 }
 
-.is-js {
-  .tabbed-section__nav {
-    display: block;
-    ul {
-      background: $clr_white;
-      @extend %semantic-list;
-      @extend %horizontal-list;
-      width: 100%;
-      text-align: center;
-      li {
-        a {
-          position: relative;
-          @extend %bobby;
-          background: $clr_white;
-          color: $clr_black;
-          text-decoration: none;
-          display: block;
-          padding: 1rem 2rem (1rem - $border-width-std) 2rem;
-          &[data-state="is-active"] {
-            color: $clr_brand-primary;
-            &:after {
-              content: "";
-              position: absolute;
-              bottom: 0;
-              left: 50%;
-              transform: translateX(-50%);
-              width: 1rem;
-              height: 0.125rem;
-              border-bottom: $border-width-std solid $clr_brand-primary;
-            }
+.tabbed-section_nav {
+  display: block;
+  ul {
+    background: $clr_white;
+    @extend %semantic-list;
+    @extend %horizontal-list;
+    width: 100%;
+    text-align: center;
+    li {
+      a {
+        position: relative;
+        @extend %bobby;
+        background: $clr_white;
+        color: $clr_black;
+        text-decoration: none;
+        display: block;
+        padding: 1rem 2rem (1rem - $border-width-std) 2rem;
+        &[data-state="is-active"] {
+          color: $clr_brand-primary;
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1rem;
+            height: 0.125rem;
+            border-bottom: $border-width-std solid $clr_brand-primary;
           }
         }
       }
     }
   }
-  .tabbed-section__tab {
-    position: absolute;
-    top: 0;
-    left: -50000px;
-    &[data-state="is-active"] {
-      position: static;
+}
+.tabbed-section_tab {
+  position: absolute;
+  top: 0;
+  left: -50000px;
+  &[data-state="is-active"] {
+    position: static;
+  }
+}
+
+#overview {
+  @media screen and (min-width: $breakpoint-min) {
+    .inner {
+      display: inline-block;
+      width: 50%;
+      article {
+        max-width: 380px;
+        margin-right: auto;
+        margin-left: auto;
+      }
     }
   }
 }
