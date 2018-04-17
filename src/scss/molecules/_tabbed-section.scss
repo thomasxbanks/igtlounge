@@ -9,6 +9,7 @@
 .tabbed-section__tab {
   background: $clr_white;
   @extend %central-column;
+  @extend %richie;
 }
 
 .is-js {
