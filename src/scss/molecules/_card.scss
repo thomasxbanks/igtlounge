@@ -6,20 +6,25 @@
 .card_container {
   @extend %central-column;
   font-size: 0;
-  @extend %grid;
-  @extend %grid_row;
   .card_container-column {
-    @extend %item-6;
     @extend %grid;
+    @extend %grid_row;
     @extend %grid_wrap;
     @extend %align-stretch;
     @extend %justify-between;
+    width: 100%;
+  }
+  @media screen and (min-width: $breakpoint-min) {
+    display: flex;
   }
 }
 .card {
   @extend %card;
   img {
+    display: block;
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
   .title {
     margin-top: 1em;
@@ -30,9 +35,9 @@
 }
 
 .card-large {
-  width: calc(100% - 1.5rem);
+  width: 100%;
   img {
-    height: 25rem;
+    height: 10rem;
     object-fit: cover;
   }
   .title {
@@ -41,12 +46,18 @@
   .content {
     @extend %richie;
   }
+  @media screen and (min-width: $breakpoint-min) {
+    width: calc(100% - 3rem);
+    img {
+      height: 25rem;
+    }
+  }
 }
 
 .card-small {
-  width: calc(50% - 0.75rem);
+  width: calc(50% - 0.5rem);
   img {
-    height: 12.5rem;
+    height: 4rem;
     object-fit: cover;
   }
   .title {
@@ -54,5 +65,11 @@
   }
   .content {
     display: none;
+  }
+  @media screen and (min-width: $breakpoint-min) {
+    width: calc(50% - 0.75rem);
+    img {
+      height: 12.5rem;
+    }
   }
 }
