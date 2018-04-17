@@ -1,32 +1,50 @@
-[class^="masthead-"] {
-  background: $clr_transparent;
+#masthead {
   position: fixed;
   top: 0;
   z-index: $z-masthead;
+  display: block;
   width: 100%;
-  @extend %grid;
-  @extend %grid_row;
-  @extend %align-center;
-  @extend %justify-between;
-  padding: 1rem;
-  @media screen and (min-width: $breakpoint-min) {
-    padding: 1.5rem 3rem;
+  transition: transform $ease-main $speed-std,
+    background-color $ease-main $speed-std;
+  &[data-conditional="true"] {
+    background-color: $clr_black-75;
+  }
+
+  &[data-conditional="true"][data-state="not-visible"] {
+    transform: translateY(-100%);
+  }
+
+  &[data-conditional="true"][data-state="is-visible"] {
+    transform: none;
+  }
+  .inner {
+    background: $clr_transparent;
+    font-size: 0;
+    padding: 1rem;
+    @media screen and (min-width: $breakpoint-min) {
+      padding: 1.5rem 3rem;
+    }
+    @extend %grid;
+    @extend %grid_row;
+    @extend %align-center;
+    @extend %justify-between;
+    &.masthead-mobile {
+      @media screen and (min-width: $breakpoint-min) {
+        display: none;
+      }
+    }
+
+    &.masthead-desktop {
+      @media screen and (max-width: $breakpoint-max) {
+        display: none;
+      }
+    }
   }
 }
 
-.masthead-mobile {
-  @media screen and (min-width: $breakpoint-min) {
-    display: none;
-  }
-}
-.masthead-desktop {
-  @media screen and (max-width: $breakpoint-max) {
-    display: none;
-  }
-}
-
-.topbar {
-  flex-basis: 1;
+.masthead-desktop .topbar {
+  padding: 0.5rem 3rem;
+  flex-grow: 1;
 }
 
 .icon-nav_wrapper {

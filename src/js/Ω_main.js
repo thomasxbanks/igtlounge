@@ -37,3 +37,36 @@ window.onload = () => {
     });
   }
 };
+const throttle = (action, wait = 100) => {
+  let time = Date.now();
+  return function() {
+    if (time + wait - Date.now() < 0) {
+      action();
+      time = Date.now();
+    }
+  };
+};
+let CurrentScroll = 0;
+
+window.addEventListener(
+  'scroll',
+  throttle(() => {
+    const scrollTop = window.scrollY;
+    // log for debug
+    console.log(scrollTop, mastheadHeight, numberizePixels(mastheadHeight));
+    if (scrollTop > numberizePixels(mastheadHeight)) {
+      masthead.setAttribute('data-conditional', 'true');
+    } else {
+      masthead.setAttribute('data-conditional', 'false');
+    }
+    if (scrollTop > CurrentScroll) {
+      // Scroll down the page
+      masthead.setAttribute('data-state', 'not-visible');
+    } else {
+      // Scroll up the page
+      masthead.setAttribute('data-state', 'is-visible');
+    }
+
+    CurrentScroll = scrollTop; // Updates current scroll position
+  })
+);

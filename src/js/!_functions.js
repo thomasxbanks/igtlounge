@@ -59,6 +59,10 @@ function easeInOut(currentTime, start, change, duration) {
   return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
 }
 
+const numberizePixels = (value) => {
+  return ~~value.substr(0, value.length - 2);
+};
+
 let log = (value) => {
   console.log(value);
 };
