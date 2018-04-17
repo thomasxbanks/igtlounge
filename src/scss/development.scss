@@ -28,6 +28,7 @@ html.redline * {
   display: block;
   width: 100%;
   padding: 2rem;
+  font-size: 0;
   &:before {
     content: attr(data-title);
     font-size: 13px;
