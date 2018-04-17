@@ -1,4 +1,8 @@
+$thumbnail_height: 13.75rem;
+
 .thumbnail_container {
+  @extend %central-column;
+  max-width: 84.0625rem;
   font-size: 0;
   @extend %grid;
   @extend %grid_row;
@@ -6,39 +10,52 @@
   @extend %align-stretch;
   @extend %justify-between;
 }
+
 .thumbnail {
-  $thumbnail_height: 13.75rem;
   display: inline-flex;
-  @extend %grid_row;
+  @extend %grid_column;
   @extend %align-stretch;
   @extend %justify-end;
-  margin: 1.2rem;
-  width: calc(25% - 2.4rem);
+  width: 50%;
   height: $thumbnail_height;
   transition: transform $ease-main $speed-std;
   position: relative;
+  overflow: hidden;
+  @media screen and (min-width: $breakpoint-min) {
+    width: 25%;
+  }
+}
+
+.thumbnail {
   header {
     position: relative;
     z-index: 1;
-    padding: 1.5rem;
+    padding: 1rem;
+    @media screen and (min-width: $breakpoint-min) {
+      padding: 1.5rem;
+    }
     width: 100%;
+    height: $thumbnail_height;
     @extend %grid;
     @extend %grid_row;
+    @extend %grid_wrap;
     @extend %align-end;
-    @extend %justify-between;
+    @extend %justify-center;
     background: $clr_gradient-dark;
     opacity: 0;
-    transition: opacity $ease-main $speed-fast;
-    transition-delay: 0;
+    transition: opacity $ease-main $speed-std;
+    transition-delay: $speed-fast;
     .content {
-      flex-basis: 1;
+      flex-grow: 1;
       .title {
         @extend %christopher;
         @include fontSize(16px);
         @include lineHeight(24px);
         color: $clr_white;
         opacity: 0;
-        transition: opacity $ease-main $speed-std;
+        transform: translateY(100%);
+        transition: opacity $ease-main $speed-std,
+          transform $ease-swoosh $speed-std;
         transition-delay: 50ms;
       }
 
@@ -48,13 +65,17 @@
         @include lineHeight(16px);
         color: $clr_silver;
         opacity: 0;
-        transition: opacity $ease-main $speed-std;
+        transform: translateY(100%);
+        transition: opacity $ease-main $speed-std,
+          transform $ease-swoosh $speed-std;
         transition-delay: 150ms;
       }
     }
     button {
       opacity: 0;
-      transition: opacity $ease-main $speed-slow;
+      transform: scale(0);
+      transition: opacity $ease-main $speed-std,
+        transform $ease-swoosh $speed-std;
       transition-delay: 100ms;
     }
   }
@@ -68,7 +89,12 @@
     width: 100%;
     height: $thumbnail_height;
     object-fit: cover;
+    transform: scale(0.8);
+    transition: transform $ease-swoosh $speed-std;
   }
+}
+
+.thumbnail {
   &[data-state="not-active"] {
     background-color: $clr_black;
     img {
@@ -93,11 +119,17 @@
     }
   }
   &:hover {
-    transform: scale(1.2);
+    img {
+      transform: none;
+    }
+    header {
+      transform: none;
+    }
     header,
     header .title,
     header .description,
     button {
+      transform: none;
       opacity: 1;
     }
   }
