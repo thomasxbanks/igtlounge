@@ -1,4 +1,4 @@
-.hero__wrapper {
+.hero_wrapper {
   $hero_width: 100%;
   $hero_height: 100vh;
   width: $hero_width;
@@ -7,7 +7,7 @@
   @extend %grid;
   @extend %align-center;
   @extend %justify-start;
-  img {
+  .hero_image {
     position: absolute;
     top: 0;
     right: 0;
@@ -16,7 +16,11 @@
     z-index: 0;
     width: $hero_width;
     height: $hero_height;
-    object-fit: cover;
+    img {
+      width: $hero_width;
+      height: $hero_height;
+      object-fit: cover;
+    }
   }
   .content {
     @extend %item-6;

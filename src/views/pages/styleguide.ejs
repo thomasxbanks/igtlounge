@@ -2,7 +2,16 @@
 	<%- include(site.views + '/organisms/hero', 
 		{
 			image: {
-				url: './img/elephant-king.jpg', 
+				url: {
+					mobile: {
+						small: './img/elephant-king-mobile@1x.jpg',
+						large: './img/elephant-king-mobile@2x.jpg'
+					},
+					desktop: {
+						small: './img/elephant-king-desktop@1x.jpg',
+						large: './img/elephant-king-desktop@2x.jpg'
+					}
+				}, 
 				alt: 'Bill Murray. Pretty much a living legend.', 
 			},
 			title: 'This is the UI Kit', 
