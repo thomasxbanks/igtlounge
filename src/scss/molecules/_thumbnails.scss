@@ -20,7 +20,6 @@ $thumbnail_height: 13.75rem;
   height: $thumbnail_height;
   transition: transform $ease-main $speed-std;
   position: relative;
-  overflow: hidden;
   @media screen and (min-width: $breakpoint-min) {
     width: 25%;
   }
@@ -43,8 +42,9 @@ $thumbnail_height: 13.75rem;
     @extend %justify-center;
     background: $clr_gradient-dark;
     opacity: 0;
-    transition: opacity $ease-main $speed-std;
-    transition-delay: $speed-fast;
+    transform: scale(0.8);
+    transition: opacity $ease-main $speed-std, transform $ease-swoosh $speed-std;
+    transition-delay: 0;
     .content {
       flex-grow: 1;
       .title {
@@ -79,7 +79,7 @@ $thumbnail_height: 13.75rem;
       transition-delay: 100ms;
     }
   }
-  img {
+  .image_wrapper {
     position: absolute;
     top: 0;
     right: 0;
@@ -88,41 +88,50 @@ $thumbnail_height: 13.75rem;
     z-index: 0;
     width: 100%;
     height: $thumbnail_height;
-    object-fit: cover;
     transform: scale(0.8);
     transition: transform $ease-swoosh $speed-std;
+    img {
+      width: 100%;
+      height: $thumbnail_height;
+      object-fit: cover;
+    }
+    .flag-new {
+      position: absolute;
+      top: 0.75rem;
+      right: 0;
+      z-index: 1;
+    }
   }
 }
 
 .thumbnail {
   &[data-state="not-active"] {
-    background-color: $clr_black;
-    img {
-      opacity: $opacity_disabled-decimal;
+    .image_wrapper {
+      background-color: $clr_black;
+      img {
+        opacity: $opacity_disabled-decimal;
+      }
     }
   }
   &[data-state="is-active"] {
-    img {
-      border: $border-width-thick solid $clr_brand-primary;
-    }
-    &:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0.5rem 1rem 0 1rem;
-      border-color: $clr_brand-primary transparent transparent;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 100%);
+    .image_wrapper {
+      box-shadow: 0 0 0 0.125rem $clr_brand-primary;
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0.5rem 1rem 0 1rem;
+        border-color: $clr_brand-primary transparent transparent;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, calc(100% + 0.125rem));
+      }
     }
   }
   &:hover {
-    img {
-      transform: none;
-    }
-    header {
+    .image_wrapper {
       transform: none;
     }
     header,

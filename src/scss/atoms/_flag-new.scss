@@ -1,0 +1,7 @@
+.flag-new {
+  background: $clr_brand-secondary;
+  @extend %bobby;
+  color: $clr_white;
+  @include lineHeight(30px);
+  padding: 0 1.5rem;
+}

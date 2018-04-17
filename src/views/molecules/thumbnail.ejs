@@ -1,5 +1,11 @@
 <article class="thumbnail" data-state="" data-target="<%= target %>">
-  <img src="<%= image.url %>" alt="<%= image.alt %>">
+  <span class="image_wrapper">
+    <%if (flag.new == true) { %>
+      <%- include(site.views + '/atoms/flag-new') %>
+    <% } %>
+    <img src="<%= image.url %>" alt="<%= image.alt %>">  
+  </span>
+  
   <header>
     <div class="content">
       <h2 class="title"><%= title %></h2>
