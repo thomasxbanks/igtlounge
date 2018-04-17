@@ -1,0 +1,11 @@
+<aside class="sidebar" data-state="not-active">
+	<nav class="sidebar_nav-header icon-nav_wrapper">
+		<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("search")', text: '', icon: 'search-light', theme: 'brand'}) %>
+		<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'closeSidebar()', text: 'Close the navigation sidebar', icon: 'close-light', theme: 'light'}) %>
+	</nav>
+	<%- include(site.views + '/molecules/nav-primary') %>
+	<nav class="sidebar_nav-footer">
+		<%- include(site.views + '/atoms/buttons/button-ghost', {action: 'log("Login")', text: 'Login', theme: 'light'}) %>
+		<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Create an account")', text: 'Create an account', theme: 'brand'}) %>
+	</nav>
+</aside>

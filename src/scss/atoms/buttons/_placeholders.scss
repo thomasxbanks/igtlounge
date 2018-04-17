@@ -3,12 +3,27 @@
   @extend %bobby;
   @include lineHeight(24px);
   text-align: center;
-  padding: 0.75rem 4rem;
+  padding: 0.5rem 2rem;
+  @media screen and (min-width: $breakpoint-min) {
+    padding: 0.75rem 4rem;
+  }
 }
 
 %button-secondary {
   @extend %bobby;
   @include lineHeight(24px);
+}
+
+%button-ghost {
+  @extend %border-radius-lozenge;
+  @extend %bobby;
+  @include lineHeight(24px);
+  border: 0.125rem solid $clr_white;
+  text-align: center;
+  padding: calc(0.5rem - 0.125rem) calc(2rem - 0.125rem);
+  @media screen and (min-width: $breakpoint-min) {
+    padding: calc(0.75rem - 0.125rem) calc(4rem - 0.125rem);
+  }
 }
 
 %button-icon-only {
@@ -19,4 +34,9 @@
 %button-icon-only-small {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+%button-icon-only-large {
+  width: 7.5rem;
+  height: 7.5rem;
 }

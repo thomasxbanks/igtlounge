@@ -1,6 +1,19 @@
-<header id="masthead">
+<header id="masthead" class="masthead-desktop">
 	<a href="/"><%- include(site.views + '/icons/logo') %></a>
-	<%- include(site.views + '/molecules/nav-primary') %>
-	<%- include(site.views + '/atoms/search-bar') %>
-	<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'requestLogin()', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
+	<span class="topbar">
+		<%- include(site.views + '/molecules/nav-primary') %>
+	</span>
+	<span	class="icon-nav_wrapper">
+		<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("search")', text: '', icon: 'search-light', theme: 'none'}) %>
+		<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'requestLogin()', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
+	</span>
 </header>
+<header id="masthead" class="masthead-mobile">
+	<a href="/"><%- include(site.views + '/icons/logo') %></a>
+	<span class="icon-nav_wrapper">
+		<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'requestLogin()', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
+		<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'openSidebar()', text: 'Toggle the navigation sidebar', icon: 'hamburger-light', theme: 'dark'}) %>
+	</span>
+</header>
+
+<%- include(site.views + '/organisms/nav-sidebar') %>
