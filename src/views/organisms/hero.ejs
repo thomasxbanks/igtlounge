@@ -1,11 +1,11 @@
 <section class="hero_wrapper">
   <%- include(site.views + '/atoms/images/image-hero', {url: image.url, alt: image.alt}) %>
-  <section class="item-6 content">
+  <section class="item-6 content_wrapper">
     <article class="inner">
       <header>
         <h1 class="title"><%= title %></h1>
+        <p class="content"><%= content %></p>
       </header>
-      <p><%= content %></p>
       <footer>
         <%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("' + primary + '")', text: 'Play game', theme: 'brand'}) %>
         <%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("' + secondary + '")', text: 'Game details', theme: 'light', icon: 'plus-light'}) %>

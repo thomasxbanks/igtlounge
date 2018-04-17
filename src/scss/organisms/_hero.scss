@@ -1,12 +1,15 @@
+$hero_width: 100%;
+$hero_height: 100vh;
+
+// Unchanging appearance settings
+
 .hero_wrapper {
-  $hero_width: 100%;
-  $hero_height: 100vh;
   width: $hero_width;
   height: $hero_height;
   position: relative;
   @extend %grid;
-  @extend %align-center;
-  @extend %justify-start;
+}
+.hero_wrapper {
   .hero_image {
     position: absolute;
     top: 0;
@@ -22,32 +25,80 @@
       object-fit: cover;
     }
   }
-  .content {
-    @extend %item-6;
-    @extend %grid;
-    @extend %grid_column;
-    @extend %align-center;
-    @extend %justify-center;
+}
+.hero_wrapper {
+  .content_wrapper {
     position: relative;
     z-index: 1;
-    padding: 3rem;
     .inner {
-      max-width: 380px;
-      .title {
-        @extend %tony;
-        color: $clr_white;
+      header {
+        .title {
+          @extend %tony;
+          color: $clr_white;
+        }
+        .content {
+          @extend %richie;
+          color: $clr_silver;
+          display: block;
+          margin-top: 1.5rem;
+        }
       }
+    }
+  }
+}
 
-      p {
-        @extend %richie;
-        color: $clr_silver;
-        display: block;
-        margin-top: 1.5rem;
+// The stuff that changes based on screen size
+@media screen and (max-width: $breakpoint-max) {
+  // small screens
+  .hero_wrapper {
+    align-items: flex-end;
+    justify-content: center;
+    .content_wrapper {
+      header {
+        display: none;
       }
+      footer {
+        text-align: center;
+        padding: 0 0 2rem 0;
+        button {
+          margin-top: 1rem;
+          &:first-of-type() {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
 
-      .button-primary-brand {
-        margin-top: 3.5rem;
-        margin-right: 2rem;
+@media screen and (min-width: $breakpoint-min) {
+  // large screens
+  .hero_wrapper {
+    align-items: center;
+    justify-content: flex-start;
+    .content_wrapper {
+      padding: 3rem;
+      .inner {
+        max-width: 380px;
+        footer {
+          margin-top: 3.5rem;
+          button:first-of-type() {
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $max-width) {
+  // large screens
+  .hero_wrapper {
+    .content_wrapper {
+      width: 50%;
+      .inner {
+        margin-right: auto;
+        margin-left: auto;
       }
     }
   }
