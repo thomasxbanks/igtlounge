@@ -18,6 +18,7 @@ router.get('/favicon.ico', function(req, res) {
 router.get('/', function(req, res) {
   let site = res.app.locals.site;
   site.template = 'index';
+  site.body = { classes: ['website'] };
   res.render(`pages/${site.template}`, res.app.locals);
 });
 
@@ -25,6 +26,7 @@ router.get('/', function(req, res) {
 router.get('/styleguide', function(req, res) {
   let site = res.app.locals.site;
   site.template = 'styleguide';
+  site.body = { classes: ['website'] };
   res.render(`pages/${site.template}`, res.app.locals);
 });
 
@@ -32,9 +34,7 @@ router.get('/styleguide', function(req, res) {
 router.get('/admin', function(req, res) {
   let site = res.app.locals.site;
   site.template = 'admin';
-  site.body = {
-    class: 'admin',
-  };
+  site.body = { classes: ['admin'] };
   res.render(`pages/${site.template}`, res.app.locals);
 });
 

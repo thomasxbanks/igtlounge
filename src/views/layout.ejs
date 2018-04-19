@@ -3,21 +3,23 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title><%= locals.site.title %></title>
+	<title><%= site.title %></title>
 	<link rel="stylesheet" href="/css/style.css">
 	<link id="devCss" rel="stylesheet" href="/css/development.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body class="<%= site.body.class %>">
-	<%- include(site.views + '/organisms/masthead') %>
+<body 
+	class="<% site.body.classes.forEach(function(className, index) { %><%= className %><% }); %>"
+>
+	<%- include(site.views + '/organisms/masthead-' + site.template) %>
 	<%- hero %>
 
 	<main>
 		<%- body %>
 	</main>
 
-	<%- include(site.views + '/organisms/colophon') %>
+	<%- include(site.views + '/organisms/colophon-' + site.template) %>
 	<script src="/js/app.js" charset="utf-8"></script>
 </body>
 

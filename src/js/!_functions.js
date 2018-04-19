@@ -48,5 +48,5 @@ function isElementInViewport(el) {
 }
 
 let requestLogin = () => {
-  alert('You must be logged in');
+  window.location.href = '/admin';
 };
