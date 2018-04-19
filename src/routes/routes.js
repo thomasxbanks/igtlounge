@@ -35,6 +35,10 @@ router.get('/admin', function(req, res) {
   let site = res.app.locals.site;
   site.template = 'admin';
   site.body = { classes: ['admin'] };
+  site.user = {
+    usertype: 'superAdmin',
+    operators: [{ link: 'william-hill', text: 'William Hill' }, { link: 'betfair', text: 'BetFair' }],
+  };
   res.render(`pages/${site.template}`, res.app.locals);
 });
 

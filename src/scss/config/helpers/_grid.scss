@@ -1,6 +1,6 @@
 $grid_size: 12;
 $max-grid: $max-width;
-$grid-gutter: 0;
+$grid-gutter: 2;
 $min-item: 300;
 $break: 2;
 
@@ -11,7 +11,7 @@ $break: 2;
 [class^="item-"] {
   display: inline-block;
   vertical-align: top;
-  width: calc(100% - #{$grid-gutter}rem);
+  width: calc(100% - #{($grid-gutter / 2)}rem);
 }
 
 @supports (display: flex) {
@@ -91,7 +91,7 @@ $break: 2;
     $size: $one * $i;
     %item-#{$i}-#{$grid_size},
     .item-#{$i}-#{$grid_size} {
-      width: unquote(calc(#{$size} - #{($grid-gutter * 2)}rem));
+      width: unquote(calc(#{$size} - #{($grid-gutter / 2)}rem));
     }
   }
 }

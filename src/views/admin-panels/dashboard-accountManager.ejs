@@ -1,0 +1,20 @@
+<h2 class="section-title">Logins</h2>
+<section class="admin-data-table_container">
+  <%- include(site.views + '/molecules/admin-data-table', 
+    {items: [
+      {type: 'login-success', action: {title: 'Logged in from:', content: 'Windows PC, Chrome v64'}, user: 'Benedict Cumberbatch', date: '04/02/2018', time: '13:04'},
+      {type: 'password-reset', action: {title: 'Password reset', content: ''}, user: 'Tom Bell', date: '04/02/2018', time: '13:04'},
+      {type: 'login-failure', action: {title: 'Failed login attempt from:', content: 'Windows PC, Chrome v64'}, user: 'Katherine Richardson-Beckinsale', date: '04/02/2018', time: '13:04'}
+    ]}
+  ) %>
+</section>
+<h2 class="section-title">Account activity</h2>
+<section class="admin-data-table_container">
+  <%- include(site.views + '/molecules/admin-data-table', 
+    {items: [
+      {type: 'login-success', action: {title: 'Logged in from:', content: 'Windows PC, Chrome v64'}, user: 'Benedict Cumberbatch', date: '04/02/2018', time: '13:04'},
+      {type: 'password-reset', action: {title: 'Password reset', content: ''}, user: 'Tom Bell', date: '04/02/2018', time: '13:04'},
+      {type: 'login-failure', action: {title: 'Failed login attempt from:', content: 'Windows PC, Chrome v64'}, user: 'Katherine Richardson-Beckinsale', date: '04/02/2018', time: '13:04'}
+    ]}
+  ) %>
+</section>

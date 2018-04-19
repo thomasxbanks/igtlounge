@@ -31,6 +31,28 @@ app.locals = {
     author: 'Cube 3',
     template: 'index',
     colophon: d.getFullYear(),
+    usertypes: {
+      superAdmin: {
+        navigation: [
+          { link: 'manage-games', text: 'Manage games' },
+          { link: 'roadmap', text: 'Roadmap' },
+          { link: 'assets', text: 'Assets' },
+          { link: 'users', text: 'Users' },
+          { link: 'operators', text: 'Operators' },
+          { link: 'articles', text: 'Articles' },
+        ],
+      },
+      accountManager: {
+        navigation: [
+          { link: 'roadmap', text: 'Roadmap' },
+          { link: 'assets', text: 'Assets' },
+          { link: 'operators', text: 'Operators' },
+        ],
+      },
+      contentManager: {
+        navigation: [{ link: 'articles', text: 'Articles' }],
+      },
+    },
   },
 };
 

@@ -6,7 +6,8 @@
 @import "site-footer";
 @import "tabbed-section";
 
-.admin main {
+.admin main,
+.admin .hero {
   @extend %padding-horizontal;
 }
 

@@ -1,4 +1,20 @@
+.admin-panel {
+  @media screen and (max-width: $breakpoint-max) {
+    width: 100%;
+  }
+  @extend %padding-bottom;
+  .section-title {
+    margin-bottom: 1rem;
+    &:not(:first-of-type) {
+      margin-top: 2.5rem;
+    }
+  }
+}
 .admin-sidebar {
+  @media screen and (max-width: $breakpoint-max) {
+    width: 100%;
+  }
+  @extend %padding-bottom;
   .sidebar-section-title {
     display: block;
     @extend %christopher;

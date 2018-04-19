@@ -1,10 +1,10 @@
 .admin-data-table_container {
   @extend %card;
   padding: 2.5rem 2rem;
+  overflow-x: auto;
   .admin-data-table {
     width: 100%;
     border-collapse: collapse;
-    overflow: scroll;
     tr {
       &:not(:last-of-type) {
         th,
