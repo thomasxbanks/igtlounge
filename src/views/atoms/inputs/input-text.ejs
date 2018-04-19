@@ -1,1 +1,6 @@
-<input class="<% for (style of styles) { %>input-<%= style %> <% } %>" type="text" placeholder="<%= placeholder %>" value="">
+<input
+  type="text" 
+  placeholder="<%= placeholder %>" 
+  value=""
+  <% if (required == true) { %>required<% } %>
+>

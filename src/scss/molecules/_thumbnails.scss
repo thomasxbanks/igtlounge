@@ -87,7 +87,7 @@ $thumbnail_offset: translate3d(0, 100%, 0);
 
 // The image and flags
 .thumbnail {
-  .image_wrapper {
+  .image_container {
     position: absolute;
     top: 0;
     right: 0;
@@ -115,7 +115,7 @@ $thumbnail_offset: translate3d(0, 100%, 0);
 // Altered states for the Thumbnails
 .thumbnail {
   &[data-state="not-active"] {
-    .image_wrapper {
+    .image_container {
       background-color: $clr_black;
       img {
         opacity: $opacity_disabled-decimal;
@@ -123,7 +123,7 @@ $thumbnail_offset: translate3d(0, 100%, 0);
     }
   }
   &[data-state="is-active"] {
-    .image_wrapper {
+    .image_container {
       box-shadow: 0 0 0 0.125rem $clr_brand-primary;
       &:after {
         content: "";
@@ -140,7 +140,7 @@ $thumbnail_offset: translate3d(0, 100%, 0);
     }
   }
   &:hover {
-    .image_wrapper {
+    .image_container {
       transform: none;
     }
     header,

@@ -7,14 +7,24 @@
   border-radius: 50%;
 }
 
+%border-radius-dump {
+  // Jazzy little fix for creating a lozenge for an element of unknown size
+  border-top-right-radius: 1rem;
+}
+
 %border-radius-lozenge {
-  border-radius: 500rem; // Jazzy little fix for creating a lozenge for an element of unknown size
+  // Jazzy little fix for creating a lozenge for an element of unknown size
+  border-radius: 500rem;
+}
+
+%border-radius-small {
+  border-radius: 0.125rem;
 }
 
 %border-radius-std {
-  border-radius: 0.25rem; // Probably around 4px ;)
+  border-radius: 0.625rem; // 10px
 }
 
 %border-radius-large {
-  border-radius: 1rem; // Probably around 16px ;)
+  border-radius: 1rem; // 16px
 }

@@ -1,0 +1,8 @@
+.admin-sidebar {
+  .sidebar-section-title {
+    display: block;
+    @extend %christopher;
+    @include fontSize(14px);
+    margin-bottom: 1rem;
+  }
+}

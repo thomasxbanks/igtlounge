@@ -1,0 +1,15 @@
+<section class="breadcrumbs_container">
+  <ul>
+    <% breadcrumbs.forEach(function(breadcrumb, index) { %>
+      <% if (index != (breadcrumbs.length - 1)) { %>
+        <li>
+          <a href="<%= breadcrumb.link %>" title="<%= breadcrumb.text %>"><%= breadcrumb.text %></a>
+        </li>
+      <% } else { %>
+        <li>
+          <%= breadcrumb.text %>
+        </li>
+      <% } %>
+    <% }); %>
+  </ul>
+</section>

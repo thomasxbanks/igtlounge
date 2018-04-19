@@ -20,7 +20,7 @@
 }
 
 .modal__content {
-  @extend %border-radius-large;
+  @extend %border-radius-std;
   @extend %box-shadow;
   background: $clr_white;
   max-width: 600px;
@@ -33,4 +33,7 @@
     right: 0;
     transform: translate(50%, -50%);
   }
+  // @TODO: Actual styles!
+  @extend %richie;
+  color: $clr_black;
 }

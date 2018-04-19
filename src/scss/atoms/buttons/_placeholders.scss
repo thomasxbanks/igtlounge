@@ -1,5 +1,4 @@
 %button-primary {
-  @extend %border-radius-lozenge;
   @extend %bobby;
   @include lineHeight(24px);
   text-align: center;
@@ -15,7 +14,6 @@
 }
 
 %button-ghost {
-  @extend %border-radius-lozenge;
   @extend %bobby;
   @include lineHeight(24px);
   border: 0.125rem solid $clr_white;
@@ -27,7 +25,6 @@
 }
 
 %button-icon-only {
-  @extend %border-radius-circle;
   @extend %dead-center;
 }
 

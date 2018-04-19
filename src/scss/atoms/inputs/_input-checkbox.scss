@@ -1,0 +1,26 @@
+.input-checkbox-fancy {
+  font-size: 0;
+  input[type="checkbox"] {
+    position: relative;
+    left: -50000px;
+    &:checked + .input-checkbox-icon {
+      background: $clr_black;
+      border-color: $clr_black;
+      svg {
+        transform: none;
+      }
+    }
+  }
+  > .input-checkbox-icon {
+    @extend %button-icon-only;
+    @extend %button-icon-only-small;
+    @extend %border-radius-circle;
+    @extend %input-border;
+    vertical-align: top;
+    background: $clr_white;
+    svg {
+      transform: scale(0.6);
+      transition: transform $ease-swoosh $speed-fast;
+    }
+  }
+}

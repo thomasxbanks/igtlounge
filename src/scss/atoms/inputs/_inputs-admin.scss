@@ -1,0 +1,78 @@
+%input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+}
+
+%input-border {
+  border: $border_width-thin solid $clr_silver;
+}
+
+%admin-input {
+  @extend %input;
+  @extend %input-border;
+  background-color: $clr_white;
+  @extend %richie;
+  color: $clr_black;
+  padding: 0.75rem 1.5rem;
+  &:not(:last-of-type) {
+    margin-right: 1rem;
+  }
+}
+
+.admin {
+  form {
+    @extend %card;
+    @extend %padding;
+    font-size: 0;
+    @extend %grid;
+    @extend %grid_row;
+    @extend %grid_wrap;
+    @extend %align-end;
+    @extend %justify-between;
+    fieldset {
+      margin: 0;
+      padding: 1rem 0;
+      &.tar {
+        text-align: right;
+      }
+    }
+  }
+  label {
+    &.input-full-width {
+      input {
+        width: 100%;
+      }
+    }
+  }
+  input[type="text"],
+  input[type="number"],
+  select {
+    display: inline-block;
+    vertical-align: middle;
+    @extend %admin-input;
+    @extend %border-radius-lozenge;
+  }
+  input[type="number"] {
+    text-align: center;
+  }
+  textarea {
+    @extend %admin-input;
+    @extend %border-radius-large;
+    width: 100%;
+    min-height: 5rem;
+  }
+}
+
+.label-title {
+  display: block;
+  @extend %christopher;
+  color: $clr_black;
+  @include fontSize(14px);
+  @include lineHeight(14px);
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  @extend %bobby;
+}

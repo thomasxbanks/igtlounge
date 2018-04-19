@@ -4,3 +4,12 @@
 @import "section";
 @import "masthead";
 @import "site-footer";
+@import "tabbed-section";
+
+.admin-panel-with-sidebar {
+  @extend %grid;
+  @extend %grid_row;
+  @extend %grid_wrap;
+  @extend %align-start;
+  @extend %justify-between;
+}

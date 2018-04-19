@@ -1,9 +1,11 @@
 [class^="button-icon-only"] {
   @extend %button-icon-only;
   @extend %button-icon-only-small;
+  @extend %border-radius-circle;
   font-size: 0;
   vertical-align: middle;
 }
+
 .button-icon-only-brand {
   color: $clr_white;
   background-color: $clr_brand-primary;

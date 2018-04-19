@@ -1,0 +1,33 @@
+.input-radio-fancy {
+  display: inline-block;
+  @extend %admin-input;
+  @extend %border-radius-lozenge;
+  input[type="radio"] {
+    position: relative;
+    left: -50000px;
+    &:checked + .input-radio-icon:after {
+      transform: none;
+    }
+  }
+  > .input-radio-icon {
+    display: inline-block;
+    vertical-align: middle;
+    @extend %border-radius-circle;
+    width: 1rem;
+    height: 1rem;
+    @extend %input-border;
+    background: $clr_white;
+    &:after {
+      content: "";
+      display: block;
+      @extend %border-radius-circle;
+      width: 0.5rem;
+      height: 0.5rem;
+      line-height: 1rem;
+      margin: 0.1875rem; // for some reason?!
+      background: $clr_black;
+      transform: scale(0);
+      transition: transform $ease-swoosh $speed-fast;
+    }
+  }
+}

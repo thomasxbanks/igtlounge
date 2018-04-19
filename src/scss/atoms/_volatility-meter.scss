@@ -17,34 +17,41 @@
   display: block;
   width: 100%;
   position: relative;
-  .gradient-bar {
-    display: block;
-    width: 100%;
-    height: 0.25rem;
-    margin-top: 0.75rem;
-    margin-bottom: 0.5rem;
-    @extend %border-radius-lozenge;
-    background: linear-gradient(
-      to right,
-      $volatility-casual,
-      $volatility-casual-balanced,
-      $volatility-balanced,
-      $volatility-balanced-aggressive,
-      $volatility-aggressive
-    );
-  }
   .dot {
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 0.75rem;
-    height: 0.75rem;
-    border: 0.125rem solid $clr_white;
-    @extend %border-radius-circle;
-    transition: $ease-swoosh $speed-std;
     &.is-start {
       left: 0;
     }
+  }
+}
+
+.gradient-bar {
+  display: block;
+  width: 100%;
+  height: 0.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  @extend %border-radius-lozenge;
+  background: linear-gradient(
+    to right,
+    $volatility-casual,
+    $volatility-casual-balanced,
+    $volatility-balanced,
+    $volatility-balanced-aggressive,
+    $volatility-aggressive
+  );
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 0.125rem solid $clr_white;
+  @extend %border-radius-circle;
+  transition: $ease-swoosh $speed-std;
+  &.is-start {
+    left: 0;
   }
 }
 

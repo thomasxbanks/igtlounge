@@ -1,5 +1,36 @@
 <%- contentFor('hero') %>
-	<h1>this is the home page</h1>
+	<%- include(site.views + '/organisms/hero', 
+		{
+			image: {
+				url: {
+					mobile: {
+						small: './img/elephant-king-mobile@1x.jpg',
+						large: './img/elephant-king-mobile@2x.jpg'
+					},
+					desktop: {
+						small: './img/elephant-king-desktop@1x.jpg',
+						large: './img/elephant-king-desktop@2x.jpg'
+					}
+				}, 
+				alt: 'Bill Murray. Pretty much a living legend.', 
+			},
+			title: 'This is the UI Kit', 
+			content: 'There\'s only a couple times when fame is ever helpful. Sometimes you can get into a restaurant where the kitchen is just closing. Sometimes you can avoid a traffic violation. But the only time it really matters is in the emergency room with your kids. That\'s when you want to be noticed, because it\'s very easy to get forgotten in an ER.',
+			primary: 'params',
+			secondary: 'this-game' }) %>
 
 	<%- contentFor('body') %>
-		<!-- This is left intentionally blank -->
+		<section class="section-theme-white">
+			<h2 class="section-title">Recommended for you</h2>
+			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Secondary with Icon")', text: 'View all', theme: 'brand', icon: 'arrow-brand'}) %>
+			<section class="thumbnail_container">
+				<%- include(site.views + '/molecules/thumbnail', {target: 'monkey-tennis', image: {url: 'http://fillmurray.com/640/460', alt: 'Bill Murray'}, title: 'Monkey Tennis', description: 'Casual game', flag: {new: false}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'elephant-kingdom', image: {url: 'http://fillmurray.com/840/470', alt: 'Bill Murray'}, title: 'Elephant Kingdom', description: 'Casual game', flag: {new: false}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'witchwood', image: {url: 'http://fillmurray.com/650/480', alt: 'Bill Murray'}, title: 'Witchwood', description: 'Casual game', flag: {new: true}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'keystone-kops', image: {url: 'http://fillmurray.com/640/490', alt: 'Bill Murray'}, title: 'Keystone Kops', description: 'Casual game', flag: {new: false}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'monkey-tennis-2', image: {url: 'http://fillmurray.com/640/460', alt: 'Bill Murray'}, title: 'Monkey Tennis', description: 'Casual game', flag: {new: true}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'elephant-kingdom-2', image: {url: 'http://fillmurray.com/840/470', alt: 'Bill Murray'}, title: 'Elephant Kingdom', description: 'Casual game', flag: {new: false}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'witchwood-2', image: {url: 'http://fillmurray.com/650/480', alt: 'Bill Murray'}, title: 'Witchwood', description: 'Casual game', flag: {new: false}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'keystone-kops-2', image: {url: 'http://fillmurray.com/640/490', alt: 'Bill Murray'}, title: 'Keystone Kops', description: 'Casual game', flag: {new: false}}) %>
+			</section>
+		</section>

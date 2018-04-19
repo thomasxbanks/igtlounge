@@ -3,13 +3,13 @@ $hero_height: 100vh;
 
 // Unchanging appearance settings
 
-.hero_wrapper {
+.hero_container {
   width: $hero_width;
   height: $hero_height;
   position: relative;
   @extend %grid;
 }
-.hero_wrapper {
+.hero_container {
   .hero_image {
     position: absolute;
     top: 0;
@@ -26,8 +26,8 @@ $hero_height: 100vh;
     }
   }
 }
-.hero_wrapper {
-  .content_wrapper {
+.hero_container {
+  .content_container {
     position: relative;
     z-index: 1;
     .inner {
@@ -50,10 +50,10 @@ $hero_height: 100vh;
 // The stuff that changes based on screen size
 @media screen and (max-width: $breakpoint-max) {
   // small screens
-  .hero_wrapper {
+  .hero_container {
     align-items: flex-end;
     justify-content: center;
-    .content_wrapper {
+    .content_container {
       header {
         display: none;
       }
@@ -73,10 +73,10 @@ $hero_height: 100vh;
 
 @media screen and (min-width: $breakpoint-min) {
   // large screens
-  .hero_wrapper {
+  .hero_container {
     align-items: center;
     justify-content: flex-start;
-    .content_wrapper {
+    .content_container {
       padding: 3rem;
       .inner {
         max-width: 380px;
@@ -93,8 +93,8 @@ $hero_height: 100vh;
 
 @media screen and (min-width: $max-width) {
   // large screens
-  .hero_wrapper {
-    .content_wrapper {
+  .hero_container {
+    .content_container {
       width: 50%;
       .inner {
         margin-right: auto;

@@ -1,6 +1,8 @@
 [class^="button"] {
   &[class*="-primary-"] {
     @extend %button-primary;
+    @extend %border-radius-lozenge;
+
     &[class*="-brand"] {
       color: $clr_white;
       background-color: $clr_brand-primary;

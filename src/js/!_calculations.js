@@ -5,6 +5,6 @@ let browser = {
 };
 
 const masthead = document.querySelector('#masthead');
-const hero = document.querySelector('.hero_wrapper');
+const hero = document.querySelector('.hero_container');
 const mastheadHeight = window.getComputedStyle(masthead, null).getPropertyValue('height');
 const heroHeight = window.getComputedStyle(hero, null).getPropertyValue('height');

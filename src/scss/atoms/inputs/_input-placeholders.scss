@@ -2,7 +2,6 @@
   // Chrome/Opera/Safari
   font-family: $font_face-main;
   @include fontSize(13px);
-  @include lineHeight(40px);
   color: $clr_silver;
 }
 
@@ -10,7 +9,6 @@
   // Firefox 19+
   font-family: $font_face-main;
   @include fontSize(13px);
-  @include lineHeight(40px);
   color: $clr_silver;
 }
 
@@ -18,7 +16,6 @@
   // IE 10+
   font-family: $font_face-main;
   @include fontSize(13px);
-  @include lineHeight(40px);
   color: $clr_silver;
 }
 
@@ -26,6 +23,5 @@
   // Firefox 18-
   font-family: $font_face-main;
   @include fontSize(13px);
-  @include lineHeight(40px);
   color: $clr_silver;
 }

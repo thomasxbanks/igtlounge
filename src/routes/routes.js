@@ -28,6 +28,16 @@ router.get('/styleguide', function(req, res) {
   res.render(`pages/${site.template}`, res.app.locals);
 });
 
+// route for our Admin panel
+router.get('/admin', function(req, res) {
+  let site = res.app.locals.site;
+  site.template = 'admin';
+  site.body = {
+    class: 'admin',
+  };
+  res.render(`pages/${site.template}`, res.app.locals);
+});
+
 // Final Catch-all for errors
 router.get('/*', function(req, res) {
   let site = res.app.locals.site;

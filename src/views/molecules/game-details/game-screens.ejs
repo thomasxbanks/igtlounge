@@ -3,21 +3,16 @@
   class="tabbed-section_tab" 
   data-state="<% if (index == 0) { %>is-active<% } %>"
 >
-  <ul class="carousel">
-    <li>
-      <%- include(site.views + '/atoms/images/image', {url: 'http://placecage.com/600/400', alt: 'Nicolas Cage, for a change'}) %>
-    </li>
-    <li>
-      <%- include(site.views + '/atoms/images/image', {url: 'http://placecage.com/600/420', alt: 'Nicolas Cage, for a change'}) %>
-    </li>
-    <li>
-      <%- include(site.views + '/atoms/images/image', {url: 'http://placecage.com/600/440', alt: 'Nicolas Cage, for a change'}) %>
-    </li>
-    <li>
-      <%- include(site.views + '/atoms/images/image', {url: 'http://placecage.com/600/460', alt: 'Nicolas Cage, for a change'}) %>
-    </li>
-    <li>
-      <%- include(site.views + '/atoms/images/image', {url: 'http://placecage.com/600/480', alt: 'Nicolas Cage, for a change'}) %>
-    </li>
+  <ul class="carousel_container">
+    <% article.slides.forEach(function(slide, index) { %>
+      <li class="carousel_slide">
+        <figure>
+          <%- include(site.views + '/atoms/images/image', {url: slide.url, alt: slide.alt}) %>
+        <figcaption>
+          <%= slide.caption %>
+        </figcaption>
+        </figure>
+      </li>
+    <% }); %>
   </ul>
 </section>

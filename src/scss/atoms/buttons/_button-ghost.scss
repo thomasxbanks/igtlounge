@@ -1,6 +1,8 @@
 [class^="button"] {
   &[class*="-ghost-"] {
     @extend %button-ghost;
+    @extend %border-radius-lozenge;
+
     &[class*="-brand"] {
       color: $clr_brand-primary;
       border-color: $clr_brand-primary;

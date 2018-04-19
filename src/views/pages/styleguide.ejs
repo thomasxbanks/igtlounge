@@ -57,7 +57,7 @@
 		</section>
 
 		<section data-title="Usage Icons" id="styleguide-usage-icons" class="section-theme-brand">
-			<%- include(site.views + '/atoms/usage-icons', {icons: ['phone', 'tablet', 'laptop', 'land']}) %>
+			<%- include(site.views + '/atoms/usage-icons', {icons: ['phone', 'tablet', 'desktop', 'slot']}) %>
 		</section>
 		<section data-title="Volatility Meter" id="styleguide-volatility-meter">
 			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Casual'}) %>
@@ -67,17 +67,17 @@
 			<%- include(site.views + '/atoms/volatility-meter', {volatility: 'Aggressive'}) %>
 		</section>
 
-		<section data-title="Cards" id="styleguide-cards" class="section-theme-light">
+		<section data-title="Teasers" id="styleguide-teasers" class="section-theme-light">
 			<h3 class="section-title">What's new on Casino Lounge</h3>
-			<section class="card_container">
-				<div class="card_container-column">
-					<%- include(site.views + '/molecules/card', {style: 'large', image: {url: 'http://fillmurray.com/600/400', alt: 'Bill Murray'}, title: 'Wishwood Launch Party - Malta (IGT Interactive)', content: 'Every path reveals secret treasures in the mystical forest of Wishwood! Join Poa the sprite and other woodland creatures as you climb the gargantuan tree growing deep within the forest.', link: '/styleguide'}) %>
+			<section class="teaser_container">
+				<div class="teaser_container-column">
+					<%- include(site.views + '/molecules/teaser', {style: 'large', image: {url: 'http://fillmurray.com/600/400', alt: 'Bill Murray'}, title: 'Wishwood Launch Party - Malta (IGT Interactive)', content: 'Every path reveals secret treasures in the mystical forest of Wishwood! Join Poa the sprite and other woodland creatures as you climb the gargantuan tree growing deep within the forest.', link: '/styleguide'}) %>
 				</div>
-				<div class="card_container-column">
-					<%- include(site.views + '/molecules/card', {style: 'small', image: {url: 'http://fillmurray.com/300/200', alt: 'Bill Murray'}, title: 'Behind the scenes: The making of Wishwood', content: '', link: '/styleguide'}) %>
-					<%- include(site.views + '/molecules/card', {style: 'small', image: {url: 'http://fillmurray.com/300/210', alt: 'Bill Murray'}, title: 'Going Wireless With Your Headphones', content: '', link: '/styleguide'}) %>
-					<%- include(site.views + '/molecules/card', {style: 'small', image: {url: 'http://fillmurray.com/300/220', alt: 'Bill Murray'}, title: 'How Does An Lcd Screen Work', content: '', link: '/styleguide'}) %>
-					<%- include(site.views + '/molecules/card', {style: 'small', image: {url: 'http://fillmurray.com/300/230', alt: 'Bill Murray'}, title: 'Microsoft Patch Management For Home Users', content: '', link: '/styleguide'}) %>
+				<div class="teaser_container-column">
+					<%- include(site.views + '/molecules/teaser', {style: 'small', image: {url: 'http://fillmurray.com/300/200', alt: 'Bill Murray'}, title: 'Behind the scenes: The making of Wishwood', content: '', link: '/styleguide'}) %>
+					<%- include(site.views + '/molecules/teaser', {style: 'small', image: {url: 'http://fillmurray.com/300/210', alt: 'Bill Murray'}, title: 'Going Wireless With Your Headphones', content: '', link: '/styleguide'}) %>
+					<%- include(site.views + '/molecules/teaser', {style: 'small', image: {url: 'http://fillmurray.com/300/220', alt: 'Bill Murray'}, title: 'How Does An Lcd Screen Work', content: '', link: '/styleguide'}) %>
+					<%- include(site.views + '/molecules/teaser', {style: 'small', image: {url: 'http://fillmurray.com/300/230', alt: 'Bill Murray'}, title: 'Microsoft Patch Management For Home Users', content: '', link: '/styleguide'}) %>
 				</div>
 			</section>
 		</section>
@@ -98,14 +98,151 @@
 		<section data-title="Tabbed Section" id="styleguide-tabbed-section">
 			<%- include(site.views + '/organisms/tabbed-sections', 
 				{articles: [
+					{slug: 'game-screens', title: 'Game screens', slides: [{url: 'http://placecage.com/900/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/460', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/540', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/1240/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}]},
 					{slug: 'overview', title: 'Overview', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis dui vitae tellus feugiat, nec sagittis leo pretium. Phasellus risus sem, scelerisque dignissim auctor in, eleifend quis turpis. Cras orci risus, molestie dapibus fringilla at, faucibus id risus. Proin nec velit sagittis, vulputate velit placerat, euismod lorem. Praesent consectetur, velit eu lacinia consectetur, nunc neque efficitur urna, nec facilisis nulla orci sit amet felis. In tincidunt dictum ligula, dignissim aliquam eros suscipit nec. Phasellus et leo et ipsum varius consectetur vel blandit lectus. Suspendisse mattis mollis quam ac fermentum. Nullam sollicitudin, nunc nec gravida vestibulum, tortor arcu suscipit velit, ut ultricies orci justo sed purus. Mauris eget ex sed ante mollis tincidunt. Pellentesque eleifend blandit mauris at ullamcorper. Nulla nec turpis id nisl fringilla aliquet. Donec dictum hendrerit nisl sed finibus. Vestibulum massa arcu, varius eget efficitur vitae, vulputate eget erat. Ut dignissim faucibus tortor ac suscipit. Quisque eget risus nec libero porta cursus id ac purus.'}, 
-					{slug: 'game-info', title: 'Game info', content: 'Praesent vel dapibus ante. Vivamus sollicitudin lorem diam, sed pellentesque urna accumsan eu. Ut vel elementum ex, ac volutpat nibh. Aliquam laoreet posuere metus, venenatis ullamcorper mauris aliquet a. Sed tempus metus nec scelerisque tempor. Vivamus dapibus pretium dolor vitae tincidunt. Quisque neque tortor, rhoncus non rhoncus non, mattis nec elit. Donec interdum urna dui, condimentum varius lacus posuere quis. '}, 
-					{slug: 'game-screens', title: 'Game screens', content: 'Fusce luctus in odio at suscipit. Proin arcu nulla, sollicitudin at imperdiet sed, venenatis sit amet mi. Proin justo risus, tempor eget blandit eget, imperdiet vel neque. Maecenas aliquam, nibh eu interdum tincidunt, risus ipsum placerat nisi, ut dignissim purus nisl eget enim. Sed mauris turpis, ornare id egestas at, congue et diam. In viverra, eros at sodales mollis, nisl lectus molestie risus, vel malesuada nisl mi interdum ante. Nunc molestie nunc vitae lectus molestie eleifend. Praesent libero nisl, scelerisque nec suscipit eget, fringilla in nisi. '}
-					]
-				}) %>
+					{slug: 'game-info', title: 'Game info', content: 'Praesent vel dapibus ante. Vivamus sollicitudin lorem diam, sed pellentesque urna accumsan eu. Ut vel elementum ex, ac volutpat nibh. Aliquam laoreet posuere metus, venenatis ullamcorper mauris aliquet a. Sed tempus metus nec scelerisque tempor. Vivamus dapibus pretium dolor vitae tincidunt. Quisque neque tortor, rhoncus non rhoncus non, mattis nec elit. Donec interdum urna dui, condimentum varius lacus posuere quis. '}
+				]}
+			) %>
 		</section>
 
 		<section data-title="Modal" id="styleguide-modal">
 			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'openModal()', text: 'Open the modal', theme: 'dark'}) %>
 			<%- include(site.views + '/organisms/modal', {content: 'Donec dictum hendrerit nisl sed finibus. Vestibulum massa arcu, varius eget efficitur vitae, vulputate eget erat. Ut dignissim faucibus tortor ac suscipit. Quisque eget risus nec libero porta cursus id ac purus. Praesent vel dapibus ante. Vivamus sollicitudin lorem diam, sed pellentesque urna accumsan eu. Ut vel elementum ex, ac volutpat nibh. Aliquam laoreet posuere metus, venenatis ullamcorper mauris aliquet a. Sed tempus metus nec scelerisque tempor. Vivamus dapibus pretium dolor vitae tincidunt.'}) %>
+		</section>
+
+		<section data-title="Admin Sidebar Nav" id="styleguide-admin-sidebar-nav">
+			<aside class="admin-sidebar">
+				<%- include(site.views + '/molecules/admin-sidebar-nav', 
+					{items: [
+						{link: '/', text: 'Recent', current: true}, 
+						{link: '/', text: 'William Hill', current: false}, 
+						{link: '/', text: 'BetFred', current: false}, 
+						{link: '/', text: 'Client 3', current: false}, 
+						{link: '/', text: 'Fourth Client', current: false}
+					]}
+				) %>
+			</aside>
+		</section>
+
+		<section data-title="Admin Data Table" id="styleguide-admin-data-table">
+			<section class="admin-panel-with-sidebar grid-central">
+				<aside class="admin-sidebar item-3-12">
+					<p class="sidebar-section-title">Admin functions</p>
+					<%- include(site.views + '/molecules/admin-sidebar-nav', 
+						{items: [
+							{link: '/', text: 'Recent', current: true}, 
+							{link: '/', text: 'William Hill', current: false}, 
+							{link: '/', text: 'BetFred', current: false}, 
+							{link: '/', text: 'Client 3', current: false}, 
+							{link: '/', text: 'Fourth Client', current: false}
+						]}
+					) %>
+				</aside>
+				<section class="item-8-12">
+					<h2 class="section-title">
+						Activity Logs
+					</h2>
+					<section class="admin-data-table_container">
+						<%- include(site.views + '/molecules/admin-data-table', 
+							{items: [
+								{type: 'login-success', action: {title: 'Logged in from:', content: 'Windows PC, Chrome v64'}, user: 'Benedict Cumberbatch', date: '04/02/2018', time: '13:04'},
+								{type: 'password-reset', action: {title: 'Password reset', content: ''}, user: 'Tom Bell', date: '04/02/2018', time: '13:04'},
+								{type: 'login-failure', action: {title: 'Failed login attempt from:', content: 'Windows PC, Chrome v64'}, user: 'Katherine Richardson-Beckinsale', date: '04/02/2018', time: '13:04'}
+							]}
+						) %>
+					</section>
+				</section>
+			</section>
+		</section>
+		<section data-title="Admin Input Form" id="styleguide-admin-input-form" class="admin">
+			<section class="grid grid-central">
+				<div class="item-6-12">
+						<h1 class="page-title">Add a game</h1>
+				</div>
+				<div class="item-6-12">
+					<%- include(site.views + '/molecules/admin-breadcrumbs', 
+						{breadcrumbs: [
+							{link: '/manage-game', text: 'Manage games'}, 
+							{link: '/', text: 'Add game'}
+						]}
+					) %>
+				</div>
+			</section>
+			<hr class="page-divider" />
+			<section class="admin-panel-with-sidebar grid-central">
+				<aside class="admin-sidebar item-3-12">
+					<p class="sidebar-section-title">Admin functions</p>
+					<%- include(site.views + '/molecules/admin-sidebar-nav', 
+						{items: [
+							{link: '/', text: 'Recent', current: true}, 
+							{link: '/', text: 'William Hill', current: false}, 
+							{link: '/', text: 'BetFred', current: false}, 
+							{link: '/', text: 'Client 3', current: false}, 
+							{link: '/', text: 'Fourth Client', current: false}
+						]}
+					) %>
+				</aside>
+						
+				<form class="item-8-12">
+					<fieldset class="item-8-12">
+						<label class="input-full-width">
+							<span class="label-title">Game name</span>
+							<%- include(site.views + '/atoms/inputs/input-text', {placeholder: 'Enter name', required: true}) %>
+						</label>
+					</fieldset>
+					<fieldset class="item-4-12 tar">
+						<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Upload main image', theme: 'dark'}) %>
+					</fieldset>
+					<fieldset class="item-12-12">
+						<label>
+							<span class="label-title">Game description</span>
+							<%- include(site.views + '/atoms/inputs/input-textarea', {placeholder: 'Type here...', required: true}) %>
+						</label>
+					</fieldset>
+					<fieldset class="item-3-12">
+						<span class="label-title">3rd Party Licence?</span>
+						<% inputs = [
+							{required: true, text: 'Yes', value: 'yes', name: 'third-party-licence'},
+							{required: true, text: 'No', value: 'no', name: 'third-party-licence'}
+						] %>
+						<% inputs.forEach(function(input, index) { %>
+							<%- include(site.views + '/atoms/inputs/input-radio', {input: input}) %>
+						<% }); %>
+					</fieldset>
+					<fieldset class="item-3-12">
+						<label>
+							<span class="label-title">Number of paylines</span>
+							<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '40', required: true}) %>
+						</label>
+					</fieldset>
+					<fieldset class="item-6-12">
+						<label>
+							<span class="label-title">Min/max stakes (GBP)</span>
+							<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '0.75', required: true}) %>
+							<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '2,250', required: true}) %>
+						</label>
+					</fieldset>
+					<fieldset class="item-12-12">
+						<label>
+							<span class="label-title">Set the volatility</span>
+							<div class="volatility-range_container">
+								<%- include(site.views + '/atoms/inputs/input-range', {placeholder: '0.75', required: true}) %>
+							</div>
+						</label>
+					</fieldset>
+					<fieldset class="item-12-12">
+							<span class="label-title">Select the supported channels</span>
+							<% inputs = [
+									{name: 'phone', icon: 'phone', text: 'Phone'},
+									{name: 'tablet', icon: 'tablet', text: 'Tablet'},
+									{name: 'desktop', icon: 'desktop', text: 'Desktop'},
+									{name: 'slot', icon: 'slot', text: 'Slot'}
+							] %>
+							<% inputs.forEach(function(input, index) { %>
+								<%- include(site.views + '/atoms/inputs/input-checkbox', {input: input}) %>
+							<% }); %>
+					</fieldset>
+					<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Submit add game form")', text: 'Add game', theme: 'brand'}) %>
+				</form>
+			</section>
 		</section>

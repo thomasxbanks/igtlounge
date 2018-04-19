@@ -1,0 +1,43 @@
+.admin-data-table_container {
+  @extend %card;
+  padding: 2.5rem 2rem;
+  .admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: scroll;
+    tr {
+      &:not(:last-of-type) {
+        th,
+        td {
+          border-bottom: 1px solid $clr_silver;
+        }
+      }
+      th {
+        @extend %junior;
+        text-align: left;
+        vertical-align: top;
+        padding: 0.75rem 1rem;
+      }
+
+      td {
+        @extend %junior;
+        text-align: left;
+        vertical-align: top;
+        padding: 1.75rem 1rem;
+        &.data-table-type {
+          .icon_container {
+            display: inline-block;
+            width: 3rem;
+            text-align: center;
+            margin-right: 1rem;
+          }
+        }
+        min-width: 5rem;
+        max-width: 20rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

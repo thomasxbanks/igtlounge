@@ -1,4 +1,8 @@
 section {
+  &[class^="section-theme"] {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+  }
   &.section-theme-brand {
     @extend %theme-brand;
   }
@@ -15,4 +19,17 @@ section {
     @extend %paulie;
     @extend %central-column;
   }
+}
+
+.page-title {
+  @extend %paulie;
+  color: $clr_black;
+}
+
+.page-divider {
+  border: 0;
+  background: $clr_silver;
+  width: 100%;
+  height: 0.0625rem;
+  margin: 2rem 0;
 }

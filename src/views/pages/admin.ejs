@@ -1,0 +1,94 @@
+<%- contentFor('hero') %>
+<section class="grid grid-central section-theme-light">
+	<div class="item-6-12">
+			<h1 class="page-title">Add a game</h1>
+	</div>
+	<div class="item-6-12">
+		<%- include(site.views + '/molecules/admin-breadcrumbs', 
+			{breadcrumbs: [
+				{link: '/manage-game', text: 'Manage games'}, 
+				{link: '/', text: 'Add game'}
+			]}
+		) %>
+	</div>
+	<hr class="page-divider" />
+</section>
+
+
+	<%- contentFor('body') %>
+		<section class="admin-panel-with-sidebar grid-central section-theme-light">
+			<aside class="admin-sidebar item-3-12">
+				<p class="sidebar-section-title">Admin functions</p>
+				<%- include(site.views + '/molecules/admin-sidebar-nav', 
+					{items: [
+						{link: '/', text: 'Recent', current: true}, 
+						{link: '/', text: 'William Hill', current: false}, 
+						{link: '/', text: 'BetFred', current: false}, 
+						{link: '/', text: 'Client 3', current: false}, 
+						{link: '/', text: 'Fourth Client', current: false}
+					]}
+				) %>
+			</aside>
+					
+			<form class="item-8-12">
+				<fieldset class="item-8-12">
+					<label class="input-full-width">
+						<span class="label-title">Game name</span>
+						<%- include(site.views + '/atoms/inputs/input-text', {placeholder: 'Enter name', required: true}) %>
+					</label>
+				</fieldset>
+				<fieldset class="item-4-12 tar">
+					<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Upload main image', theme: 'dark'}) %>
+				</fieldset>
+				<fieldset class="item-12-12">
+					<label>
+						<span class="label-title">Game description</span>
+						<%- include(site.views + '/atoms/inputs/input-textarea', {placeholder: 'Type here...', required: true}) %>
+					</label>
+				</fieldset>
+				<fieldset class="item-3-12">
+					<span class="label-title">3rd Party Licence?</span>
+					<% inputs = [
+						{required: true, text: 'Yes', value: 'yes', name: 'third-party-licence'},
+						{required: true, text: 'No', value: 'no', name: 'third-party-licence'}
+					] %>
+					<% inputs.forEach(function(input, index) { %>
+						<%- include(site.views + '/atoms/inputs/input-radio', {input: input}) %>
+					<% }); %>
+				</fieldset>
+				<fieldset class="item-3-12">
+					<label>
+						<span class="label-title">Number of paylines</span>
+						<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '40', required: true}) %>
+					</label>
+				</fieldset>
+				<fieldset class="item-6-12">
+					<label>
+						<span class="label-title">Min/max stakes (GBP)</span>
+						<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '0.75', required: true}) %>
+						<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '2,250', required: true}) %>
+					</label>
+				</fieldset>
+				<fieldset class="item-12-12">
+					<label>
+						<span class="label-title">Set the volatility</span>
+						<div class="volatility-range_container">
+							<%- include(site.views + '/atoms/inputs/input-range', {placeholder: '0.75', required: true}) %>
+						</div>
+					</label>
+				</fieldset>
+				<fieldset class="item-12-12">
+						<span class="label-title">Select the supported channels</span>
+						<% inputs = [
+								{name: 'phone', icon: 'phone', text: 'Phone'},
+								{name: 'tablet', icon: 'tablet', text: 'Tablet'},
+								{name: 'desktop', icon: 'desktop', text: 'Desktop'},
+								{name: 'slot', icon: 'slot', text: 'Slot'}
+						] %>
+						<% inputs.forEach(function(input, index) { %>
+							<%- include(site.views + '/atoms/inputs/input-checkbox', {input: input}) %>
+						<% }); %>
+				</fieldset>
+				<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Submit add game form")', text: 'Add game', theme: 'brand'}) %>
+			</form>
+		</section>
