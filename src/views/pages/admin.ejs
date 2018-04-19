@@ -1,14 +1,19 @@
 <%- contentFor('hero') %>
 <section class="hero grid grid-central section-theme-light">
 	<div class="item-6-12">
-			<h1 class="page-title">Add a game</h1>
+			<h1 class="page-title"><%= site.body.title %></h1>
 	</div>
 	<div class="item-6-12">
-		<%- include(site.views + '/molecules/admin-breadcrumbs', 
-			{breadcrumbs: [
-				{link: '/', text: 'Dashboard'}
-			]}
-		) %>
+		<% if (site.body.title == 'Dashboard') { %>
+
+		<% } else { %>
+			<%- include(site.views + '/molecules/admin-breadcrumbs', 
+				{breadcrumbs: [
+					{link: '/', text: 'Dashboard'}
+				]}
+			) %>
+		<% } %>
+		
 	</div>
 	<hr class="page-divider" />
 </section>
@@ -17,16 +22,36 @@
 	<%- contentFor('body') %>
 		<section class="admin-panel-with-sidebar grid-central section-theme-light">
 			<aside class="admin-sidebar item-3-12">
-				<%- include(site.views + '/molecules/admin-sidebar-nav', 
-					{items: site.user.operators}
-				) %>
+				<% if (site.subnavigation.length > 0) { %>
+					<%- include(site.views + '/molecules/admin-sidebar-nav', 
+						{items: site.subnavigation}
+					) %>
 				<hr class="page-divider" />
+				<% } %>
+				<% if (user.securityLevel >= 1 ) { %>
+				<p class="sidebar-section-title">Your accounts</p>
+					<%- include(site.views + '/molecules/admin-sidebar-nav', 
+						{items: user.operators}
+					) %>
+				<hr class="page-divider" />
+				<% } %>
 				<p class="sidebar-section-title">Admin functions</p>
 				<%- include(site.views + '/molecules/admin-sidebar-nav', 
-					{items: site.usertypes[site.user.usertype].navigation}
+					{items: site.usertypes[user.usertype].navigation}
 				) %>
 			</aside>
 			<section class="admin-panel item-9-12">
-				<%- include(site.views + '/admin-panels/dashboard-' + site.user.usertype) %>
+					<% if (site.page == 'manage-games') { %>
+						<section class="thumbnail_container">
+							<%- include(site.views + '/molecules/thumbnail', {target: 'monkey-tennis', image: {url: 'http://fillmurray.com/640/460', alt: 'Bill Murray'}, title: 'Monkey Tennis', description: 'Casual game', flag: {new: false}}) %>
+							<%- include(site.views + '/molecules/thumbnail', {target: 'elephant-kingdom', image: {url: 'http://fillmurray.com/840/470', alt: 'Bill Murray'}, title: 'Elephant Kingdom', description: 'Casual game', flag: {new: false}}) %>
+							<%- include(site.views + '/molecules/thumbnail', {target: 'witchwood', image: {url: 'http://fillmurray.com/650/480', alt: 'Bill Murray'}, title: 'Witchwood', description: 'Casual game', flag: {new: true}}) %>
+							<%- include(site.views + '/molecules/thumbnail', {target: 'keystone-kops', image: {url: 'http://fillmurray.com/640/490', alt: 'Bill Murray'}, title: 'Keystone Kops', description: 'Casual game', flag: {new: false}}) %>
+						</section>
+					<% } else if (site.page == 'add-game') { %>
+						<%- include(site.views + '/forms/add-game') %>
+					<% } else { %>
+						<%- include(site.views + '/admin-panels/dashboard-' + user.usertype) %>
+					<% } %>
 			</section>
 		</section>

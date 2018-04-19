@@ -1,9 +1,11 @@
 'use strict';
 var express = require('express');
 var path = require('path');
+var helmet = require('helmet');
 var expressLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var app = express();
+app.use(helmet());
 var port = process.env.PORT || 8008;
 var directory = {
   views: `${__dirname}/views/`,
@@ -53,6 +55,18 @@ app.locals = {
         navigation: [{ link: 'articles', text: 'Articles' }],
       },
     },
+    pages: {
+      admin: { subnavigation: [] },
+      'manage-games': {
+        subnavigation: [{ link: 'add-game', text: 'Add a game' }],
+      },
+      'add-game': { subnavigation: [] },
+    },
+  },
+  user: {
+    securityLevel: 3,
+    usertype: 'superAdmin',
+    operators: [{ link: 'william-hill', text: 'William Hill' }, { link: 'betfair', text: 'BetFair' }],
   },
 };
 

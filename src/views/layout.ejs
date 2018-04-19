@@ -10,7 +10,7 @@
 </head>
 
 <body 
-	class="<% site.body.classes.forEach(function(className, index) { %><%= className %><% }); %>"
+	class="<% site.body.classes.forEach(function(className, index) { %><%= className %> <% }); %>"
 >
 	<%- include(site.views + '/organisms/masthead-' + site.template) %>
 	<%- hero %>

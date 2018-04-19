@@ -20,10 +20,9 @@
   .inner {
     background: $clr_transparent;
     font-size: 0;
-    padding: 1rem;
-    @media screen and (min-width: $breakpoint-min) {
-      padding: 1.5rem 3rem;
-    }
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    @extend %padding-horizontal;
     @extend %grid;
     @extend %grid_row;
     @extend %align-center;
