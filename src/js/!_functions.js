@@ -13,24 +13,6 @@ let destroyElement = (element) => {
   document.querySelector(element).outerHTML = '';
 };
 
-function scrollTo(element, to, duration) {
-  var start = element.scrollTop,
-    change = to - start,
-    increment = 20;
-
-  var animateScroll = function(elapsedTime) {
-    elapsedTime += increment;
-    var position = easeInOut(elapsedTime, start, change, duration);
-    element.scrollTop = position;
-    if (elapsedTime < duration) {
-      setTimeout(function() {
-        animateScroll(elapsedTime);
-      }, increment);
-    }
-  };
-  animateScroll(0);
-}
-
 function isElementInViewport(el) {
   //special bonus for those using jQuery
   if (typeof jQuery === 'function' && el instanceof jQuery) {
