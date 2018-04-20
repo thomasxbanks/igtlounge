@@ -1,5 +1,12 @@
 .tabbed-section_container {
   background: $clr_white;
+  overflow: hidden;
+  &[data-state="not-active"] {
+    display: none;
+  }
+  &[data-state="is-active"] {
+    display: block;
+  }
 }
 
 .tabbed-section_tab {

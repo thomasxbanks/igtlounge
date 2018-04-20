@@ -4,12 +4,12 @@
 			image: {
 				url: {
 					mobile: {
-						small: './img/elephant-king-mobile@1x.jpg',
-						large: './img/elephant-king-mobile@2x.jpg'
+						small: '/img/elephant-king-mobile@1x.jpg',
+						large: '/img/elephant-king-mobile@2x.jpg'
 					},
 					desktop: {
-						small: './img/elephant-king-desktop@1x.jpg',
-						large: './img/elephant-king-desktop@2x.jpg'
+						small: '/img/elephant-king-desktop@1x.jpg',
+						large: '/img/elephant-king-desktop@2x.jpg'
 					}
 				}, 
 				alt: 'Bill Murray. Pretty much a living legend.', 
@@ -97,11 +97,14 @@
 
 		<section data-title="Tabbed Section" id="styleguide-tabbed-section">
 			<%- include(site.views + '/organisms/tabbed-sections', 
-				{articles: [
-					{slug: 'game-screens', title: 'Game screens', slides: [{url: 'http://placecage.com/900/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/460', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/540', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/1240/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}]},
-					{slug: 'overview', title: 'Overview', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis dui vitae tellus feugiat, nec sagittis leo pretium. Phasellus risus sem, scelerisque dignissim auctor in, eleifend quis turpis. Cras orci risus, molestie dapibus fringilla at, faucibus id risus. Proin nec velit sagittis, vulputate velit placerat, euismod lorem. Praesent consectetur, velit eu lacinia consectetur, nunc neque efficitur urna, nec facilisis nulla orci sit amet felis. In tincidunt dictum ligula, dignissim aliquam eros suscipit nec. Phasellus et leo et ipsum varius consectetur vel blandit lectus. Suspendisse mattis mollis quam ac fermentum. Nullam sollicitudin, nunc nec gravida vestibulum, tortor arcu suscipit velit, ut ultricies orci justo sed purus. Mauris eget ex sed ante mollis tincidunt. Pellentesque eleifend blandit mauris at ullamcorper. Nulla nec turpis id nisl fringilla aliquet. Donec dictum hendrerit nisl sed finibus. Vestibulum massa arcu, varius eget efficitur vitae, vulputate eget erat. Ut dignissim faucibus tortor ac suscipit. Quisque eget risus nec libero porta cursus id ac purus.'}, 
-					{slug: 'game-info', title: 'Game info', content: 'Praesent vel dapibus ante. Vivamus sollicitudin lorem diam, sed pellentesque urna accumsan eu. Ut vel elementum ex, ac volutpat nibh. Aliquam laoreet posuere metus, venenatis ullamcorper mauris aliquet a. Sed tempus metus nec scelerisque tempor. Vivamus dapibus pretium dolor vitae tincidunt. Quisque neque tortor, rhoncus non rhoncus non, mattis nec elit. Donec interdum urna dui, condimentum varius lacus posuere quis. '}
-				]}
+				{
+					target: 'elephant-kingdom', 
+					articles: [
+						{slug: 'game-screens', title: 'Game screens', slides: [{url: 'http://placecage.com/900/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/460', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/640/540', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}, {url: 'http://placecage.com/1240/480', alt:'Nicolas Cage. Dude.', caption: 'This is a caption about this photo of Nicolas Cage'}]},
+						{slug: 'overview', title: 'Overview', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis dui vitae tellus feugiat, nec sagittis leo pretium. Phasellus risus sem, scelerisque dignissim auctor in, eleifend quis turpis. Cras orci risus, molestie dapibus fringilla at, faucibus id risus. Proin nec velit sagittis, vulputate velit placerat, euismod lorem. Praesent consectetur, velit eu lacinia consectetur, nunc neque efficitur urna, nec facilisis nulla orci sit amet felis. In tincidunt dictum ligula, dignissim aliquam eros suscipit nec. Phasellus et leo et ipsum varius consectetur vel blandit lectus. Suspendisse mattis mollis quam ac fermentum. Nullam sollicitudin, nunc nec gravida vestibulum, tortor arcu suscipit velit, ut ultricies orci justo sed purus. Mauris eget ex sed ante mollis tincidunt. Pellentesque eleifend blandit mauris at ullamcorper. Nulla nec turpis id nisl fringilla aliquet. Donec dictum hendrerit nisl sed finibus. Vestibulum massa arcu, varius eget efficitur vitae, vulputate eget erat. Ut dignissim faucibus tortor ac suscipit. Quisque eget risus nec libero porta cursus id ac purus.'}, 
+						{slug: 'game-info', title: 'Game info', content: 'Praesent vel dapibus ante. Vivamus sollicitudin lorem diam, sed pellentesque urna accumsan eu. Ut vel elementum ex, ac volutpat nibh. Aliquam laoreet posuere metus, venenatis ullamcorper mauris aliquet a. Sed tempus metus nec scelerisque tempor. Vivamus dapibus pretium dolor vitae tincidunt. Quisque neque tortor, rhoncus non rhoncus non, mattis nec elit. Donec interdum urna dui, condimentum varius lacus posuere quis. '}
+					]
+				}
 			) %>
 		</section>
 
@@ -183,27 +186,27 @@
 					) %>
 				</aside>
 						
-				<form class="item-8-12">
-					<fieldset class="item-8-12">
+				<form id="addGame" class="item-12-12" onSubmit="addGame();">
+					<fieldset class="item-7-12">
 						<label class="input-full-width">
 							<span class="label-title">Game name</span>
-							<%- include(site.views + '/atoms/inputs/input-text', {placeholder: 'Enter name', required: true}) %>
+							<%- include(site.views + '/atoms/inputs/input-text', {name: 'add-game-name', placeholder: 'Enter name', required: true}) %>
 						</label>
 					</fieldset>
-					<fieldset class="item-4-12 tar">
+					<fieldset class="item-5-12 tar">
 						<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Upload main image', theme: 'dark'}) %>
 					</fieldset>
 					<fieldset class="item-12-12">
 						<label>
 							<span class="label-title">Game description</span>
-							<%- include(site.views + '/atoms/inputs/input-textarea', {placeholder: 'Type here...', required: true}) %>
+							<%- include(site.views + '/atoms/inputs/input-textarea', {name: 'add-game-description', placeholder: 'Type here...', required: true}) %>
 						</label>
 					</fieldset>
 					<fieldset class="item-3-12">
 						<span class="label-title">3rd Party Licence?</span>
 						<% inputs = [
-							{required: true, text: 'Yes', value: 'yes', name: 'third-party-licence'},
-							{required: true, text: 'No', value: 'no', name: 'third-party-licence'}
+							{name: 'add-game-third-party-licence', text: 'Yes', value: 'yes', required: true},
+							{name: 'add-game-third-party-licence', text: 'No', value: 'no', required: true}
 						] %>
 						<% inputs.forEach(function(input, index) { %>
 							<%- include(site.views + '/atoms/inputs/input-radio', {input: input}) %>
@@ -212,21 +215,21 @@
 					<fieldset class="item-3-12">
 						<label>
 							<span class="label-title">Number of paylines</span>
-							<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '40', required: true}) %>
+							<%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-paylines', placeholder: '40', min: '1', max: '10', step: '1', required: true}) %>
 						</label>
 					</fieldset>
 					<fieldset class="item-6-12">
 						<label>
 							<span class="label-title">Min/max stakes (GBP)</span>
-							<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '0.75', required: true}) %>
-							<%- include(site.views + '/atoms/inputs/input-number', {placeholder: '2,250', required: true}) %>
+							<%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-stakes-min', placeholder: '0.75', min: '0.5', max: '5000', step: '0.25', required: true}) %>
+							<%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-stakes-max', placeholder: '2,250', min: '0.5', max: '5000', step: '0.25', required: true}) %>
 						</label>
 					</fieldset>
 					<fieldset class="item-12-12">
 						<label>
 							<span class="label-title">Set the volatility</span>
 							<div class="volatility-range_container">
-								<%- include(site.views + '/atoms/inputs/input-range', {placeholder: '0.75', required: true}) %>
+								<%- include(site.views + '/atoms/inputs/input-range', {name: 'add-game-volatility', required: true}) %>
 							</div>
 						</label>
 					</fieldset>
@@ -242,7 +245,7 @@
 								<%- include(site.views + '/atoms/inputs/input-checkbox', {input: input}) %>
 							<% }); %>
 					</fieldset>
-					<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Submit add game form")', text: 'Add game', theme: 'brand'}) %>
+					<%- include(site.views + '/atoms/buttons/button-primary', {action: 'addGame.submit', text: 'Add game', theme: 'brand'}) %>
 				</form>
 			</section>
 		</section>

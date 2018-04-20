@@ -58,9 +58,10 @@ app.locals = {
     pages: {
       admin: { subnavigation: [] },
       'manage-games': {
-        subnavigation: [{ link: 'add-game', text: 'Add a game' }],
+        title: 'Manage games',
+        subnavigation: [{ link: '/manage-games/add-game', text: 'Add a game' }],
       },
-      'add-game': { subnavigation: [] },
+      'add-game': { title: 'Add a game', subnavigation: [] },
     },
   },
   user: {

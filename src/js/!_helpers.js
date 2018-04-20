@@ -34,3 +34,41 @@ const throttle = (action, wait = 100) => {
     }
   };
 };
+
+// Detect the end of CSS Animation
+const whichAnimationEvent = () => {
+  var t,
+    el = document.createElement('fakeelement');
+
+  var animations = {
+    animation: 'animationend',
+    OAnimation: 'oAnimationEnd',
+    MozAnimation: 'animationend',
+    WebkitAnimation: 'webkitAnimationEnd',
+  };
+
+  for (t in animations) {
+    if (el.style[t] !== undefined) {
+      return animations[t];
+    }
+  }
+};
+
+// Detect the end of CSS Transition
+const whichTransitionEvent = () => {
+  var t,
+    el = document.createElement('fakeelement');
+
+  var transitions = {
+    transition: 'transitionend',
+    OTransition: 'oTransitionEnd',
+    MozTransition: 'transitionend',
+    WebkitTransition: 'webkitTransitionEnd',
+  };
+
+  for (t in transitions) {
+    if (el.style[t] !== undefined) {
+      return transitions[t];
+    }
+  }
+};

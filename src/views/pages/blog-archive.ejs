@@ -1,0 +1,26 @@
+<%- contentFor('hero') %>
+<section class="hero-text section-theme-light">
+	<div class="grid grid-central">
+		<div class="item-6-12">
+				<h3 class="section-title">What's new on Casino Lounge</h3>
+		</div>
+		<hr class="page-divider" />
+	</div>
+</section>
+
+	<%- contentFor('body') %>
+		<section class="section-theme-light">
+			<div class="grid grid-central">
+				<section class="teaser_container grid-central">
+					<div class="teaser_container-column">
+						<%- include(site.views + '/molecules/teaser', {style: 'large', image: {url: 'http://fillmurray.com/600/400', alt: 'Bill Murray'}, title: 'Wishwood Launch Party - Malta (IGT Interactive)', content: 'Every path reveals secret treasures in the mystical forest of Wishwood! Join Poa the sprite and other woodland creatures as you climb the gargantuan tree growing deep within the forest.', link: '/news-events/wishwood-launch-aprty'}) %>
+					</div>
+					<div class="teaser_container-column">
+						<%- include(site.views + '/molecules/teaser', {style: 'small', image: {url: 'http://fillmurray.com/300/200', alt: 'Bill Murray'}, title: 'Behind the scenes: The making of Wishwood', content: '', link: '/news-events/the-making-of-wishwood'}) %>
+						<%- include(site.views + '/molecules/teaser', {style: 'small', image: {url: 'http://fillmurray.com/300/210', alt: 'Bill Murray'}, title: 'Going Wireless With Your Headphones', content: '', link: '/news-events/going-wireless'}) %>
+						<%- include(site.views + '/molecules/teaser', {style: 'small', image: {url: 'http://fillmurray.com/300/220', alt: 'Bill Murray'}, title: 'How Does An Lcd Screen Work', content: '', link: '/news-events/how-does-an-lcd-screen-work'}) %>
+						<%- include(site.views + '/molecules/teaser', {style: 'small', image: {url: 'http://fillmurray.com/300/230', alt: 'Bill Murray'}, title: 'Microsoft Patch Management For Home Users', content: '', link: '/news-events/patch-management'}) %>
+					</div>
+				</section>
+			</div>
+		</section>

@@ -29,6 +29,16 @@ function isElementInViewport(el) {
   );
 }
 
+// @TODO: Dummy functions to be replaced with actual ones
+// when the Pimcore API is available
 let requestLogin = () => {
   window.location.href = '/admin';
+};
+
+let requestLogout = () => {
+  window.location.href = '/';
+};
+
+let addGame = (data) => {
+  console.table(data);
 };

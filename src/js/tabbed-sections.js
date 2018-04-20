@@ -1,5 +1,7 @@
-let tabLinks = document.querySelectorAll('.tabbed-section_nav a');
-let tabs = document.querySelectorAll('.tabbed-section_tab');
+const tabbedSectionContainer = document.querySelector('.tabbed-section_container');
+const tabs = tabbedSectionContainer.querySelectorAll('.tabbed-section_tab');
+const tabLinks = tabbedSectionContainer.querySelectorAll('.tabbed-section_nav a');
+
 if (tabLinks.length > 0 && tabs.length > 0) {
   tabLinks.forEach((tabLink) => {
     tabLink.addEventListener('click', (e) => {

@@ -6,9 +6,7 @@
   width: 100%;
   transition: transform $ease-main $speed-std,
     background-color $ease-main $speed-std;
-  &[data-conditional="true"] {
-    background-color: $clr_black-75;
-  }
+  background-color: $clr_black;
 
   &[data-conditional="true"][data-state="not-visible"] {
     transform: translateY(-100%);
@@ -39,6 +37,16 @@
       }
     }
   }
+  .companyLogo {
+    @extend %christopher;
+    color: white;
+    text-decoration: none;
+    @include lineHeight(40px);
+    svg {
+      vertical-align: bottom;
+      margin-right: 0.5rem;
+    }
+  }
 }
 
 .masthead-desktop .topbar {
@@ -52,8 +60,4 @@
       margin-right: 0.5rem;
     }
   }
-}
-
-.admin #masthead {
-  background: $clr_black;
 }
