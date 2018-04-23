@@ -63,6 +63,9 @@
     width: 100%;
     min-height: 5rem;
   }
+  select {
+    @extend %label-title;
+  }
 }
 
 %label-title {
