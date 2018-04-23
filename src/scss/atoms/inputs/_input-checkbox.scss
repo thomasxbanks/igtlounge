@@ -2,10 +2,14 @@
 .input-checkbox-fancy {
   display: inline-block;
   padding: 0.5rem 0;
-  width: 200px;
+  width: 100%;
+  max-width: 12rem;
   input[type="checkbox"] {
     position: relative;
     left: -50000px;
+    &:focus + .input-checkbox-check {
+      border-color: $clr_brand-primary;
+    }
     &:checked + .input-checkbox-check {
       .icon {
         transform: none;
@@ -26,6 +30,7 @@
   }
   .input-checkbox-label {
     @extend %label-title;
+    @include lineHeight(40px);
     display: inline-block;
     vertical-align: middle;
   }
@@ -37,6 +42,9 @@
   input[type="checkbox"] {
     position: relative;
     left: -50000px;
+    &:focus + .input-checkbox-icon {
+      border-color: $clr_brand-primary;
+    }
     &:checked + .input-checkbox-icon {
       background: $clr_black;
       border-color: $clr_black;

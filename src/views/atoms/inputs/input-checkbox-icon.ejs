@@ -1,5 +1,10 @@
 <label class="input-checkbox-icon" title="<%= input.text %>" aria-label="<%= input.text %>">
-  <input type="checkbox" name="<%= input.name %>">
+  <input 
+    tabindex="0" 
+    type="checkbox" 
+    name="<%= input.name %>"
+    <% if (input.required == true) { %>required<% } %>
+  >
   <span class="input-checkbox-icon">
     <%- include(site.views + '/icons/usage-icons/' + input.icon) %>
   </span>

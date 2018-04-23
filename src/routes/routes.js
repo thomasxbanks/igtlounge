@@ -141,11 +141,11 @@ router.get('/*', function(req, res) {
   site.page = {
     slug: pageSlug,
     template: site.template,
-    masthead: 'error',
-    colophon: 'error',
-    body: { title: site.pages[pageSlug].title, classes: [site.template, pageSlug] },
-    subnavigation: site.pages[pageSlug].subnavigation,
-    breadcrumbs: true,
+    masthead: 'website',
+    colophon: 'admin',
+    body: { title: 'Oops!', classes: [site.template, pageSlug] },
+    subnavigation: false,
+    breadcrumbs: false,
   };
   res.render(`pages/${site.template}`, res.app.locals);
 });

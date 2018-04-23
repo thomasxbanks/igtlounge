@@ -38,23 +38,14 @@ app.locals = {
       superAdmin: {
         navigation: [
           { link: 'manage-games', text: 'Manage games' },
-          { link: 'roadmap', text: 'Roadmap' },
-          { link: 'assets', text: 'Assets' },
           { link: 'users', text: 'Users' },
           { link: 'operators', text: 'Operators' },
-          { link: 'articles', text: 'Articles' },
         ],
       },
       accountManager: {
-        navigation: [
-          { link: 'roadmap', text: 'Roadmap' },
-          { link: 'assets', text: 'Assets' },
-          { link: 'operators', text: 'Operators' },
-        ],
+        navigation: [],
       },
-      contentManager: {
-        navigation: [{ link: 'articles', text: 'Articles' }],
-      },
+      contentManager: {},
     },
     pages: {
       admin: { subnavigation: [] },

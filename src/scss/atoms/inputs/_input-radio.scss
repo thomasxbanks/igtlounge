@@ -1,7 +1,9 @@
 .input-radio-fancy {
   display: inline-block;
+  font-size: 0;
   @extend %admin-input;
   @extend %border-radius-lozenge;
+  position: relative;
   input[type="radio"] {
     position: relative;
     left: -50000px;
@@ -10,6 +12,9 @@
     }
   }
   > .input-radio-icon {
+    position: absolute;
+    top: calc(50% - 0.5rem);
+    left: 1rem;
     display: inline-block;
     vertical-align: middle;
     @extend %border-radius-circle;
@@ -29,5 +34,11 @@
       transform: scale(0);
       transition: transform $ease-swoosh $speed-fast;
     }
+  }
+  .input-radio-label {
+    @extend %label-title;
+    display: inline-block;
+    margin-left: 0.5rem;
+    line-height: 1.25rem;
   }
 }

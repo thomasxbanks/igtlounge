@@ -42,3 +42,8 @@ let requestLogout = () => {
 let addGame = (data) => {
   console.table(data);
 };
+
+let duplicateRow = (el) => {
+  var thisRow = el.parentElement.querySelector('.input-joined_row');
+  el.insertAdjacentHTML('beforebegin', thisRow.outerHTML);
+};

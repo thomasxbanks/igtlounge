@@ -1,6 +1,6 @@
 const tabbedSectionContainer = document.querySelector('.tabbed-section_container');
-const tabs = tabbedSectionContainer.querySelectorAll('.tabbed-section_tab');
-const tabLinks = tabbedSectionContainer.querySelectorAll('.tabbed-section_nav a');
+const tabs = document.querySelectorAll('.tabbed-section_tab');
+const tabLinks = document.querySelectorAll('.tabbed-section_nav a');
 
 if (tabLinks.length > 0 && tabs.length > 0) {
   tabLinks.forEach((tabLink) => {

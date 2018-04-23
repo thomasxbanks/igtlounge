@@ -55,14 +55,14 @@
         {name: 'slot', icon: 'slot', text: 'Slot'}
     ] %>
     <% inputs.forEach(function(input, index) { %>
-      <%- include(site.views + '/atoms/inputs/input-checkbox-icon', {input: input}) %>
+      <%- include(site.views + '/atoms/inputs/input-checkbox-icon', {input: input, required: false}) %>
     <% }); %>
   </fieldset>
 
   <% 
     // Volatility Rating
   %>
-  <fieldset class="item-6-12">
+  <fieldset class="item-12-12">
     <label>
       <span class="label-title">Volatility Rating</span>
       <div class="volatility-range_container">
@@ -73,7 +73,7 @@
   <% 
     // Game Type
   %>
-  <fieldset class="item-3-12">
+  <fieldset class="item-12-12">
     <label>
       <span class="label-title">Game Type</span>
       <% options = [
@@ -86,13 +86,13 @@
           {value: 'type-table', text: 'Table'},
           {value: 'type-video-poker', text: 'Video Poker'}
       ] %>
-      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a type', options: options}) %>
+      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a type', options: options, required: true}) %>
     </label>
   </fieldset>
   <% 
     // Roadmap
   %>
-  <fieldset class="item-3-12">
+  <fieldset class="item-12-12">
     <label>
       <span class="label-title">Add to Roadmap?</span>
       <% options = [
@@ -105,7 +105,7 @@
           {value: 'roadmap-2019-Q3', text: '2019-Q3'},
           {value: 'roadmap-2019-Q4', text: '2019-Q4'}
       ] %>
-      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a quarter', options: options}) %>
+      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a quarter', options: options, required: true}) %>
     </label>
   </fieldset>
   <% 
@@ -114,14 +114,14 @@
   <fieldset class="item-12-12">
     <span class="label-title">Supported territories</span>
     <% inputs = [
-        {name: 'territory-asia', icon: 'phone', text: 'Asia'},
-        {name: 'territory-british-columbia', icon: 'phone', text: 'British Columbia'},
-        {name: 'territory-europe', icon: 'phone', text: 'Europe'},
-        {name: 'territory-manitoba', icon: 'phone', text: 'Manitoba'},
-        {name: 'territory-new-jersey', icon: 'phone', text: 'New Jersey'},
-        {name: 'territory-ontario', icon: 'phone', text: 'Ontario'},
-        {name: 'territory-pennsylvania', icon: 'phone', text: 'Pensylvia'},
-        {name: 'territory-quebec', icon: 'phone', text: 'Quebec'}
+        {name: 'territory-asia', icon: 'phone', text: 'Asia', required: false},
+        {name: 'territory-british-columbia', icon: 'phone', text: 'British Columbia', required: false},
+        {name: 'territory-europe', icon: 'phone', text: 'Europe', required: false},
+        {name: 'territory-manitoba', icon: 'phone', text: 'Manitoba', required: false},
+        {name: 'territory-new-jersey', icon: 'phone', text: 'New Jersey', required: false},
+        {name: 'territory-ontario', icon: 'phone', text: 'Ontario', required: false},
+        {name: 'territory-pennsylvania', icon: 'phone', text: 'Pensylvia', required: false},
+        {name: 'territory-quebec', icon: 'phone', text: 'Quebec', required: false} 
     ] %>
     <% inputs.forEach(function(input, index) { %>
       <%- include(site.views + '/atoms/inputs/input-checkbox', {input: input}) %>
@@ -134,16 +134,16 @@
     <span class="label-title">Supported languages</span>
     <% inputs = [
         {name: 'territory-canadian-french', icon: 'phone', text: 'Canadian French'},
-        {name: 'territory-danish', icon: 'phone', text: 'Danish'},
-        {name: 'territory-english', icon: 'phone', text: 'English'},
-        {name: 'territory-finnish', icon: 'phone', text: 'Finnish'},
-        {name: 'territory-french', icon: 'phone', text: 'French'},
-        {name: 'territory-german', icon: 'phone', text: 'German'},
-        {name: 'territory-italian', icon: 'phone', text: 'Italian'},
-        {name: 'territory-norwegian', icon: 'phone', text: 'Norwegian'},
-        {name: 'territory-portugese', icon: 'phone', text: 'Portuguese'},
-        {name: 'territory-spanish', icon: 'phone', text: 'Spanish'},
-        {name: 'territory-swedish', icon: 'phone', text: 'Swedish'}
+        {name: 'territory-danish', icon: 'phone', text: 'Danish', required: false},
+        {name: 'territory-english', icon: 'phone', text: 'English', required: false},
+        {name: 'territory-finnish', icon: 'phone', text: 'Finnish', required: false},
+        {name: 'territory-french', icon: 'phone', text: 'French', required: false},
+        {name: 'territory-german', icon: 'phone', text: 'German', required: false},
+        {name: 'territory-italian', icon: 'phone', text: 'Italian', required: false},
+        {name: 'territory-norwegian', icon: 'phone', text: 'Norwegian', required: false},
+        {name: 'territory-portugese', icon: 'phone', text: 'Portuguese', required: false},
+        {name: 'territory-spanish', icon: 'phone', text: 'Spanish', required: false},
+        {name: 'territory-swedish', icon: 'phone', text: 'Swedish', required: false} 
     ] %>
     <% inputs.forEach(function(input, index) { %>
       <%- include(site.views + '/atoms/inputs/input-checkbox', {input: input}) %>
@@ -152,7 +152,7 @@
   <% 
     // Theme
   %>
-  <fieldset class="item-3-12">
+  <fieldset class="item-12-12">
     <label>
       <span class="label-title">Themes</span>
       <% options = [
@@ -168,22 +168,22 @@
           {value: 'theme-nature', text: 'Nature'},
           {value: 'theme-stepper', text: 'Stepper'}
       ] %>
-      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a theme', options: options}) %>
+      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a theme', options: options, required: true}) %>
     </label>
   </fieldset>
   <% 
     // New
   %>
-  <fieldset class="item-3-12">
+  <fieldset class="item-12-12">
     <span class="label-title">Is this game new?</span>
     <%- include(site.views + '/atoms/inputs/input-toggle', 
-      {input: {name: 'add-game-new', text: 'Is this game new?'}
+      {input: {name: 'add-game-new', text: 'Is this game new?', required: true}
     }) %>
   </fieldset>
   <% 
     // Paylines
   %>
-  <fieldset class="item-3-12">
+  <fieldset class="item-12-12">
     <label>
       <span class="label-title">Number of paylines</span>
       <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-paylines', placeholder: '40', min: '1', max: '10', step: '1', required: true}) %>
@@ -202,29 +202,70 @@
   <% 
     // Software ID & RTP
   %>
-  <fieldset class="item-6-12">
-    <label>
-      <span class="label-title">Software ID & RTP</span>
+  <fieldset class="item-12-12 input-joined_container">
+    <div class="input-joined_label_container">
+      <div class="label_container">
+        <span>Software ID</span>
+        <span>Percentage</span>
+      </div>
+    </div>
+    <label class="input-joined_row">
       <%- include(site.views + '/atoms/inputs/input-text', 
         {
-          name: 'add-game-software-id', 
+          name: 'add-game-software-id-1', 
           placeholder: 'Enter ID', 
           required: true, 
           maxlength: '',
           message: {
             error: {
               required: 'Please do not leave this blank', 
-              invalid: 'Please enter a valid ID'
+              invalid: ''
             }
           }
         }
       ) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-1', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true}) %>
     </label>
+    <label class="input-joined_row">
+      <%- include(site.views + '/atoms/inputs/input-text', 
+        {
+          name: 'add-game-software-id-2', 
+          placeholder: 'Enter ID', 
+          required: true, 
+          maxlength: '',
+          message: {
+            error: {
+              required: 'Please do not leave this blank', 
+              invalid: ''
+            }
+          }
+        }
+      ) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-3', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true}) %>
+    </label>
+    <label class="input-joined_row">
+      <%- include(site.views + '/atoms/inputs/input-text', 
+        {
+          name: 'add-game-software-id-1', 
+          placeholder: 'Enter ID', 
+          required: true, 
+          maxlength: '',
+          message: {
+            error: {
+              required: 'Please do not leave this blank', 
+              invalid: ''
+            }
+          }
+        }
+      ) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-3', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true}) %>
+    </label>
+    <%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'duplicateRow(this)', text: 'Duplicate this row', icon: 'plus-light', theme: 'dark'}) %>
   </fieldset>
   <% 
     // Release date
   %>
-  <fieldset class="item-6-12">
+  <fieldset class="item-12-12">
     <label>
       <span class="label-title">Game Release Date</span>
       <%- include(site.views + '/atoms/inputs/input-date', 

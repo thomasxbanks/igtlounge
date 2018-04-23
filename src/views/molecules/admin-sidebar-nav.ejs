@@ -3,7 +3,7 @@
     <% items.forEach(function(item, index) { %>
       <li>
         <a 
-          href="<%= item.link %>"
+          href="/<%= item.link %>"
           data-state="<%if (item.current == true) { %>is-active<% } %>"
         >
           <%= item.text %>

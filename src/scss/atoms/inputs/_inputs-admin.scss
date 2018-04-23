@@ -65,17 +65,32 @@
   }
   select {
     @extend %label-title;
+    &:required:invalid {
+      color: $clr_silver;
+    }
+    &:valid {
+      color: $clr_black;
+    }
+  }
+  input[type="date"] {
+    @extend %label-title;
+    &:required:invalid {
+      color: $clr_silver;
+    }
+    &:valid {
+      color: $clr_black;
+    }
   }
 }
 
 %label-title {
   @extend %christopher;
-  color: $clr_black;
   @include fontSize(14px);
 }
 .label-title {
   display: block;
   @extend %label-title;
+  color: $clr_black;
   @include lineHeight(14px);
   margin-bottom: 0.75rem;
 }
