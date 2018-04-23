@@ -11,10 +11,10 @@
 %admin-input {
   @extend %input;
   @extend %input-border;
-  background-color: $clr_white;
   @extend %richie;
   color: $clr_black;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.5rem;
+  height: 2.5rem;
   &:not(:last-of-type) {
     margin-right: 1rem;
   }
@@ -47,6 +47,7 @@
   }
   input[type="text"],
   input[type="number"],
+  input[type="date"],
   select {
     display: inline-block;
     vertical-align: middle;
@@ -64,15 +65,17 @@
   }
 }
 
-.label-title {
-  display: block;
+%label-title {
   @extend %christopher;
   color: $clr_black;
   @include fontSize(14px);
+}
+.label-title {
+  display: block;
+  @extend %label-title;
   @include lineHeight(14px);
   margin-bottom: 0.75rem;
 }
-
 form .description {
   @extend %bobby;
 }

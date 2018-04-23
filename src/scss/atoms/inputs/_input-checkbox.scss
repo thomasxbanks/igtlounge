@@ -1,4 +1,38 @@
+// Fancy checkbox
 .input-checkbox-fancy {
+  display: inline-block;
+  padding: 0.5rem 0;
+  width: 200px;
+  input[type="checkbox"] {
+    position: relative;
+    left: -50000px;
+    &:checked + .input-checkbox-check {
+      .icon {
+        transform: none;
+      }
+    }
+  }
+  > .input-checkbox-check {
+    vertical-align: top;
+    @extend %border-radius-circle;
+    @extend %button-icon-only-small;
+    @extend %input-border;
+    @extend %dead-center;
+    margin-right: 0.5rem;
+    .icon {
+      transform: scale(0);
+      transition: transform $ease-swoosh $speed-fast;
+    }
+  }
+  .input-checkbox-label {
+    @extend %label-title;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+// Checkbox using an icon only
+.input-checkbox-icon {
   font-size: 0;
   input[type="checkbox"] {
     position: relative;

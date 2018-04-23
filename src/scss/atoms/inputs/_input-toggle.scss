@@ -1,0 +1,61 @@
+.input-toggle {
+  input[type="checkbox"] {
+    position: relative;
+    left: -50000px;
+    &:checked + .input-toggle-slider {
+      background-color: $clr_brand-primary;
+      border-color: $clr_brand-primary;
+      &:before {
+        border-color: $clr_brand-primary;
+        transform: none;
+      }
+      + .input-toggle-label {
+        .input-toggle-label-yes {
+          display: inline-block;
+        }
+        .input-toggle-label-no {
+          display: none;
+        }
+      }
+    }
+  }
+  > .input-toggle-slider {
+    position: relative;
+    cursor: pointer;
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    width: 5rem;
+    height: 2.5rem;
+    @extend %border-radius-lozenge;
+    background-color: $clr_silver;
+    transition: background-color $ease-main $speed-fast;
+    &:before {
+      position: absolute;
+      content: "";
+      @extend %border-radius-circle;
+      width: calc(2.5rem - 0.5rem);
+      height: calc(2.5rem - 0.5rem);
+      right: 0.25rem;
+      bottom: 0.25rem;
+      background-color: $clr_white;
+      transform: translate3d(-2.5rem, 0, 0);
+      transition: transform $ease-swoosh $speed-std,
+        background-color $ease-main $speed-fast;
+    }
+    + .input-toggle-label {
+      .input-toggle-label-yes {
+        display: none;
+      }
+      .input-toggle-label-no {
+        display: inline-block;
+      }
+    }
+  }
+  .input-toggle-label {
+    @extend %label-title;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

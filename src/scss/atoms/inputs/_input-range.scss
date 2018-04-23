@@ -12,6 +12,7 @@
   @extend %grid_row;
   @extend %align-center;
   @extend %justify-between;
+  height: 2.5rem;
 }
 .volatility-range {
   &::-webkit-slider-thumb {

@@ -1,6 +1,8 @@
-<textarea
-  type="text" 
+<input
+  type="date" 
   placeholder="<%= placeholder %>" 
-  maxlength="<%= maxlength %>"
+  value=""
+  min="<%= min %>"
+  max="<%= max %>"
   <% if (required == true) { %>required<% } %>
-></textarea>
+>

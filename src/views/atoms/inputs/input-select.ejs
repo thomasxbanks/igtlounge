@@ -1,0 +1,6 @@
+<select>
+    <option value="" disabled selected><%= text %></option>
+    <% options.forEach(function(option, index) { %>
+      <option value="<%= option.value %>"><%= option.text %></option>
+    <% }); %>
+</select>

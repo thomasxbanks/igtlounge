@@ -1,7 +1,7 @@
 <label class="input-checkbox-fancy" title="<%= input.text %>" aria-label="<%= input.text %>">
-  <input type="checkbox" name="phone">
-  <span class="input-checkbox-icon">
-    <%- include(site.views + '/icons/usage-icons/' + input.icon) %>
+  <input type="checkbox" name="<%= input.name %>">
+  <span class="input-checkbox-check">
+    <%- include(site.views + '/icons/user-interface/check-brand') %>
   </span>
   <span class="input-checkbox-label">
     <%= input.text %>

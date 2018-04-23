@@ -21,7 +21,7 @@
 	<%- contentFor('body') %>
 		<section class="admin-panel-with-sidebar grid-central section-theme-light">
 			<aside class="admin-sidebar item-3-12">
-				<% if (site.page.subnavigation.length > 0) { %>
+				<% if (site.page.subnavigation != false) { %>
 					<%- include(site.views + '/molecules/admin-sidebar-nav', 
 						{items: site.page.subnavigation}
 					) %>

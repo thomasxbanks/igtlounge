@@ -32,6 +32,7 @@ app.locals = {
     description: '',
     author: 'Cube 3',
     template: 'index',
+    today: `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`,
     colophon: d.getFullYear(),
     usertypes: {
       superAdmin: {
@@ -59,9 +60,12 @@ app.locals = {
       admin: { subnavigation: [] },
       'manage-games': {
         title: 'Manage games',
-        subnavigation: [{ link: '/manage-games/add-game', text: 'Add a game' }],
+        subnavigation: [{ link: 'manage-games/add-game', text: 'Add a game' }],
       },
-      'add-game': { title: 'Add a game', subnavigation: [] },
+      'add-game': {
+        title: 'Add a game',
+        subnavigation: false,
+      },
     },
   },
   user: {
