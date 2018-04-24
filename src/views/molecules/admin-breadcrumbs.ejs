@@ -3,7 +3,7 @@
     <% breadcrumbs.forEach(function(breadcrumb, index) { %>
       <% if (index != (breadcrumbs.length - 1)) { %>
         <li>
-          <a href="<%= breadcrumb.link %>" title="<%= breadcrumb.text %>"><%= breadcrumb.text %></a>
+          <a href="/admin/<%= breadcrumb.link %>" title="<%= breadcrumb.text %>"><%= breadcrumb.text %></a>
         </li>
       <% } else { %>
         <li>
