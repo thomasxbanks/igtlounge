@@ -1,0 +1,66 @@
+%label-title {
+  @extend %ralphie;
+}
+
+%label-text {
+  @extend %junior;
+}
+
+%input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+}
+
+%input-border {
+  border: $border_width-thin solid $clr_silver;
+}
+
+%admin-input {
+  @extend %input;
+  @extend %input-border;
+  @extend %richie;
+  color: $clr_black;
+  padding: 0.5rem 1.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+[data-state="is-pristine"] {
+  background: none;
+  + [class^="input-checkbox-"] {
+    background: none;
+  }
+  &:focus {
+    border-color: $clr_brand-primary;
+    + [class^="input-checkbox-"] {
+      border-color: $clr_brand-primary;
+      background: none;
+    }
+  }
+}
+
+[data-state="not-pristine"] {
+  &:invalid {
+    border-color: $clr_failure;
+    box-shadow: none;
+    position: relative;
+    background: rgba($clr_failure, $opacity-failure-decimal);
+    + [class^="input-checkbox-"] {
+      background: rgba($clr_failure, $opacity-failure-decimal);
+      border-color: $clr_failure;
+    }
+  }
+  &:valid {
+    border-color: $clr_success;
+  }
+  &:focus {
+    border-color: $clr_brand-primary;
+    background: none;
+    + [class^="input-checkbox-"] {
+      border-color: $clr_brand-primary;
+      background: none;
+    }
+  }
+}

@@ -16,6 +16,9 @@ input[type="range"]::-moz-focus-outer {
   @extend %align-center;
   @extend %justify-between;
   height: 2.5rem;
+  .description {
+    @extend %bobby;
+  }
 }
 
 .volatility-range {

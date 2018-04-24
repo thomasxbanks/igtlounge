@@ -3,7 +3,11 @@
     tabindex="0" 
     type="checkbox" 
     name="<%= input.name %>"
-    <% if (input.required == true) { %>required<% } %>
+    data-state="is-pristine" onfocus="dirty(event)"
+    onfocus="dirty(event)"
+    <% if (input.required == true) { %>
+      required
+    <% } %>
   >
   <span class="input-checkbox-icon">
     <%- include(site.views + '/icons/usage-icons/' + input.icon) %>
@@ -11,4 +15,11 @@
   <span class="input-checkbox-label">
     <%= input.text %>
   </span>
+  <div 
+    class="input-validation-message"
+    <% if (input.required == true) { %>
+      data-message-error-required="<%= input.message.error.required %>"
+    <% } %>
+    data-message-error-invalid="<%= input.message.error.invalid %>"
+  ></div>
 </label>

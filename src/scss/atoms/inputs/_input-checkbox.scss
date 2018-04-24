@@ -7,9 +7,6 @@
   input[type="checkbox"] {
     position: relative;
     left: -50000px;
-    &:focus + .input-checkbox-check {
-      border-color: $clr_brand-primary;
-    }
     &:checked + .input-checkbox-check {
       .icon {
         transform: none;
@@ -29,7 +26,7 @@
     }
   }
   .input-checkbox-label {
-    @extend %label-title;
+    @extend %label-text;
     @include lineHeight(40px);
     display: inline-block;
     vertical-align: middle;
@@ -42,12 +39,8 @@
   input[type="checkbox"] {
     position: relative;
     left: -50000px;
-    &:focus + .input-checkbox-icon {
-      border-color: $clr_brand-primary;
-    }
     &:checked + .input-checkbox-icon {
       background: $clr_black;
-      border-color: $clr_black;
       svg {
         transform: none;
       }
@@ -59,7 +52,6 @@
     @extend %border-radius-circle;
     @extend %input-border;
     vertical-align: top;
-    background: $clr_white;
     svg {
       transform: scale(0.6);
       transition: transform $ease-swoosh $speed-fast;

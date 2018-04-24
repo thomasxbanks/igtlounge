@@ -54,7 +54,7 @@
     }
   }
   .input-toggle-label {
-    @extend %label-title;
+    @extend %label-text;
     display: inline-block;
     vertical-align: middle;
   }

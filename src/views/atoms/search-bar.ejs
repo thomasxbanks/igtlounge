@@ -1,7 +1,7 @@
 <form class="search-bar">
   <label>
     Search
-    <%- include(site.views + '/atoms/inputs/input-search', {placeholder: 'Enter a search term'}) %>
+    <%- include(site.views + '/atoms/inputs/input-search', {placeholder: 'Enter a search term', required: false, message: {error: {invalid: "Generic error message"}}}) %>
     <button type="submit" class="button-icon-only icon-search">
       <%- include(site.views + '/icons/user-interface/search-light') %>
     </button>

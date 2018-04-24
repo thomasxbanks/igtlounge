@@ -7,5 +7,17 @@
   max="<%= max %>"
   step="<%= step %>"
   tabindex="0"
-  <% if (required == true) { %>required<% } %>
+  data-state="is-pristine" 
+  onfocus="dirty(event)"
+  onblur="validate(event)"
+  <% if (required == true) { %>
+    required
+  <% } %>
 >
+<div 
+  class="input-validation-message"
+  <% if (required == true) { %>
+    data-message-error-required="<%= message.error.required %>"
+  <% } %>
+  data-message-error-invalid="<%= message.error.invalid %>"
+></div>

@@ -1,0 +1,6 @@
+input[type="date"] {
+  @extend %admin-input;
+
+  @extend %border-radius-lozenge;
+  @extend %label-title;
+}

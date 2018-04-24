@@ -1,7 +1,7 @@
 <form class="newsletter-signup">
   <label class="input-minimal input-invert">
     Search
-    <%- include(site.views + '/atoms/inputs/input-newsletter', {placeholder: 'Enter a search term'}) %>
+    <%- include(site.views + '/atoms/inputs/input-newsletter', {placeholder: 'Enter a search term', required: true, message: {error: {required: 'Generic failure message', invalid: "Generic failure message"}}}) %>
     <button type="submit" class="button-icon-only-brand">
       <%- include(site.views + '/icons/user-interface/arrow-light') %>
     </button>

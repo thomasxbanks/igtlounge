@@ -1,0 +1,19 @@
+<%- contentFor('hero') %>
+<section class="hero-text section-theme-light">
+	<div class="grid grid-central">
+		<div class="item-6-12">
+				<h3 class="section-title">Games archive</h3>
+		</div>
+		<hr class="page-divider" />
+	</div>
+</section>
+
+	<%- contentFor('body') %>
+		<section class="section-theme-light">
+			<section class="thumbnail_container">
+				<%- include(site.views + '/molecules/thumbnail', {target: 'monkey-tennis-2', image: {url: 'http://fillmurray.com/640/460', alt: 'Bill Murray'}, title: 'Monkey Tennis', description: 'Casual game', flag: {new: true}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'elephant-kingdom-2', image: {url: 'http://fillmurray.com/840/470', alt: 'Bill Murray'}, title: 'Elephant Kingdom', description: 'Casual game', flag: {new: false}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'witchwood-2', image: {url: 'http://fillmurray.com/650/480', alt: 'Bill Murray'}, title: 'Witchwood', description: 'Casual game', flag: {new: false}}) %>
+				<%- include(site.views + '/molecules/thumbnail', {target: 'keystone-kops-2', image: {url: 'http://fillmurray.com/640/490', alt: 'Bill Murray'}, title: 'Keystone Kops', description: 'Casual game', flag: {new: false}}) %>
+		</section>
+		</section>

@@ -49,13 +49,13 @@
   <fieldset class="item-12-12">
     <span class="label-title">Supported channels</span>
     <% inputs = [
-        {name: 'phone', icon: 'phone', text: 'Phone'},
-        {name: 'tablet', icon: 'tablet', text: 'Tablet'},
-        {name: 'desktop', icon: 'desktop', text: 'Desktop'},
-        {name: 'slot', icon: 'slot', text: 'Slot'}
+        {name: 'phone', icon: 'phone', text: 'Phone', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'tablet', icon: 'tablet', text: 'Tablet', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'desktop', icon: 'desktop', text: 'Desktop', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'slot', icon: 'slot', text: 'Slot', required: false, message: {error: {invalid: "Generic error message"}}}
     ] %>
     <% inputs.forEach(function(input, index) { %>
-      <%- include(site.views + '/atoms/inputs/input-checkbox-icon', {input: input, required: false}) %>
+      <%- include(site.views + '/atoms/inputs/input-checkbox-icon', {input: input}) %>
     <% }); %>
   </fieldset>
 
@@ -66,7 +66,7 @@
     <label>
       <span class="label-title">Volatility Rating</span>
       <div class="volatility-range_container">
-        <%- include(site.views + '/atoms/inputs/input-range', {name: 'add-game-volatility', required: true}) %>
+        <%- include(site.views + '/atoms/inputs/input-range', {name: 'add-game-volatility', required: true, message: {error: {invalid: "Generic error message"}}}) %>
       </div>
     </label>
   </fieldset>
@@ -86,7 +86,7 @@
           {value: 'type-table', text: 'Table'},
           {value: 'type-video-poker', text: 'Video Poker'}
       ] %>
-      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a type', options: options, required: true}) %>
+      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a type', options: options, required: true, message: {error: {invalid: "Generic error message"}}}) %>
     </label>
   </fieldset>
   <% 
@@ -105,7 +105,7 @@
           {value: 'roadmap-2019-Q3', text: '2019-Q3'},
           {value: 'roadmap-2019-Q4', text: '2019-Q4'}
       ] %>
-      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a quarter', options: options, required: true}) %>
+      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a quarter', options: options, required: true, message: {error: {invalid: "Generic error message"}}}) %>
     </label>
   </fieldset>
   <% 
@@ -114,14 +114,14 @@
   <fieldset class="item-12-12">
     <span class="label-title">Supported territories</span>
     <% inputs = [
-        {name: 'territory-asia', icon: 'phone', text: 'Asia', required: false},
-        {name: 'territory-british-columbia', icon: 'phone', text: 'British Columbia', required: false},
-        {name: 'territory-europe', icon: 'phone', text: 'Europe', required: false},
-        {name: 'territory-manitoba', icon: 'phone', text: 'Manitoba', required: false},
-        {name: 'territory-new-jersey', icon: 'phone', text: 'New Jersey', required: false},
-        {name: 'territory-ontario', icon: 'phone', text: 'Ontario', required: false},
-        {name: 'territory-pennsylvania', icon: 'phone', text: 'Pensylvia', required: false},
-        {name: 'territory-quebec', icon: 'phone', text: 'Quebec', required: false} 
+        {name: 'territory-asia', icon: 'phone', text: 'Asia', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-british-columbia', icon: 'phone', text: 'British Columbia', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-europe', icon: 'phone', text: 'Europe', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-manitoba', icon: 'phone', text: 'Manitoba', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-new-jersey', icon: 'phone', text: 'New Jersey', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-ontario', icon: 'phone', text: 'Ontario', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-pennsylvania', icon: 'phone', text: 'Pensylvia', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-quebec', icon: 'phone', text: 'Quebec', required: false, message: {error: {invalid: "Generic error message"}}} 
     ] %>
     <% inputs.forEach(function(input, index) { %>
       <%- include(site.views + '/atoms/inputs/input-checkbox', {input: input}) %>
@@ -133,17 +133,17 @@
   <fieldset class="item-12-12">
     <span class="label-title">Supported languages</span>
     <% inputs = [
-        {name: 'territory-canadian-french', icon: 'phone', text: 'Canadian French'},
-        {name: 'territory-danish', icon: 'phone', text: 'Danish', required: false},
-        {name: 'territory-english', icon: 'phone', text: 'English', required: false},
-        {name: 'territory-finnish', icon: 'phone', text: 'Finnish', required: false},
-        {name: 'territory-french', icon: 'phone', text: 'French', required: false},
-        {name: 'territory-german', icon: 'phone', text: 'German', required: false},
-        {name: 'territory-italian', icon: 'phone', text: 'Italian', required: false},
-        {name: 'territory-norwegian', icon: 'phone', text: 'Norwegian', required: false},
-        {name: 'territory-portugese', icon: 'phone', text: 'Portuguese', required: false},
-        {name: 'territory-spanish', icon: 'phone', text: 'Spanish', required: false},
-        {name: 'territory-swedish', icon: 'phone', text: 'Swedish', required: false} 
+        {name: 'territory-canadian-french', icon: 'phone', text: 'Canadian French', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-danish', icon: 'phone', text: 'Danish', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-english', icon: 'phone', text: 'English', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-finnish', icon: 'phone', text: 'Finnish', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-french', icon: 'phone', text: 'French', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-german', icon: 'phone', text: 'German', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-italian', icon: 'phone', text: 'Italian', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-norwegian', icon: 'phone', text: 'Norwegian', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-portugese', icon: 'phone', text: 'Portuguese', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-spanish', icon: 'phone', text: 'Spanish', required: false, message: {error: {invalid: "Generic error message"}}},
+        {name: 'territory-swedish', icon: 'phone', text: 'Swedish', required: false, message: {error: {invalid: "Generic error message"}}} 
     ] %>
     <% inputs.forEach(function(input, index) { %>
       <%- include(site.views + '/atoms/inputs/input-checkbox', {input: input}) %>
@@ -168,7 +168,7 @@
           {value: 'theme-nature', text: 'Nature'},
           {value: 'theme-stepper', text: 'Stepper'}
       ] %>
-      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a theme', options: options, required: true}) %>
+      <%- include(site.views + '/atoms/inputs/input-select', {text: 'Select a theme', options: options, required: true, message: {error: {invalid: "Generic error message"}}}) %>
     </label>
   </fieldset>
   <% 
@@ -177,7 +177,7 @@
   <fieldset class="item-12-12">
     <span class="label-title">Is this game new?</span>
     <%- include(site.views + '/atoms/inputs/input-toggle', 
-      {input: {name: 'add-game-new', text: 'Is this game new?', required: true}
+      {input: {name: 'add-game-new', text: 'Is this game new?', required: false, message: {error: {invalid: "Generic error message"}}}
     }) %>
   </fieldset>
   <% 
@@ -186,7 +186,7 @@
   <fieldset class="item-12-12">
     <label>
       <span class="label-title">Number of paylines</span>
-      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-paylines', placeholder: '40', min: '1', max: '10', step: '1', required: true}) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-paylines', placeholder: '40', min: '1', max: '10', step: '1', required: true, message: {error: {invalid: "Generic error message"}}}) %>
     </label>
   </fieldset>
   <% 
@@ -195,8 +195,8 @@
   <fieldset class="item-12-12">
     <label>
       <span class="label-title">Min/max stakes (GBP)</span>
-      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-stakes-min', placeholder: '0.75', min: '0.5', max: '5000', step: '0.25', required: true}) %>
-      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-stakes-max', placeholder: '2,250', min: '0.5', max: '5000', step: '0.25', required: true}) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-stakes-min', placeholder: '0.75', min: '0.5', max: '5000', step: '0.25', required: true, message: {error: {invalid: "Generic error message"}}}) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-stakes-max', placeholder: '2,250', min: '0.5', max: '5000', step: '0.25', required: true, message: {error: {invalid: "Generic error message"}}}) %>
     </label>
   </fieldset>
   <% 
@@ -219,12 +219,12 @@
           message: {
             error: {
               required: 'Please do not leave this blank', 
-              invalid: ''
+              invalid: 'Generic error message'
             }
           }
         }
       ) %>
-      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-1', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true}) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-1', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true, message: {error: {invalid: "Generic error message"}}}) %>
     </label>
     <label class="input-joined_row">
       <%- include(site.views + '/atoms/inputs/input-text', 
@@ -236,12 +236,12 @@
           message: {
             error: {
               required: 'Please do not leave this blank', 
-              invalid: ''
+              invalid: 'Generic error message'
             }
           }
         }
       ) %>
-      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-3', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true}) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-3', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true, message: {error: {invalid: "Generic error message"}}}) %>
     </label>
     <label class="input-joined_row">
       <%- include(site.views + '/atoms/inputs/input-text', 
@@ -253,12 +253,12 @@
           message: {
             error: {
               required: 'Please do not leave this blank', 
-              invalid: ''
+              invalid: 'Generic error message'
             }
           }
         }
       ) %>
-      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-3', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true}) %>
+      <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-3', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true, message: {error: {invalid: "Generic error message"}}}) %>
     </label>
     <%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'duplicateRow(this)', text: 'Duplicate this row', icon: 'plus-light', theme: 'dark'}) %>
   </fieldset>
@@ -291,8 +291,8 @@
   <fieldset class="item-12-12">
     <span class="label-title">3rd Party Licenced</span>
     <% inputs = [
-      {name: 'add-game-third-party-licence', text: 'Yes', value: 'yes', required: true},
-      {name: 'add-game-third-party-licence', text: 'No', value: 'no', required: true}
+      {name: 'add-game-third-party-licence', text: 'Yes', value: 'yes', required: true, message: {error: {invalid: "Generic error message"}}},
+      {name: 'add-game-third-party-licence', text: 'No', value: 'no', required: true, message: {error: {invalid: "Generic error message"}}}
     ] %>
     <% inputs.forEach(function(input, index) { %>
       <%- include(site.views + '/atoms/inputs/input-radio', {input: input}) %>

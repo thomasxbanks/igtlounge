@@ -7,14 +7,14 @@
 		</span>
 		<span	class="icon-nav_container">
 			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'log("search")', text: '', icon: 'search-light', theme: 'none'}) %>
-			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'requestLogin()', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'login()', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
 		</span>
 	</div>
 
 	<div class="inner masthead-mobile">
 		<a href="/"><%- include(site.views + '/icons/logo') %></a>
 		<span class="icon-nav_container">
-			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'requestLogin()', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'login()', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
 			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'openSidebar()', text: 'Toggle the navigation sidebar', icon: 'hamburger-light', theme: 'dark'}) %>
 		</span>
 	</div>

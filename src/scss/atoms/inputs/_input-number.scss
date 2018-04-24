@@ -1,0 +1,7 @@
+input[type="number"] {
+  @extend %admin-input;
+
+  @extend %border-radius-lozenge;
+  @extend %label-title;
+  text-align: center;
+}

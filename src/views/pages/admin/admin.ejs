@@ -28,11 +28,13 @@
 				<hr class="page-divider" />
 				<% } %>
 				<% if (user.securityLevel >= 1 ) { %>
-				<p class="sidebar-section-title">Your accounts</p>
-					<%- include(site.views + '/molecules/admin-sidebar-nav', 
-						{items: user.operators}
-					) %>
-				<hr class="page-divider" />
+					<% if (user.operators != false) { %>
+						<p class="sidebar-section-title">Your accounts&nbsp;(<%= user.operators.length %>)</p>
+						<%- include(site.views + '/molecules/admin-sidebar-nav', 
+							{items: user.operators}
+						) %>
+						<hr class="page-divider" />
+					<% } %>
 				<% } %>
 				<p class="sidebar-section-title">Admin functions</p>
 				<%- include(site.views + '/molecules/admin-sidebar-nav', 

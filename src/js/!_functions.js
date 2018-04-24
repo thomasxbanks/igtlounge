@@ -29,9 +29,28 @@ function isElementInViewport(el) {
   );
 }
 
+const dirty = (event) => {
+  event.currentTarget.setAttribute('data-state', 'not-pristine');
+};
+
+const validate = (event) => {
+  var thisInput = event.currentTarget;
+  var thisInputContainer = thisInput.parentElement;
+  var valid = thisInput.checkValidity();
+  if (valid) {
+    thisInputContainer.querySelector('.input-validation-message').style.display = `none`;
+  } else {
+    thisInputContainer.querySelector('.input-validation-message').style.display = `block`;
+  }
+};
+
 // @TODO: Dummy functions to be replaced with actual ones
 // when the Pimcore API is available
 let requestLogin = () => {
+  alert('You must be logged in to access this area of the site.');
+};
+
+let login = () => {
   window.location.href = '/admin';
 };
 

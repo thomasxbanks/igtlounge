@@ -1,0 +1,16 @@
+select {
+  @extend %admin-input;
+
+  @extend %border-radius-lozenge;
+  @extend %label-title;
+  &:required:invalid {
+    color: $clr_silver;
+    option {
+      color: $clr_black;
+    }
+  }
+
+  &:valid {
+    color: $clr_black;
+  }
+}

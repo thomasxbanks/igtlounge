@@ -1,9 +1,9 @@
 const viewGameDetails = (target) => {
   const thumbnails = document.querySelectorAll('.thumbnail');
   disableThumbnails(thumbnails);
-  closeTabbedSection();
+  // closeTabbedSection();
   enableThumbnail(target);
-  openTabbedSection();
+  // openTabbedSection();
 };
 
 const disableThumbnails = (thumbnails) => {

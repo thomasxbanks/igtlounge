@@ -1,7 +1,24 @@
 <label class="input-radio-fancy" title="<%= input.text %>" aria-label="<%= input.text %>">
-  <input tabindex="0" type="radio" name="<%= input.name %>">
+  <input 
+    tabindex="0" 
+    type="radio" 
+    name="<%= input.name %>"
+    data-state="is-pristine" 
+    onfocus="dirty(event)"
+    onblur="validate(event)"
+    <% if (input.required == true) { %>
+      required
+    <% } %>
+  >
   <span class="input-radio-icon"></span>
   <span class="input-radio-label">
     <%= input.text %>
   </span>
+<div 
+  class="input-validation-message"
+  <% if (input.required == true) { %>
+    data-message-error-required="<%= input.message.error.required %>"
+  <% } %>
+  data-message-error-invalid="<%= input.message.error.invalid %>"
+></div>
 </label>

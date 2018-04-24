@@ -1,0 +1,8 @@
+textarea {
+  @extend %admin-input;
+
+  @extend %border-radius-large;
+  @extend %label-title;
+  width: 100%;
+  min-height: 5rem;
+}
