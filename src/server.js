@@ -86,10 +86,7 @@ app.locals = {
     securityLevel: 3,
     usertype: 'superAdmin',
     name: 'Benedict Cumberbatch',
-    operators: [
-      { link: 'admin/operators/william-hill', text: 'William Hill' },
-      { link: 'admin/operators/betfair', text: 'BetFair' },
-    ],
+    operators: false,
   },
 };
 

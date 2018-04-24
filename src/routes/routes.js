@@ -171,7 +171,10 @@ router.get('/admin/:section', function(req, res) {
       colophon: 'admin',
       body: { title: site.pages['admin'][pageSection].title, classes: [site.template, pageSection] },
       subnavigation: site.pages['admin'][pageSection].subnavigation,
-      breadcrumbs: true,
+      breadcrumbs: [
+        { link: '/admin', text: 'Home' },
+        { link: pageSection, text: site.pages['admin'][pageSection].title },
+      ],
     };
     res.render(`pages/admin/${site.template}`, local);
   } else {
@@ -198,8 +201,13 @@ router.get('/admin/:section/:slug', function(req, res) {
         classes: [site.template, pageSection, pageSlug],
       },
       subnavigation: site.pages['admin'][pageSection][pageSlug].subnavigation,
-      breadcrumbs: true,
+      breadcrumbs: [
+        { link: '/admin', text: 'Home' },
+        { link: pageSection, text: site.pages['admin'][pageSection].title },
+        { link: pageSlug, text: site.pages['admin'][pageSection][pageSlug].title },
+      ],
     };
+    console.log(site.page);
     res.render(`pages/admin/${site.template}`, local);
   } else {
     loadPageLogin(site, res);

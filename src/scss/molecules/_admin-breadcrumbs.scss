@@ -5,9 +5,14 @@
     li {
       @extend %bobby;
       color: $clr_black;
+      font-weight: bold;
       text-transform: none;
       a {
+        @extend %bobby;
+        color: $clr_black;
+        font-weight: normal;
         text-decoration: none;
+        text-transform: capitalize;
       }
       &:not(:last-of-type) {
         &:after {

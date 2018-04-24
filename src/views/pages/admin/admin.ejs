@@ -4,15 +4,11 @@
 			<h1 class="page-title"><%= site.page.body.title %></h1>
 	</div>
 	<div class="item-6-12">
-		<% if (site.page.body.breadcrumbs == true) { %>
+		<% if (site.page.breadcrumbs != false) { %>
 			<%- include(site.views + '/molecules/admin-breadcrumbs', 
-				{breadcrumbs: [
-					{link: '/', text: 'Dashboard'}
-				]}
+				{breadcrumbs: site.page.breadcrumbs}
 			) %>
 		<% } %>
-
-		
 	</div>
 	<hr class="page-divider" />
 </section>
@@ -42,17 +38,6 @@
 				) %>
 			</aside>
 			<section class="admin-panel item-9-12">
-					<% if (site.page.slug == 'manage-games') { %>
-						<section class="thumbnail_container">
-							<%- include(site.views + '/molecules/thumbnail', {target: 'monkey-tennis', image: {url: 'http://fillmurray.com/640/460', alt: 'Bill Murray'}, title: 'Monkey Tennis', description: 'Casual game', flag: {new: false}}) %>
-							<%- include(site.views + '/molecules/thumbnail', {target: 'elephant-kingdom', image: {url: 'http://fillmurray.com/840/470', alt: 'Bill Murray'}, title: 'Elephant Kingdom', description: 'Casual game', flag: {new: false}}) %>
-							<%- include(site.views + '/molecules/thumbnail', {target: 'witchwood', image: {url: 'http://fillmurray.com/650/480', alt: 'Bill Murray'}, title: 'Witchwood', description: 'Casual game', flag: {new: true}}) %>
-							<%- include(site.views + '/molecules/thumbnail', {target: 'keystone-kops', image: {url: 'http://fillmurray.com/640/490', alt: 'Bill Murray'}, title: 'Keystone Kops', description: 'Casual game', flag: {new: false}}) %>
-						</section>
-					<% } else if (site.page.slug == 'add-game') { %>
-						<%- include(site.views + '/forms/add-game') %>
-					<% } else { %>
-						<%- include(site.views + '/admin-panels/dashboard-' + user.usertype) %>
-					<% } %>
+					<%- include(site.views + '/admin-panels/' + site.page.slug) %>
 			</section>
 		</section>
