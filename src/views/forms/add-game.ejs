@@ -260,7 +260,7 @@
       ) %>
       <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-software-percentage-3', placeholder: '93.16', min: '0', max: '100', step: '0.01', required: true}) %>
     </label>
-    <%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'duplicateRow(this)', text: 'Duplicate this row', icon: 'plus-light', theme: 'dark'}) %>
+    <%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'duplicateRow(this)', text: 'Duplicate this row', icon: 'plus-light', theme: 'dark'}) %>
   </fieldset>
   <% 
     // Release date
@@ -299,6 +299,6 @@
     <% }); %>
   </fieldset>
   <fieldset class="item-12-12">
-    <%- include(site.views + '/atoms/buttons/button-primary', {action: 'addGame.submit', text: 'Add game', theme: 'brand'}) %>
+    <%- include(site.views + '/atoms/buttons/button-primary', {type: 'submit', action: 'addGame.submit', text: 'Add game', theme: 'brand'}) %>
   </fieldset>
 </form>

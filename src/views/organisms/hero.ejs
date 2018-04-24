@@ -7,8 +7,8 @@
         <p class="content"><%= content %></p>
       </header>
       <footer>
-        <%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("' + primary + '")', text: 'Play game', theme: 'brand'}) %>
-        <%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("' + secondary + '")', text: 'Game details', theme: 'light', icon: 'plus-light'}) %>
+        <%- include(site.views + '/atoms/buttons/button-primary', {type: 'button', action: 'log("' + primary + '")', text: 'Play game', theme: 'brand'}) %>
+        <%- include(site.views + '/atoms/buttons/button-secondary_icon', {type: 'button', action: 'log("' + secondary + '")', text: 'Game details', theme: 'light', icon: 'plus-light'}) %>
       </footer>
     </article>
   </section>

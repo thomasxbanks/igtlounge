@@ -15,7 +15,10 @@
 }
 
 %padding-right {
-  padding-right: 3rem;
+  padding-right: 1rem;
+  @media screen and (min-width: 768px) {
+    padding-right: 3rem;
+  }
 }
 
 %padding-bottom {
@@ -23,7 +26,10 @@
 }
 
 %padding-left {
-  padding-left: 3rem;
+  padding-left: 1rem;
+  @media screen and (min-width: 768px) {
+    padding-left: 3rem;
+  }
 }
 
 %padding-horizontal {

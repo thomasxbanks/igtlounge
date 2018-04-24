@@ -27,33 +27,33 @@
 		</section>
 
 		<section data-title="Buttons (Primary)" id="styleguide-buttons-primary">
-			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button Brand', theme: 'brand'}) %>
-			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button Dark', theme: 'dark'}) %>
-			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'log("Primary")', text: 'Primary Button Light', theme: 'light'}) %>
+			<%- include(site.views + '/atoms/buttons/button-primary', {type: 'button', action: 'log("Primary")', text: 'Primary Button Brand', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-primary', {type: 'button', action: 'log("Primary")', text: 'Primary Button Dark', theme: 'dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-primary', {type: 'button', action: 'log("Primary")', text: 'Primary Button Light', theme: 'light'}) %>
 		</section>
 
 		<section data-title="Buttons (Secondary)" id="styleguide-buttons-secondary">
-			<%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("Secondary")', text: 'Secondary Button Brand', theme: 'brand'}) %>
-			<%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("Secondary")', text: 'Secondary Button Dark', theme: 'dark'}) %>
-			<%- include(site.views + '/atoms/buttons/button-secondary', {action: 'log("Secondary")', text: 'Secondary Button Light', theme: 'light'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary', {type: 'button', action: 'log("Secondary")', text: 'Secondary Button Brand', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary', {type: 'button', action: 'log("Secondary")', text: 'Secondary Button Dark', theme: 'dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary', {type: 'button', action: 'log("Secondary")', text: 'Secondary Button Light', theme: 'light'}) %>
 		</section>
 
 		<section data-title="Buttons (Secondary with Icon)" id="styleguide-buttons-secondary-icon">
-			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Secondary with Icon")', text: 'Secondary Button Icon Brand', theme: 'brand', icon: 'arrow-brand'}) %>
-			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Secondary with Icon")', text: 'Secondary Button Icon Dark', theme: 'dark', icon: 'arrow-dark'}) %>
-			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Secondary with Icon")', text: 'Secondary Button Icon Light', theme: 'light', icon: 'arrow-light'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {type: 'button', action: 'log("Secondary with Icon")', text: 'Secondary Button Icon Brand', theme: 'brand', icon: 'arrow-brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {type: 'button', action: 'log("Secondary with Icon")', text: 'Secondary Button Icon Dark', theme: 'dark', icon: 'arrow-dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {type: 'button', action: 'log("Secondary with Icon")', text: 'Secondary Button Icon Light', theme: 'light', icon: 'arrow-light'}) %>
 		</section>
 
 		<section data-title="Buttons (Icon only)" id="styleguide-buttons-icon-only">
-			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("expand thumbnail")', text: 'Expand the thumbnail', icon: 'plus-light', theme: 'light'}) %>
-			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("log in")', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
-			<%- include(site.views + '/atoms/buttons/button-icon-only', {action: 'log("share stuff")', text: 'Share something', icon: 'share-light', theme: 'dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'log("expand thumbnail")', text: 'Expand the thumbnail', icon: 'plus-light', theme: 'light'}) %>
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'log("log in")', text: 'Log in', icon: 'account-light', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-icon-only', {type: 'button', action: 'log("share stuff")', text: 'Share something', icon: 'share-light', theme: 'dark'}) %>
 		</section>
 		
 		<section data-title="Buttons (Ghost)" id="styleguide-buttons-ghost">
-			<%- include(site.views + '/atoms/buttons/button-ghost', {action: 'log("Ghost")', text: 'Ghost Button Brand', theme: 'brand'}) %>
-			<%- include(site.views + '/atoms/buttons/button-ghost', {action: 'log("Ghost")', text: 'Ghost Button Dark', theme: 'dark'}) %>
-			<%- include(site.views + '/atoms/buttons/button-ghost', {action: 'log("Ghost")', text: 'Ghost Button Light', theme: 'light'}) %>
+			<%- include(site.views + '/atoms/buttons/button-ghost', {type: 'button', action: 'log("Ghost")', text: 'Ghost Button Brand', theme: 'brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-ghost', {type: 'button', action: 'log("Ghost")', text: 'Ghost Button Dark', theme: 'dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-ghost', {type: 'button', action: 'log("Ghost")', text: 'Ghost Button Light', theme: 'light'}) %>
 		</section>
 
 		<section data-title="Usage Icons" id="styleguide-usage-icons" class="section-theme-brand">
@@ -109,7 +109,7 @@
 		</section>
 
 		<section data-title="Modal" id="styleguide-modal">
-			<%- include(site.views + '/atoms/buttons/button-primary', {action: 'openModal()', text: 'Open the modal', theme: 'dark'}) %>
+			<%- include(site.views + '/atoms/buttons/button-primary', {type: 'button', action: 'openModal()', text: 'Open the modal', theme: 'dark'}) %>
 			<%- include(site.views + '/organisms/modal', {content: 'Donec dictum hendrerit nisl sed finibus. Vestibulum massa arcu, varius eget efficitur vitae, vulputate eget erat. Ut dignissim faucibus tortor ac suscipit. Quisque eget risus nec libero porta cursus id ac purus. Praesent vel dapibus ante. Vivamus sollicitudin lorem diam, sed pellentesque urna accumsan eu. Ut vel elementum ex, ac volutpat nibh. Aliquam laoreet posuere metus, venenatis ullamcorper mauris aliquet a. Sed tempus metus nec scelerisque tempor. Vivamus dapibus pretium dolor vitae tincidunt.'}) %>
 		</section>
 

@@ -53,6 +53,9 @@
     vertical-align: middle;
     @extend %admin-input;
     @extend %border-radius-lozenge;
+    &:focus {
+      border-color: $clr_brand-primary;
+    }
   }
   input[type="number"] {
     text-align: center;
@@ -62,11 +65,17 @@
     @extend %border-radius-large;
     width: 100%;
     min-height: 5rem;
+    &:focus {
+      border-color: $clr_brand-primary;
+    }
   }
   select {
     @extend %label-title;
     &:required:invalid {
       color: $clr_silver;
+      option {
+        color: $clr_black;
+      }
     }
     &:valid {
       color: $clr_black;

@@ -22,7 +22,7 @@
 	<%- contentFor('body') %>
 		<section class="section-theme-white">
 			<h2 class="section-title">Recommended for you</h2>
-			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {action: 'log("Secondary with Icon")', text: 'View all', theme: 'brand', icon: 'arrow-brand'}) %>
+			<%- include(site.views + '/atoms/buttons/button-secondary_icon', {type: 'button', action: 'log("Secondary with Icon")', text: 'View all', theme: 'brand', icon: 'arrow-brand'}) %>
 			<section class="thumbnail_container">
 				<%- include(site.views + '/molecules/thumbnail', {target: 'monkey-tennis', image: {url: 'http://fillmurray.com/640/460', alt: 'Bill Murray'}, title: 'Monkey Tennis', description: 'Casual game', flag: {new: false}}) %>
 				<%- include(site.views + '/molecules/thumbnail', {target: 'elephant-kingdom', image: {url: 'http://fillmurray.com/840/470', alt: 'Bill Murray'}, title: 'Elephant Kingdom', description: 'Casual game', flag: {new: false}}) %>
