@@ -1,0 +1,21 @@
+<footer id="site-footer">
+		<div class="grid">
+			<div class="item-4-12">
+				<a href="/"><%- include(site.views + '/icons/logo') %></a>
+			</div>
+			<div class="item-4-12">
+				<%- include(site.views + '/organisms/newsletter-signup') %>
+			</div>
+			<div class="item-4-12">
+				<nav>
+					<ul>
+						<li><a href="/styleguide">Footer link</a></li>
+						<li><a href="/styleguide">Footer link</a></li>
+						<li><a href="/styleguide">Footer link</a></li>
+						<li><a href="/styleguide">Footer link</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div id="colophon">&copy; <time><%= locals.site.colophon %></time> <cite><%= locals.site.author %></cite></div>
+</footer>

@@ -1,0 +1,28 @@
+<table class="admin-data-table">
+  <tr>
+    <th>Type</th>
+    <th>User</th>
+    <th>Date</th>
+    <th>Time</th>
+  </tr>
+  <% items.forEach(function(item, index) { %>
+    <tr>
+      <td class="data-table-type" title="<%= item.action.title %> <%= item.action.content %>">
+        <div class="icon_container">
+          <%- include(site.views + 'icons/display/' + item.type + '-brand') %>
+        </div>
+        <strong><%= item.action.title %></strong>
+        <%= item.action.content %>
+      </td>
+      <td class="data-table-user" title="<%= item.user %>">
+        <%= item.user %>
+      </td>
+      <td class="data-table-date" title="<%= item.date %>">
+        <%= item.date %>
+      </td>
+      <td class="data-table-time" title="<%= item.time %>">
+        <%= item.time %>
+      </td>
+    </tr>
+  <% }); %>
+</table>

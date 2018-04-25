@@ -78,13 +78,12 @@
       <span class="label-title">Game Type</span>
       <% options = [
           {value: 'type-casual-game', text: 'Casual Game'},
-          {value: 'type-coming-soon', text: 'Coming Soon'},
           {value: 'type-egm-ports', text: 'EGM Ports'},
-          {value: 'type-featured', text: 'Featured'},
           {value: 'type-jackpots', text: 'Jackpots'},
           {value: 'type-slots', text: 'Slots'},
           {value: 'type-table', text: 'Table'},
-          {value: 'type-video-poker', text: 'Video Poker'}
+          {value: 'type-video-poker', text: 'Video Poker'},
+          {value: 'type-instant-win', text: 'Instant Win'}
       ] %>
       <%- include(site.views + '/atoms/inputs/input-select', {name: 'add-game-type', text: 'Select a type', options: options, required: true, message: {error: {invalid: site.messages.forms.failure.generic}}}) %>
     </label>
@@ -156,15 +155,10 @@
     <label>
       <span class="label-title">Themes</span>
       <% options = [
-          {value: 'theme-branded', text: 'Branded'},
-          {value: 'theme-featured', text: 'Featured'},
-          {value: 'theme-recent', text: 'Recent'},
-          {value: 'theme-new', text: 'New'},
+        {value: 'theme-animal', text: 'Animal'},
           {value: 'theme-egm-port', text: 'EGM Port'},
           {value: 'theme-egypt', text: 'Egypt'},
-          {value: 'theme-animal', text: 'Animal'},
           {value: 'theme-game-show', text: 'Game Show'},
-          {value: 'theme-top-performer', text: 'Top Performer'},
           {value: 'theme-nature', text: 'Nature'},
           {value: 'theme-stepper', text: 'Stepper'}
       ] %>
@@ -174,10 +168,22 @@
   <% 
     // New
   %>
-  <fieldset class="item-12-12">
+  <fieldset class="item-3-12">
     <span class="label-title">Is this game new?</span>
     <%- include(site.views + '/atoms/inputs/input-toggle', 
       {input: {name: 'add-game-new', text: 'Is this game new?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
+    }) %>
+  </fieldset>
+  <fieldset class="item-3-12">
+    <span class="label-title">Is this game featured?</span>
+    <%- include(site.views + '/atoms/inputs/input-toggle', 
+      {input: {name: 'add-game-featured', text: 'Is this game featured?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
+    }) %>
+  </fieldset>
+  <fieldset class="item-3-12">
+    <span class="label-title">Is this game branded?</span>
+    <%- include(site.views + '/atoms/inputs/input-toggle', 
+      {input: {name: 'add-game-branded', text: 'Is this game branded?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
     }) %>
   </fieldset>
   <% 
