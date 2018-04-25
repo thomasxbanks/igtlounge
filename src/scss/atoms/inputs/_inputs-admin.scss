@@ -32,21 +32,8 @@
 }
 
 .input-validation-message {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateY(100%);
   display: none;
   @extend %junior;
   color: $clr_failure;
-  padding: 0 1.5rem;
-  &:before {
-    display: inline-block;
-    margin-right: 0.5rem;
-    content: attr(data-message-error-required);
-  }
-  &:after {
-    display: inline-block;
-    content: attr(data-message-error-invalid);
-  }
+  padding-top: 0.5rem;
 }

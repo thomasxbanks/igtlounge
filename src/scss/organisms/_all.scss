@@ -6,7 +6,6 @@
 @import "site-footer";
 @import "tabbed-section";
 
-.admin main,
 .admin .hero {
   @extend %padding-horizontal;
 }
@@ -17,6 +16,7 @@
   @extend %grid_wrap;
   @extend %align-start;
   @extend %justify-between;
+  @extend %padding-horizontal;
 }
 
 .admin {
