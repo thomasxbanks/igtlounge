@@ -195,6 +195,7 @@ router.get('/admin/:section', function(req, res) {
     site.template = 'admin';
     site.page = {
       slug: pageSection,
+      current: pageSection,
       template: site.template,
       masthead: 'admin',
       colophon: 'admin',
@@ -232,6 +233,7 @@ router.get('/admin/:section/:slug', function(req, res) {
     site.template = 'admin';
     site.page = {
       slug: pageSlug,
+      current: pageSection,
       template: site.template,
       masthead: 'admin',
       colophon: 'admin',
