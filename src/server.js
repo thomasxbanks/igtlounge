@@ -37,12 +37,14 @@ app.locals = {
     usertypes: {
       superAdmin: {
         navigation: [
-          { link: 'admin/games', text: 'Manage games' },
-          { link: 'admin/users', text: 'Manage Users' },
-          { link: 'admin/operators', text: 'Manage Operators' },
+          { slug: 'games', link: 'admin/games', text: 'Manage games' },
+          { slug: 'users', link: 'admin/users', text: 'Manage Users' },
+          { slug: 'operators', link: 'admin/operators', text: 'Manage Operators' },
         ],
       },
-      accountManager: {},
+      accountManager: {
+        navigation: [{ slug: 'operators', link: 'admin/operators', text: 'Manage Operators' }],
+      },
       contentManager: {},
     },
     pages: {
@@ -71,22 +73,76 @@ app.locals = {
         operators: {
           securityLevel: 2,
           title: 'Operators',
-          subnavigation: [{ link: 'admin/operators/add-operator', text: 'Add an operator' }],
-          'add-operator': {
-            securityLevel: 2,
-            title: 'Add an operator',
-            subnavigation: false,
+          subnavigation: false,
+        },
+      },
+    },
+    messages: {
+      forms: {
+        failure: {
+          generic: 'Generic error message',
+          required: 'Please do not leave this blank. ',
+          invalid: {
+            letters: 'Please use only letters. ',
+            numbers: 'Please use only numbers. ',
+            short: 'Please limit description to 250 characters. ',
+            id: 'Please enter a valid ID. ',
           },
         },
       },
     },
   },
+  usergroups: [{ slug: 'igt', name: 'IGT' }, { slug: 'operator', name: 'Operator' }],
+  operators: [
+    {
+      slug: 'william-hill',
+      name: 'William Hill',
+      accountManager: { UID: '001' },
+    },
+    {
+      slug: 'betfair',
+      name: 'BetFair',
+      accountManager: { UID: '003' },
+    },
+    {
+      slug: 'skybet',
+      name: 'SkyBet',
+      accountManager: { UID: '001' },
+    },
+  ],
+  users: [
+    {
+      UID: '001',
+      isLoggedIn: false,
+      securityLevel: 2,
+      usertype: { slug: 'accountManager', name: 'Account Manager' },
+      usergroup: { slug: 'igt', name: 'IGT' },
+      name: { firstName: 'Katherine', surname: 'Richardson-Beckinsale' },
+      operators: [],
+    },
+    {
+      UID: '002',
+      isLoggedIn: false,
+      securityLevel: 3,
+      usertype: { slug: 'superAdmin', name: 'Super Admin' },
+      usergroup: { slug: 'igt', name: 'IGT' },
+      name: { firstName: 'Benedict', surname: 'Cumberbatch' },
+      operators: false,
+    },
+  ],
+  games: [
+    {
+      name: 'Monkey Tennis',
+    },
+    {
+      name: 'Elephant Kingdom',
+    },
+    {
+      name: 'Witch Wood',
+    },
+  ],
   user: {
-    isLoggedIn: true,
-    securityLevel: 3,
-    usertype: 'superAdmin',
-    name: 'Benedict Cumberbatch',
-    operators: false,
+    UID: '002',
   },
 };
 

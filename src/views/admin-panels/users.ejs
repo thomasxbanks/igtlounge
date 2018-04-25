@@ -1,10 +1,41 @@
-<pre>
-  1. Get all users from Pimcore API
-  2. Loop through users and display on screen
-
-  eg:
-  
-  users.forEach(function(user, index) {
-    include(site.views + '/molecules/user/', {index: index, user: user})
-  });
-</pre>
+<section class="admin-data-table_container">
+  <table class="admin-data-table user-data">
+    <tr>
+      <th>UID</th>
+      <th>Name</th>
+      <th>Group</th>
+      <th>Type</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% users.forEach(function(user, index) { %>
+      <tr class="
+        <% if (user.isLoggedIn == true) { %>
+          is-loggedin
+        <% } else { %>
+          not-loggedin
+        <% } %>
+      ">
+        <td class="data-table-UID" title="<%= user.UID %>">
+          <%= user.UID %>
+        </td>
+        <td class="data-table-user" title="<%= user.name.firstName %> <%= user.name.surname %>">
+          <%= user.name.firstName %>
+          <%= user.name.surname %>
+        </td>
+        <td class="data-table-date" title="<%= user.usergroup.name %>">
+          <%= user.usergroup.name %>
+        </td>
+        <td class="data-table-time" title="<%= user.usertype.name %>">
+          <%= user.usertype.name %>
+        </td>
+        <td>
+          <%- include(site.views + '/atoms/buttons/button-secondary', {type: 'button', action: 'editUser("'+user.UID+'")', text: 'Edit user', theme: 'brand'}) %>
+        </td>
+        <td>
+          <%- include(site.views + '/atoms/buttons/button-secondary', {type: 'button', action: 'deleteUser("'+user.UID+'")', text: 'Delete user', theme: 'brand'}) %>
+        </td>
+      </tr>
+    <% }); %>
+  </table>
+</section>

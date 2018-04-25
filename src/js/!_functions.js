@@ -24,8 +24,10 @@ function isElementInViewport(el) {
   return (
     rect.top >= 0 &&
     rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) /*or $(window).height() */ &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) /*or $(window).height() */ &&
+    rect.right <=
+      (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
   );
 }
 
@@ -62,7 +64,22 @@ let addGame = (data) => {
   console.table(data);
 };
 
+let addUser = (data) => {
+  console.table(data);
+};
+
 let duplicateRow = (el) => {
   var thisRow = el.parentElement.querySelector('.input-joined_row');
   el.insertAdjacentHTML('beforebegin', thisRow.outerHTML);
+};
+
+let editUser = (uid) => {
+  window.location.href = `/admin/users/edit-user?user=${uid}`;
+};
+
+let deleteUser = (uid) => {
+  if (confirm('Are you sure you want to delete this user?')) {
+    console.log(`User ${uid} has been deleted`);
+    document.querySelector(`[title="${uid}"]`).parentElement.outerHTML = ``;
+  }
 };

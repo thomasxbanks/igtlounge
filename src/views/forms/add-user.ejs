@@ -1,3 +1,77 @@
-<h1>
-  Add a user form goes here
-</h1>
+<form id="addUser" class="item-12-12" onSubmit="addUser();">
+  <% 
+    // First Name
+  %>
+  <fieldset class="item-6-12">
+    <label class="input-full-width">
+      <span class="label-title">First Name</span>
+      <%- include(site.views + '/atoms/inputs/input-text', 
+        {
+          name: 'add-user-firstname', 
+          placeholder: 'Joe', 
+          required: true, 
+          maxlength: '',
+          message: {
+            error: {
+              required: site.messages.forms.failure.required, 
+              invalid: site.messages.forms.failure.invalid.letters
+            }
+          }
+        }
+      ) %>
+    </label>
+  </fieldset>
+  <% 
+    // Surname
+  %>
+  <fieldset class="item-6-12">
+    <label class="input-full-width">
+      <span class="label-title">Surname</span>
+      <%- include(site.views + '/atoms/inputs/input-text', 
+        {
+          name: 'add-user-surname', 
+          placeholder: 'Bloggs', 
+          required: true, 
+          maxlength: '',
+          message: {
+            error: {
+              required: site.messages.forms.failure.required, 
+              invalid: site.messages.forms.failure.invalid.letters
+            }
+          }
+        }
+      ) %>
+    </label>
+  </fieldset>
+  <% 
+    // User Group
+  %>
+  <fieldset class="item-6-12">
+    <label>
+      <span class="label-title">User group</span>
+      <% inputs = [] %>
+      <% usergroups.forEach(function(usergroup, index) { %>
+        <% inputs.push({name: 'add-user-usergroup', text: usergroup.name, value: usergroup.slug, required: true, message: {error: {invalid: site.messages.forms.failure.generic}}}) %>
+      <% }); %>
+      <% inputs.forEach(function(input, index) { %>
+        <%- include(site.views + '/atoms/inputs/input-radio', {input: input}) %>  
+      <% }); %>
+    </label>
+  </fieldset>
+  <% 
+    // Organisation
+  %>
+  <fieldset class="item-6-12">
+    <label class="input-full-width">
+      <span class="label-title">Select an organisation</span>
+      <% inputs = [] %>
+      <% operators.forEach(function(operator, index) { %>
+        <% inputs.push({value: operator.slug, text: operator.name}) %>
+      <% }); %>
+      <%- include(site.views + '/atoms/inputs/input-select', {name: 'add-user-organisation', text: 'Select an organisation', options: inputs, required: true, message: {error: {invalid: site.messages.forms.failure.generic}}}) %>
+    </label>
+  </fieldset>
+  <fieldset class="item-12-12">
+    <%- include(site.views + '/atoms/buttons/button-primary', {type: 'submit', action: 'addUser.submit', text: 'Add user', theme: 'brand'}) %>
+  </fieldset>
+</form>

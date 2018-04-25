@@ -4,7 +4,8 @@
       <li>
         <a 
           href="/<%= item.link %>"
-          data-state="<%if (item.current == true) { %>is-active<% } %>"
+          data-page="<%= site.page.slug %> == <%= item.slug %>"
+          data-state="<%if (site.page.slug == item.slug) { %>is-active<% } %>"
         >
           <%= item.text %>
         </a>

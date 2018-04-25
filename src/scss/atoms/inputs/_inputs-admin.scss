@@ -6,14 +6,18 @@
     @extend %grid;
     @extend %grid_row;
     @extend %grid_wrap;
-    @extend %align-end;
+    @extend %align-start;
     @extend %justify-between;
     fieldset {
       padding: 1rem 0;
+      vertical-align: top;
+      position: relative;
     }
     label {
       &.input-full-width {
-        input {
+        input,
+        textarea,
+        select {
           width: 100%;
         }
       }
@@ -28,17 +32,21 @@
 }
 
 .input-validation-message {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
   display: none;
   @extend %junior;
-  @include lineHeight(24px);
   color: $clr_failure;
-  padding: 0.5rem;
+  padding: 0 1.5rem;
   &:before {
-    display: block;
+    display: inline-block;
+    margin-right: 0.5rem;
     content: attr(data-message-error-required);
   }
   &:after {
-    display: block;
+    display: inline-block;
     content: attr(data-message-error-invalid);
   }
 }

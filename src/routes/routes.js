@@ -27,6 +27,23 @@ const loadPageLogin = (site, res) => {
   res.render(`pages/login`, res.app.locals);
 };
 
+const getAvailableOperators = (local) => {
+  var availableOperators = [];
+  availableOperators.push(
+    local.operators.filter(function(obj) {
+      return obj['accountManager']['UID'] === local.user['UID'];
+    })
+  );
+  return availableOperators[0];
+};
+
+const getCurrentUser = (local) => {
+  var user = local.users.filter(function(obj) {
+    return obj['UID'] === local.user['UID'];
+  });
+  return user[0];
+};
+
 // START Public-facing content routes
 // route for our homepage
 router.get('/', function(req, res) {
@@ -138,15 +155,21 @@ router.get('/news-events/:slug', function(req, res) {
 router.get('/admin', function(req, res) {
   let local = res.app.locals;
   let site = local.site;
-  let user = local.user;
-  if (user.isLoggedIn) {
+  local.user = getCurrentUser(local);
+  local.user.isLoggedIn = true;
+  local.user.operators = getAvailableOperators(local);
+
+  if (local.user.isLoggedIn && local.user.usergroup.slug === 'igt') {
     site.template = 'admin';
     site.page = {
       slug: 'admin',
       template: site.template,
       masthead: 'admin',
       colophon: 'admin',
-      body: { title: `Welcome back, ${user.name}!`, classes: [site.template, 'dashboard', user.usertype] },
+      body: {
+        title: `Welcome back, ${local.user.name.firstName}!`,
+        classes: [site.template, 'dashboard', local.user.usertype.slug],
+      },
       subnavigation: false,
       breadcrumbs: false,
     };
@@ -160,21 +183,34 @@ router.get('/admin', function(req, res) {
 router.get('/admin/:section', function(req, res) {
   let local = res.app.locals;
   let site = local.site;
-  let user = local.user;
   let pageSection = req.params.section;
-  if (user.isLoggedIn && user.securityLevel >= site.pages['admin'][pageSection].securityLevel) {
+  local.user = getCurrentUser(local);
+  local.user.isLoggedIn = true;
+  local.user.operators = getAvailableOperators(local);
+  if (
+    local.user.isLoggedIn &&
+    local.user.usergroup.slug === 'igt' &&
+    local.user.securityLevel >= site.pages['admin'][pageSection].securityLevel
+  ) {
     site.template = 'admin';
     site.page = {
       slug: pageSection,
       template: site.template,
       masthead: 'admin',
       colophon: 'admin',
-      body: { title: site.pages['admin'][pageSection].title, classes: [site.template, pageSection] },
+      body: {
+        title: site.pages['admin'][pageSection].title,
+        classes: [site.template, pageSection],
+      },
       subnavigation: site.pages['admin'][pageSection].subnavigation,
-      breadcrumbs: [{ link: '', text: 'Home' }, { link: pageSection, text: site.pages['admin'][pageSection].title }],
+      breadcrumbs: [
+        { link: '', text: 'Dashboard' },
+        { link: pageSection, text: site.pages['admin'][pageSection].title },
+      ],
     };
     res.render(`pages/admin/${site.template}`, local);
   } else {
+    console.error('Conditions not met. Redirect to Login page.');
     loadPageLogin(site, res);
   }
 });
@@ -183,10 +219,16 @@ router.get('/admin/:section', function(req, res) {
 router.get('/admin/:section/:slug', function(req, res) {
   let local = res.app.locals;
   let site = local.site;
-  let user = local.user;
+  local.user = getCurrentUser(local);
+  local.user.isLoggedIn = true;
+  local.user.operators = getAvailableOperators(local);
   let pageSection = req.params.section;
   let pageSlug = req.params.slug;
-  if (user.isLoggedIn && user.securityLevel >= site.pages['admin'][pageSection][pageSlug].securityLevel) {
+  if (
+    local.user.isLoggedIn &&
+    local.user.usergroup.slug === 'igt' &&
+    local.user.securityLevel >= site.pages['admin'][pageSection][pageSlug].securityLevel
+  ) {
     site.template = 'admin';
     site.page = {
       slug: pageSlug,
@@ -199,7 +241,7 @@ router.get('/admin/:section/:slug', function(req, res) {
       },
       subnavigation: site.pages['admin'][pageSection][pageSlug].subnavigation,
       breadcrumbs: [
-        { link: '', text: 'Home' },
+        { link: '', text: 'Dashboard' },
         { link: pageSection, text: site.pages['admin'][pageSection].title },
         { link: pageSlug, text: site.pages['admin'][pageSection][pageSlug].title },
       ],
