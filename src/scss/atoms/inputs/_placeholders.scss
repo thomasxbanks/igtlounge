@@ -26,6 +26,9 @@
   height: 2.5rem;
   display: inline-block;
   vertical-align: middle;
+  &:not(:last-of-type) {
+    margin-right: 1rem;
+  }
 }
 
 [data-state="is-pristine"] {

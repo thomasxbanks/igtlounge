@@ -1,9 +1,6 @@
 .input-radio-fancy {
   display: inline-block;
   font-size: 0;
-  &:not(:last-of-type) {
-    margin-right: 1rem;
-  }
   @extend %admin-input;
   @extend %border-radius-lozenge;
   position: relative;
