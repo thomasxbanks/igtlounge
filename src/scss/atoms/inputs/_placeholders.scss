@@ -20,6 +20,7 @@
   @extend %input;
   @extend %input-border;
   @extend %richie;
+  box-shadow: none !important;
   color: $clr_black;
   padding: 0.5rem 1.5rem;
   height: 2.5rem;
@@ -43,12 +44,10 @@
 
 [data-state="not-pristine"] {
   &:invalid {
-    border-color: $clr_failure;
     box-shadow: none;
+    border-color: $clr_failure;
     position: relative;
-    background: rgba($clr_failure, $opacity-failure-decimal);
     + [class^="input-checkbox-"] {
-      background: rgba($clr_failure, $opacity-failure-decimal);
       border-color: $clr_failure;
     }
   }
