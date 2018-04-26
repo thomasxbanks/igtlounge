@@ -26,9 +26,11 @@
   height: 2.5rem;
   display: inline-block;
   vertical-align: middle;
+  margin: 0;
   &:not(:last-of-type) {
     margin-right: 1rem;
   }
+  transition: $ease-main $speed-std;
 }
 
 [data-state="is-pristine"] {

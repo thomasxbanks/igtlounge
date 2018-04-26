@@ -248,7 +248,6 @@ router.get('/admin/:section/:slug', function(req, res) {
         { link: pageSlug, text: site.pages['admin'][pageSection][pageSlug].title },
       ],
     };
-    console.log(site.page);
     res.render(`pages/admin/${site.template}`, local);
   } else {
     loadPageLogin(site, res);

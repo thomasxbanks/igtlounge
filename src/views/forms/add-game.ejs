@@ -174,16 +174,22 @@
       {input: {name: 'add-game-new', text: 'Is this game new?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
     }) %>
   </fieldset>
+  <% 
+    // Featured
+  %>
   <fieldset class="item-3-12">
     <span class="label-title">Is this game featured?</span>
     <%- include(site.views + '/atoms/inputs/input-toggle', 
       {input: {name: 'add-game-featured', text: 'Is this game featured?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
     }) %>
   </fieldset>
+  <% 
+    // Licensed
+  %>
   <fieldset class="item-3-12">
-    <span class="label-title">Is this game branded?</span>
+    <span class="label-title">Licenced?</span>
     <%- include(site.views + '/atoms/inputs/input-toggle', 
-      {input: {name: 'add-game-branded', text: 'Is this game branded?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
+      {input: {name: 'add-game-licenced', text: 'Is this game licenced?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
     }) %>
   </fieldset>
   <% 
@@ -290,19 +296,6 @@
         }
       ) %>
     </label>
-  </fieldset>
-  <% 
-    // 3rd Party Licensed
-  %>
-  <fieldset class="item-12-12">
-    <span class="label-title">3rd Party Licenced</span>
-    <% inputs = [
-      {name: 'add-game-third-party-licence', text: 'Yes', value: 'yes', required: true, message: {error: {invalid: site.messages.forms.failure.generic}}},
-      {name: 'add-game-third-party-licence', text: 'No', value: 'no', required: true, message: {error: {invalid: site.messages.forms.failure.generic}}}
-    ] %>
-    <% inputs.forEach(function(input, index) { %>
-      <%- include(site.views + '/atoms/inputs/input-radio', {input: input}) %>
-    <% }); %>
   </fieldset>
   <fieldset class="item-12-12">
     <%- include(site.views + '/atoms/buttons/button-primary', {type: 'submit', action: 'addGame.submit', text: 'Add game', theme: 'brand'}) %>
