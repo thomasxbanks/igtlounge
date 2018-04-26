@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "gulp && gulp watch",
-    "test": "echo \"#YOLO!🤣\" && exit 0"
+    "test": "echo \"#YOLO!🤣\" && exit 0",
+    "deploy": "git pull && gulp && pm2 restart server",
+    "launch": "pm2 start ./dist/server.js",
+    "kill": "pm2 stop server",
+    "reboot": "pm2 restart server"
   },
   "keywords": [],
   "author": "",
