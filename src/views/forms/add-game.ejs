@@ -78,7 +78,7 @@
       <span class="label-title">Game Type</span>
       <% options = [
           {value: 'type-casual-game', text: 'Casual Game'},
-          {value: 'type-egm-ports', text: 'EGM Ports'},
+          {value: 'type-egm', text: 'EGM'},
           {value: 'type-jackpots', text: 'Jackpots'},
           {value: 'type-slots', text: 'Slots'},
           {value: 'type-table', text: 'Table'},
@@ -94,17 +94,9 @@
   <fieldset class="item-12-12">
     <label>
       <span class="label-title">Add to Roadmap?</span>
-      <% options = [
-          {value: 'roadmap-2018-Q1', text: '2018-Q1'},
-          {value: 'roadmap-2018-Q2', text: '2018-Q2'},
-          {value: 'roadmap-2018-Q3', text: '2018-Q3'},
-          {value: 'roadmap-2018-Q4', text: '2018-Q4'},
-          {value: 'roadmap-2019-Q1', text: '2019-Q1'},
-          {value: 'roadmap-2019-Q2', text: '2019-Q2'},
-          {value: 'roadmap-2019-Q3', text: '2019-Q3'},
-          {value: 'roadmap-2019-Q4', text: '2019-Q4'}
-      ] %>
-      <%- include(site.views + '/atoms/inputs/input-select', {name: 'add-game-quarter', text: 'Select a quarter', options: options, required: true, message: {error: {invalid: site.messages.forms.failure.generic}}}) %>
+      <%- include(site.views + '/atoms/inputs/input-toggle', 
+        {input: {name: 'add-game-roadmap', text: 'Is this game displayed on the roadmap?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
+      }) %>
     </label>
   </fieldset>
   <% 
@@ -187,7 +179,7 @@
     // Licensed
   %>
   <fieldset class="item-3-12">
-    <span class="label-title">Licenced?</span>
+    <span class="label-title">Is this game licenced?</span>
     <%- include(site.views + '/atoms/inputs/input-toggle', 
       {input: {name: 'add-game-licenced', text: 'Is this game licenced?', required: false, message: {error: {invalid: site.messages.forms.failure.generic}}}
     }) %>
@@ -195,7 +187,7 @@
   <% 
     // Paylines
   %>
-  <fieldset class="item-12-12">
+  <fieldset class="item-6-12">
     <label>
       <span class="label-title">Number of paylines</span>
       <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-paylines', placeholder: '40', min: '1', max: '10', step: '1', required: true, message: {error: {invalid: site.messages.forms.failure.generic}}}) %>
@@ -204,7 +196,7 @@
   <% 
     // Min/Max Stakes
   %>
-  <fieldset class="item-12-12">
+  <fieldset class="item-6-12">
     <label>
       <span class="label-title">Min/max stakes (GBP)</span>
       <%- include(site.views + '/atoms/inputs/input-number', {name: 'add-game-stakes-min', placeholder: '0.75', min: '0.5', max: '5000', step: '0.25', required: true, message: {error: {invalid: site.messages.forms.failure.generic}}}) %>
