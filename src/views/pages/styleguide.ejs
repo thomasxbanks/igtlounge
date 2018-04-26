@@ -173,19 +173,6 @@
 			</section>
 			<hr class="page-divider" />
 			<section class="admin-panel-with-sidebar grid-central">
-				<aside class="admin-sidebar item-3-12">
-					<p class="sidebar-section-title">Admin functions</p>
-					<%- include(site.views + '/molecules/admin-sidebar-nav', 
-						{items: [
-							{link: '/', text: 'Recent', current: true}, 
-							{link: '/', text: 'William Hill', current: false}, 
-							{link: '/', text: 'BetFred', current: false}, 
-							{link: '/', text: 'Client 3', current: false}, 
-							{link: '/', text: 'Fourth Client', current: false}
-						]}
-					) %>
-				</aside>
-						
-				
+				<%- include(site.views + '/forms/add-game') %>
 			</section>
 		</section>
